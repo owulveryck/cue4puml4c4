@@ -1,0 +1,23 @@
+@startuml MyName
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+!include https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/GCPCommon.puml
+!include https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/vertexai/vertexai.puml 
+
+!include https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_storage/cloud_storage.puml 
+
+
+System_Boundary(system1,"My System1","bla"){
+	ContainerDb(mylitecontainer,"lite","Google Cloud Storage","ça sert à blabla","cloud_storage")
+	Container(mysupercontainer,"mycontainer","VertexAI","my super description","vertexai")
+
+	Rel("mylitecontainer","mysupercontainer","")
+
+}
+
+
+
+
+
+SHOW_LEGEND()
+@enduml
