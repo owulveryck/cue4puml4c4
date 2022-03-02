@@ -59,7 +59,7 @@ func main() {
 						log.Println(err)
 						continue
 					}
-					u, _ := url.Parse("http://localhost:8080/plantuml/png/")
+					u, _ := url.Parse("http://localhost:8080/plantuml/svg/")
 					req := &http.Request{
 						Method: http.MethodPost,
 						URL:    u,
@@ -150,9 +150,34 @@ func ConnWs(w http.ResponseWriter, r *http.Request) {
 const (
 	index = `
 <html lang="zh-TW">
-<head></head>
+<head>
+<style>
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: gray;
+}
+.container {
+  margin: 0;
+  display: block;
+  height: 100%;
+}
+.center {
+  margin: auto;
+}
+.container img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 100%;
+  max-width: 100%;
+}
+</style>
+</head>
 <body>
+<div class="container center">
 <img id="image" />
+</div>
 </body>
 </html>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -171,7 +196,7 @@ ws.onopen = function() {
 ws.onmessage = function(e) {
     console.log("[onmessage] receive message.");
     var res = JSON.parse(e.data);
-    $("#image").attr("src", "data:image/jpeg;base64," + res["image"]);
+    $("#image").attr("src", "data:image/svg+xml;utf8;base64," + res["image"]);
     console.log(res)
     console.log(res["cue"])
     console.log(res["plantuml"])
