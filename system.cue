@@ -1,8 +1,10 @@
 package c4
 
+#id: =~"^[a-zA-Z][a-zA-Z_]*"
+
 #System: {
 	label:        string
-	id:           string
+	id:           #id
 	description?: string
 	isBoundary:   bool | *false
 	technology?:  #Technology
@@ -10,18 +12,23 @@ package c4
 	containers?: [...#Container]
 	rels?: [...#Rel]
 	systems?: [...#System]
+	link?: #url
+	tags?: [...#ElementTag]
 }
 
 #Container: {
-	id:           string
+	id:           #id
 	label:        string
 	technology:   #Technology | *noTech
 	description?: string
-	tags?: [...#tag]
+	tags?: [...#ElementTag]
 	link?: #url
 }
 
-#tag: string
+#Person: {
+	id:    #id
+	label: string
+}
 
 #url: string
 
@@ -30,11 +37,35 @@ noTech: #Technology & {
 }
 
 #Rel: {
-	source:      #System | #Container
-	dest:        #System | #Container
+	source:      #System | #Container | #Person
+	dest:        #System | #Container | #Person
 	description: string | *""
 	protocol?:   string
 	link?:       #url
+	tags?: [...#RelationTag]
+}
+
+#color: =~"#[0-9a-f]{6}"
+
+#ElementTag: {
+	id:           string
+	bgColor?:     #color
+	fontColor?:   #color
+	borderColor?: #color
+	legendText?:  string
+	technology?:  #Technology
+	shadowing?:   bool
+	shape?:       "rounded" | "eightsided"
+}
+
+#RelationTag: {
+	id:            string
+	textColor?:    #color
+	lineColor?:    #color
+	lineStyle?:    "dash" | "dot" | "bold"
+	technology?:   #Technology
+	legendText?:   string
+	legendSprite?: "\(technology)"
 }
 
 #Technology: {
@@ -55,7 +86,20 @@ noTech: #Technology & {
 	name: string
 }
 #C1: {
+	elementTags:  elementsTags
+	relationTags: relationsTags
 	Technologies?: [...#Technology]
+	Persons?: [...#Person]
 	Systems: [...#System]
 	Container?: [...#Container]
+	Relations?: [...#Rel]
+}
+
+// Tags
+elementsTags: [ID=_]: #ElementTag & {
+	id: "\(ID)"
+}
+
+relationsTags: [ID=_]: #RelationTag & {
+	id: "\(ID)"
 }

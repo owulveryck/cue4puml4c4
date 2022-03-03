@@ -29,9 +29,8 @@ type diagram struct {
 func main() {
 	C = make(chan diagram)
 	upgrader = websocket.Upgrader{
-		ReadBufferSize:    1024,
-		WriteBufferSize:   1024,
-		EnableCompression: true,
+		ReadBufferSize:  1024,
+		WriteBufferSize: 1024,
 	}
 	watcher, err := fsnotify.NewWatcher()
 	if err != nil {
@@ -70,7 +69,9 @@ func main() {
 					}
 					resp, err := http.DefaultClient.Do(req)
 					if err != nil {
-						log.Fatal(err)
+						log.Println(err)
+						log.Println("is plantuml server up and running?")
+						continue
 					}
 					res, err := ioutil.ReadAll(resp.Body)
 
