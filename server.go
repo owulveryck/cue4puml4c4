@@ -137,13 +137,16 @@ func ConnWs(w http.ResponseWriter, r *http.Request) {
 			fmt.Println("Read : " + err.Error())
 			return
 		}
-		for diagram := range C {
+		select {
+		case diagram := <-C:
 			str := base64.StdEncoding.EncodeToString(diagram.image)
 			res["image"] = str
 
 			if err = ws.WriteJSON(&res); err != nil {
 				log.Println(err)
 			}
+		case <-r.Context().Done():
+			return
 		}
 	}
 }
