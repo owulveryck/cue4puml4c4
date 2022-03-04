@@ -1,34 +1,23 @@
 package main
 
 import (
-	"bytes"
+	"context"
 	"encoding/base64"
 	"fmt"
-	"io"
-	"io/ioutil"
 	"log"
 	"net/http"
-	"net/url"
-	"os/exec"
 
 	"github.com/fsnotify/fsnotify"
 	"github.com/gorilla/websocket"
 )
 
-var (
-	upgrader websocket.Upgrader
-	C        chan diagram
-)
-
 type diagram struct {
 	image    []byte
-	cue      []byte
 	plantuml []byte
 }
 
 func main() {
-	C = make(chan diagram)
-	upgrader = websocket.Upgrader{
+	upgrader := websocket.Upgrader{
 		ReadBufferSize:  1024,
 		WriteBufferSize: 1024,
 	}
@@ -36,68 +25,6 @@ func main() {
 	if err != nil {
 		log.Fatal("NewWatcher failed: ", err)
 	}
-	defer watcher.Close()
-
-	done := make(chan bool)
-	go func(C chan diagram) {
-		defer close(done)
-
-		for {
-			select {
-			case event, ok := <-watcher.Events:
-				if !ok {
-					return
-				}
-				if event.Op == fsnotify.Write {
-					cue := exec.Command("cue", "cmd", "genpuml")
-					var outb, errb bytes.Buffer
-					cue.Stdout = &outb
-					cue.Stderr = &errb
-					if err := cue.Run(); err != nil {
-						log.Println(errb.String())
-						log.Println(err)
-						continue
-					}
-					u, _ := url.Parse("http://localhost:8080/plantuml/svg/")
-					req := &http.Request{
-						Method: http.MethodPost,
-						URL:    u,
-						Header: map[string][]string{
-							"Content-Type": {"text/plain"},
-						},
-						Body: io.NopCloser(bytes.NewReader(outb.Bytes())),
-					}
-					resp, err := http.DefaultClient.Do(req)
-					if err != nil {
-						log.Println(err)
-						log.Println("is plantuml server up and running?")
-						continue
-					}
-					res, err := ioutil.ReadAll(resp.Body)
-
-					if err != nil {
-						log.Fatal(err)
-					}
-					resp.Body.Close()
-					if resp.StatusCode != http.StatusOK {
-						log.Println(resp.StatusCode)
-					}
-					log.Println("Senging new image")
-					log.Printf("%s", outb.Bytes())
-					C <- diagram{
-						plantuml: outb.Bytes(),
-						image:    res,
-					}
-				}
-			case err, ok := <-watcher.Errors:
-				if !ok {
-					return
-				}
-				log.Println("error:", err)
-			}
-		}
-
-	}(C)
 
 	err = watcher.Add("./")
 	if err != nil {
@@ -106,16 +33,34 @@ func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "%v", index)
 	})
-	http.HandleFunc("/connws/", ConnWs)
+	http.HandleFunc("/connws/", (&client{
+		upgrader: upgrader,
+		watcher:  watcher,
+		watch:    watch,
+	}).ConnWs)
 	err = http.ListenAndServe(":9090", nil)
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}
-
 }
 
-func ConnWs(w http.ResponseWriter, r *http.Request) {
-	ws, err := upgrader.Upgrade(w, r, nil)
+type client struct {
+	upgrader websocket.Upgrader
+	watcher  *fsnotify.Watcher
+	watch    func(ctx context.Context, watcher *fsnotify.Watcher, C chan diagram)
+}
+
+func (c *client) ConnWs(w http.ResponseWriter, r *http.Request) {
+	C := make(chan diagram, 5)
+	defer func() {
+		// drain and close
+		for len(C) > 0 {
+			<-C
+		}
+		close(C)
+	}()
+	go c.watch(r.Context(), c.watcher, C)
+	ws, err := c.upgrader.Upgrade(w, r, nil)
 	if _, ok := err.(websocket.HandshakeError); ok {
 		http.Error(w, "Not a websocket handshake", 400)
 		return

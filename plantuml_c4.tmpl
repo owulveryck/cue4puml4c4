@@ -1,4 +1,5 @@
 @startuml MyName
+
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
 
 !include https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/GCPCommon.puml
@@ -8,6 +9,7 @@
 {{end -}}
 {{end -}}
 
+/'Relation Tags'/ 
 {{range .relationTags}}
 AddRelTag("{{.id}}"
 {{- if .textColor}},$textColor="{{.textColor}}"{{end -}}
@@ -17,8 +19,8 @@ AddRelTag("{{.id}}"
 {{- if .technology}},$techn="{{.technology.name}}",$sprite="{{.technology.sprite.id}}"{{ end -}})
 {{end}}
 
-{{range .elementTags}}
 /'Element Tags'/ 
+{{range .elementTags}}
 AddElementTag("{{.id}}"
 {{- if .bgColor}},$bgColor="{{.bgColor}}"{{end -}}
 {{- if .borderColor}},$borderColor="{{.borderColor}}"{{ end -}}
@@ -30,9 +32,11 @@ AddElementTag("{{.id}}"
 {{end}}
 
 {{if .Persons}}
+/' Persons '/
 {{template "Persons" .Persons}}
 {{end}}
 {{if .Systems}}
+/' Systems '/
 {{template "Systems" .Systems}}
 {{end}}
 
@@ -69,6 +73,7 @@ Person({{.id}},"{{.label}}")
 {{- end}}
 
 {{if .Relations}}
+/' Relations '/
 {{ range .Relations}}
 {{template "Rel" .}}
 {{end}}
