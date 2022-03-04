@@ -52,6 +52,7 @@ type client struct {
 
 func (c *client) ConnWs(w http.ResponseWriter, r *http.Request) {
 	C := make(chan diagram, 5)
+	log.Printf("New Connection with %v", C)
 	defer func() {
 		// drain and close
 		for len(C) > 0 {
@@ -71,17 +72,21 @@ func (c *client) ConnWs(w http.ResponseWriter, r *http.Request) {
 
 	res := map[string]interface{}{}
 	for {
-		if err = ws.ReadJSON(&res); err != nil {
-			if err.Error() == "EOF" {
+		/*
+			if err = ws.ReadJSON(&res); err != nil {
+				if err.Error() == "EOF" {
+					log.Println("gone...")
+					return
+				}
+				// ErrShortWrite means a write accepted fewer bytes than requested then failed to return an explicit error.
+				if err.Error() == "unexpected EOF" {
+					log.Println(err)
+					return
+				}
+				fmt.Println("Read : " + err.Error())
 				return
 			}
-			// ErrShortWrite means a write accepted fewer bytes than requested then failed to return an explicit error.
-			if err.Error() == "unexpected EOF" {
-				return
-			}
-			fmt.Println("Read : " + err.Error())
-			return
-		}
+		*/
 		select {
 		case diagram := <-C:
 			str := base64.StdEncoding.EncodeToString(diagram.image)
@@ -90,6 +95,7 @@ func (c *client) ConnWs(w http.ResponseWriter, r *http.Request) {
 			if err = ws.WriteJSON(&res); err != nil {
 				log.Println(err)
 			}
+			log.Println("new picture sent")
 		case <-r.Context().Done():
 			return
 		}

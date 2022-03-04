@@ -74,9 +74,9 @@ func generateImageAndSend(C chan diagram) error {
 	if resp.StatusCode != http.StatusOK {
 		log.Println(resp.StatusCode)
 	}
-	log.Println("Senging new image")
+	log.Printf("Senging new image on %v", C)
 	puml, _ := format(bytes.NewReader(outb.Bytes()))
-	log.Printf("%s", puml)
+	fmt.Printf("%s", puml)
 	C <- diagram{
 		plantuml: outb.Bytes(),
 		image:    res,
