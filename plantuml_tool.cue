@@ -1,4 +1,4 @@
-package c4
+package main
 
 import (
 	"tool/cli"
