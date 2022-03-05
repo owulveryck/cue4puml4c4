@@ -60,7 +60,7 @@ sampleSystem: c4.#System & {
 	id:    "c1"
 	label: "Sample System"
 	containers: [myWebApp, myothercontainer]
-	technology: gcp.Vertexai
+	technology: gcp.CloudSql
 	systems: [twitter, othersample]
 }
 
@@ -113,10 +113,10 @@ C1: c4.#C1 & {
 					"\(x.technology.name)": x.technology
 				}
 				if x.systems != _|_ {
-					"system_\(i)": (#next & {#in: x.systems}).tech
+					(#next & {#in: x.systems}).tech
 				}
 				if x.containers != _|_ {
-					"container_\(i)": (#next & {#in: x.containers}).tech
+					(#next & {#in: x.containers}).tech
 				}
 			}
 		}
