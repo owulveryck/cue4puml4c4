@@ -72,21 +72,6 @@ func (c *client) ConnWs(w http.ResponseWriter, r *http.Request) {
 
 	res := map[string]interface{}{}
 	for {
-		/*
-			if err = ws.ReadJSON(&res); err != nil {
-				if err.Error() == "EOF" {
-					log.Println("gone...")
-					return
-				}
-				// ErrShortWrite means a write accepted fewer bytes than requested then failed to return an explicit error.
-				if err.Error() == "unexpected EOF" {
-					log.Println(err)
-					return
-				}
-				fmt.Println("Read : " + err.Error())
-				return
-			}
-		*/
 		select {
 		case diagram := <-C:
 			str := base64.StdEncoding.EncodeToString(diagram.image)

@@ -1,6 +1,10 @@
-package c4
+package gcp
 
-GCPStackdriver: #Technology & {
+import (
+	"github.com/owulveryck/cue4puml4c4:c4"
+)
+
+Stackdriver: c4.#Technology & {
 	name: "Google Stackdriver"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/stackdriver/stackdriver.puml"
@@ -8,7 +12,7 @@ GCPStackdriver: #Technology & {
 	}
 }
 
-GCPKeyManagementService: #Technology & {
+KeyManagementService: {
 	name: "Google Key Management Service"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/key_management_service/key_management_service.puml"
@@ -16,7 +20,7 @@ GCPKeyManagementService: #Technology & {
 	}
 }
 
-GCPDataflow: #Technology & {
+Dataflow: {
 	name: "Google Dataflow"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/dataflow/dataflow.puml"
@@ -24,7 +28,7 @@ GCPDataflow: #Technology & {
 	}
 }
 
-GCPAutomlTranslation: #Technology & {
+AutomlTranslation: {
 	name: "Google Automl Translation"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/automl_translation/automl_translation.puml"
@@ -32,7 +36,7 @@ GCPAutomlTranslation: #Technology & {
 	}
 }
 
-GCPCloudGpu: #Technology & {
+CloudGpu: {
 	name: "Google Cloud Gpu"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_gpu/cloud_gpu.puml"
@@ -40,7 +44,7 @@ GCPCloudGpu: #Technology & {
 	}
 }
 
-GCPGceSystemsManagement: #Technology & {
+GceSystemsManagement: {
 	name: "Google Gce Systems Management"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/gce_systems_management/gce_systems_management.puml"
@@ -48,7 +52,7 @@ GCPGceSystemsManagement: #Technology & {
 	}
 }
 
-GCPCloudInterconnect: #Technology & {
+CloudInterconnect: {
 	name: "Google Cloud Interconnect"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_interconnect/cloud_interconnect.puml"
@@ -56,7 +60,7 @@ GCPCloudInterconnect: #Technology & {
 	}
 }
 
-GCPIdentityAwareProxy: #Technology & {
+IdentityAwareProxy: {
 	name: "Google Identity-aware Proxy"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/identity-aware_proxy/identity-aware_proxy.puml"
@@ -64,7 +68,7 @@ GCPIdentityAwareProxy: #Technology & {
 	}
 }
 
-GCPDatastream: #Technology & {
+Datastream: {
 	name: "Google Datastream"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/datastream/datastream.puml"
@@ -72,7 +76,7 @@ GCPDatastream: #Technology & {
 	}
 }
 
-GCPConnectors: #Technology & {
+Connectors: {
 	name: "Google Connectors"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/connectors/connectors.puml"
@@ -80,7 +84,7 @@ GCPConnectors: #Technology & {
 	}
 }
 
-GCPBeyondcorp: #Technology & {
+Beyondcorp: {
 	name: "Google Beyondcorp"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/beyondcorp/beyondcorp.puml"
@@ -88,7 +92,7 @@ GCPBeyondcorp: #Technology & {
 	}
 }
 
-GCPHome: #Technology & {
+Home: {
 	name: "Google Home"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/home/home.puml"
@@ -96,7 +100,7 @@ GCPHome: #Technology & {
 	}
 }
 
-GCPCloudForMarketing: #Technology & {
+CloudForMarketing: {
 	name: "Google Cloud For Marketing"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_for_marketing/cloud_for_marketing.puml"
@@ -104,7 +108,7 @@ GCPCloudForMarketing: #Technology & {
 	}
 }
 
-GCPPartnerPortal: #Technology & {
+PartnerPortal: {
 	name: "Google Partner Portal"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/partner_portal/partner_portal.puml"
@@ -112,7 +116,7 @@ GCPPartnerPortal: #Technology & {
 	}
 }
 
-GCPNetworkTiers: #Technology & {
+NetworkTiers: {
 	name: "Google Network Tiers"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/network_tiers/network_tiers.puml"
@@ -120,7 +124,7 @@ GCPNetworkTiers: #Technology & {
 	}
 }
 
-GCPContainerOptimizedOs: #Technology & {
+ContainerOptimizedOs: {
 	name: "Google Container Optimized Os"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/container_optimized_os/container_optimized_os.puml"
@@ -128,7 +132,7 @@ GCPContainerOptimizedOs: #Technology & {
 	}
 }
 
-GCPAutomlVision: #Technology & {
+AutomlVision: {
 	name: "Google Automl Vision"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/automl_vision/automl_vision.puml"
@@ -136,7 +140,7 @@ GCPAutomlVision: #Technology & {
 	}
 }
 
-GCPGCPCommon: #Technology & {
+GCPCommon: {
 	name: "Google GCPCommon"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/GCPCommon.puml"
@@ -144,7 +148,7 @@ GCPGCPCommon: #Technology & {
 	}
 }
 
-GCPSpeechToText: #Technology & {
+SpeechToText: {
 	name: "Google Speech-to-text"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/speech-to-text/speech-to-text.puml"
@@ -152,7 +156,7 @@ GCPSpeechToText: #Technology & {
 	}
 }
 
-GCPCloudDeploymentManager: #Technology & {
+CloudDeploymentManager: {
 	name: "Google Cloud Deployment Manager"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_deployment_manager/cloud_deployment_manager.puml"
@@ -160,7 +164,7 @@ GCPCloudDeploymentManager: #Technology & {
 	}
 }
 
-GCPBareMetalSolutions: #Technology & {
+BareMetalSolutions: {
 	name: "Google Bare Metal Solutions"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/bare_metal_solutions/bare_metal_solutions.puml"
@@ -168,7 +172,7 @@ GCPBareMetalSolutions: #Technology & {
 	}
 }
 
-GCPCloudScheduler: #Technology & {
+CloudScheduler: {
 	name: "Google Cloud Scheduler"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_scheduler/cloud_scheduler.puml"
@@ -176,7 +180,7 @@ GCPCloudScheduler: #Technology & {
 	}
 }
 
-GCPLauncher: #Technology & {
+Launcher: {
 	name: "Google Launcher"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/launcher/launcher.puml"
@@ -184,7 +188,7 @@ GCPLauncher: #Technology & {
 	}
 }
 
-GCPErrorReporting: #Technology & {
+ErrorReporting: {
 	name: "Google Error Reporting"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/error_reporting/error_reporting.puml"
@@ -192,7 +196,7 @@ GCPErrorReporting: #Technology & {
 	}
 }
 
-GCPCloudTranslationApi: #Technology & {
+CloudTranslationApi: {
 	name: "Google Cloud Translation Api"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_translation_api/cloud_translation_api.puml"
@@ -200,7 +204,7 @@ GCPCloudTranslationApi: #Technology & {
 	}
 }
 
-GCPCloudLoadBalancing: #Technology & {
+CloudLoadBalancing: {
 	name: "Google Cloud Load Balancing"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_load_balancing/cloud_load_balancing.puml"
@@ -208,7 +212,7 @@ GCPCloudLoadBalancing: #Technology & {
 	}
 }
 
-GCPReleaseNotes: #Technology & {
+ReleaseNotes: {
 	name: "Google Release Notes"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/release_notes/release_notes.puml"
@@ -216,7 +220,7 @@ GCPReleaseNotes: #Technology & {
 	}
 }
 
-GCPContainerRegistry: #Technology & {
+ContainerRegistry: {
 	name: "Google Container Registry"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/container_registry/container_registry.puml"
@@ -224,7 +228,7 @@ GCPContainerRegistry: #Technology & {
 	}
 }
 
-GCPPersistentDisk: #Technology & {
+PersistentDisk: {
 	name: "Google Persistent Disk"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/persistent_disk/persistent_disk.puml"
@@ -232,7 +236,7 @@ GCPPersistentDisk: #Technology & {
 	}
 }
 
-GCPCertificateManager: #Technology & {
+CertificateManager: {
 	name: "Google Certificate Manager"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/certificate_manager/certificate_manager.puml"
@@ -240,7 +244,7 @@ GCPCertificateManager: #Technology & {
 	}
 }
 
-GCPOsInventoryManagement: #Technology & {
+OsInventoryManagement: {
 	name: "Google Os Inventory Management"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/os_inventory_management/os_inventory_management.puml"
@@ -248,7 +252,7 @@ GCPOsInventoryManagement: #Technology & {
 	}
 }
 
-GCPTrace: #Technology & {
+Trace: {
 	name: "Google Trace"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/trace/trace.puml"
@@ -256,7 +260,7 @@ GCPTrace: #Technology & {
 	}
 }
 
-GCPLooker: #Technology & {
+Looker: {
 	name: "Google Looker"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/looker/looker.puml"
@@ -264,7 +268,7 @@ GCPLooker: #Technology & {
 	}
 }
 
-GCPAutomlVideoIntelligence: #Technology & {
+AutomlVideoIntelligence: {
 	name: "Google Automl Video Intelligence"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/automl_video_intelligence/automl_video_intelligence.puml"
@@ -272,7 +276,7 @@ GCPAutomlVideoIntelligence: #Technology & {
 	}
 }
 
-GCPGenomics: #Technology & {
+Genomics: {
 	name: "Google Genomics"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/genomics/genomics.puml"
@@ -280,7 +284,7 @@ GCPGenomics: #Technology & {
 	}
 }
 
-GCPBigtable: #Technology & {
+Bigtable: {
 	name: "Google Bigtable"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/bigtable/bigtable.puml"
@@ -288,7 +292,7 @@ GCPBigtable: #Technology & {
 	}
 }
 
-GCPCloudEkm: #Technology & {
+CloudEkm: {
 	name: "Google Cloud Ekm"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_ekm/cloud_ekm.puml"
@@ -296,7 +300,7 @@ GCPCloudEkm: #Technology & {
 	}
 }
 
-GCPConfigurationManagement: #Technology & {
+ConfigurationManagement: {
 	name: "Google Configuration Management"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/configuration_management/configuration_management.puml"
@@ -304,7 +308,7 @@ GCPConfigurationManagement: #Technology & {
 	}
 }
 
-GCPPartnerInterconnect: #Technology & {
+PartnerInterconnect: {
 	name: "Google Partner Interconnect"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/partner_interconnect/partner_interconnect.puml"
@@ -312,7 +316,7 @@ GCPPartnerInterconnect: #Technology & {
 	}
 }
 
-GCPDialogflow: #Technology & {
+Dialogflow: {
 	name: "Google Dialogflow"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/dialogflow/dialogflow.puml"
@@ -320,7 +324,7 @@ GCPDialogflow: #Technology & {
 	}
 }
 
-GCPIotCore: #Technology & {
+IotCore: {
 	name: "Google Iot Core"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/iot_core/iot_core.puml"
@@ -328,7 +332,7 @@ GCPIotCore: #Technology & {
 	}
 }
 
-GCPCloudArmor: #Technology & {
+CloudArmor: {
 	name: "Google Cloud Armor"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_armor/cloud_armor.puml"
@@ -336,7 +340,7 @@ GCPCloudArmor: #Technology & {
 	}
 }
 
-GCPCloudGeneric: #Technology & {
+CloudGeneric: {
 	name: "Google Cloud Generic"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_generic/cloud_generic.puml"
@@ -344,7 +348,7 @@ GCPCloudGeneric: #Technology & {
 	}
 }
 
-GCPOsConfigurationManagement: #Technology & {
+OsConfigurationManagement: {
 	name: "Google Os Configuration Management"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/os_configuration_management/os_configuration_management.puml"
@@ -352,7 +356,7 @@ GCPOsConfigurationManagement: #Technology & {
 	}
 }
 
-GCPAiPlatformUnified: #Technology & {
+AiPlatformUnified: {
 	name: "Google Ai Platform Unified"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/ai_platform_unified/ai_platform_unified.puml"
@@ -360,7 +364,7 @@ GCPAiPlatformUnified: #Technology & {
 	}
 }
 
-GCPCloudSpanner: #Technology & {
+CloudSpanner: {
 	name: "Google Cloud Spanner"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_spanner/cloud_spanner.puml"
@@ -368,7 +372,7 @@ GCPCloudSpanner: #Technology & {
 	}
 }
 
-GCPTrafficDirector: #Technology & {
+TrafficDirector: {
 	name: "Google Traffic Director"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/traffic_director/traffic_director.puml"
@@ -376,7 +380,7 @@ GCPTrafficDirector: #Technology & {
 	}
 }
 
-GCPGoogleKubernetesEngine: #Technology & {
+GoogleKubernetesEngine: {
 	name: "Google Google Kubernetes Engine"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/google_kubernetes_engine/google_kubernetes_engine.puml"
@@ -384,7 +388,7 @@ GCPGoogleKubernetesEngine: #Technology & {
 	}
 }
 
-GCPAgentAssist: #Technology & {
+AgentAssist: {
 	name: "Google Agent Assist"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/agent_assist/agent_assist.puml"
@@ -392,7 +396,7 @@ GCPAgentAssist: #Technology & {
 	}
 }
 
-GCPFirestore: #Technology & {
+Firestore: {
 	name: "Google Firestore"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/firestore/firestore.puml"
@@ -400,7 +404,7 @@ GCPFirestore: #Technology & {
 	}
 }
 
-GCPDeveloperPortal: #Technology & {
+DeveloperPortal: {
 	name: "Google Developer Portal"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/developer_portal/developer_portal.puml"
@@ -408,7 +412,7 @@ GCPDeveloperPortal: #Technology & {
 	}
 }
 
-GCPSecurity: #Technology & {
+Security: {
 	name: "Google Security"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/security/security.puml"
@@ -416,7 +420,7 @@ GCPSecurity: #Technology & {
 	}
 }
 
-GCPLocalSsd: #Technology & {
+LocalSsd: {
 	name: "Google Local Ssd"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/local_ssd/local_ssd.puml"
@@ -424,7 +428,7 @@ GCPLocalSsd: #Technology & {
 	}
 }
 
-GCPDataplex: #Technology & {
+Dataplex: {
 	name: "Google Dataplex"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/dataplex/dataplex.puml"
@@ -432,7 +436,7 @@ GCPDataplex: #Technology & {
 	}
 }
 
-GCPPrivateServiceConnect: #Technology & {
+PrivateServiceConnect: {
 	name: "Google Private Service Connect"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/private_service_connect/private_service_connect.puml"
@@ -440,7 +444,7 @@ GCPPrivateServiceConnect: #Technology & {
 	}
 }
 
-GCPManagedServiceForMicrosoftActiveDirectory: #Technology & {
+ManagedServiceForMicrosoftActiveDirectory: {
 	name: "Google Managed Service For Microsoft Active Directory"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/managed_service_for_microsoft_active_directory/managed_service_for_microsoft_active_directory.puml"
@@ -448,7 +452,7 @@ GCPManagedServiceForMicrosoftActiveDirectory: #Technology & {
 	}
 }
 
-GCPVmwareEngine: #Technology & {
+VmwareEngine: {
 	name: "Google Vmware Engine"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/vmware_engine/vmware_engine.puml"
@@ -456,7 +460,7 @@ GCPVmwareEngine: #Technology & {
 	}
 }
 
-GCPArtifactRegistry: #Technology & {
+ArtifactRegistry: {
 	name: "Google Artifact Registry"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/artifact_registry/artifact_registry.puml"
@@ -464,7 +468,7 @@ GCPArtifactRegistry: #Technology & {
 	}
 }
 
-GCPCloudHsm: #Technology & {
+CloudHsm: {
 	name: "Google Cloud Hsm"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_hsm/cloud_hsm.puml"
@@ -472,7 +476,7 @@ GCPCloudHsm: #Technology & {
 	}
 }
 
-GCPCloudHealthcareApi: #Technology & {
+CloudHealthcareApi: {
 	name: "Google Cloud Healthcare Api"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_healthcare_api/cloud_healthcare_api.puml"
@@ -480,7 +484,7 @@ GCPCloudHealthcareApi: #Technology & {
 	}
 }
 
-GCPDataLossPreventionApi: #Technology & {
+DataLossPreventionApi: {
 	name: "Google Data Loss Prevention Api"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/data_loss_prevention_api/data_loss_prevention_api.puml"
@@ -488,7 +492,7 @@ GCPDataLossPreventionApi: #Technology & {
 	}
 }
 
-GCPEarlyAccessCenter: #Technology & {
+EarlyAccessCenter: {
 	name: "Google Early Access Center"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/early_access_center/early_access_center.puml"
@@ -496,7 +500,7 @@ GCPEarlyAccessCenter: #Technology & {
 	}
 }
 
-GCPQuotas: #Technology & {
+Quotas: {
 	name: "Google Quotas"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/quotas/quotas.puml"
@@ -504,7 +508,7 @@ GCPQuotas: #Technology & {
 	}
 }
 
-GCPCloudRoutes: #Technology & {
+CloudRoutes: {
 	name: "Google Cloud Routes"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_routes/cloud_routes.puml"
@@ -512,7 +516,7 @@ GCPCloudRoutes: #Technology & {
 	}
 }
 
-GCPCloudOptimizationAi: #Technology & {
+CloudOptimizationAi: {
 	name: "Google Cloud Optimization Ai"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_optimization_ai/cloud_optimization_ai.puml"
@@ -520,7 +524,7 @@ GCPCloudOptimizationAi: #Technology & {
 	}
 }
 
-GCPAnthosServiceMesh: #Technology & {
+AnthosServiceMesh: {
 	name: "Google Anthos Service Mesh"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/anthos_service_mesh/anthos_service_mesh.puml"
@@ -528,7 +532,7 @@ GCPAnthosServiceMesh: #Technology & {
 	}
 }
 
-GCPMigrateForAnthos: #Technology & {
+MigrateForAnthos: {
 	name: "Google Migrate For Anthos"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/migrate_for_anthos/migrate_for_anthos.puml"
@@ -536,7 +540,7 @@ GCPMigrateForAnthos: #Technology & {
 	}
 }
 
-GCPAdvancedAgentModeling: #Technology & {
+AdvancedAgentModeling: {
 	name: "Google Advanced Agent Modeling"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/advanced_agent_modeling/advanced_agent_modeling.puml"
@@ -544,7 +548,7 @@ GCPAdvancedAgentModeling: #Technology & {
 	}
 }
 
-GCPDataCatalog: #Technology & {
+DataCatalog: {
 	name: "Google Data Catalog"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/data_catalog/data_catalog.puml"
@@ -552,7 +556,7 @@ GCPDataCatalog: #Technology & {
 	}
 }
 
-GCPCloudJobsApi: #Technology & {
+CloudJobsApi: {
 	name: "Google Cloud Jobs Api"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_jobs_api/cloud_jobs_api.puml"
@@ -560,7 +564,7 @@ GCPCloudJobsApi: #Technology & {
 	}
 }
 
-GCPVirtualPrivateCloud: #Technology & {
+VirtualPrivateCloud: {
 	name: "Google Virtual Private Cloud"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/virtual_private_cloud/virtual_private_cloud.puml"
@@ -568,7 +572,7 @@ GCPVirtualPrivateCloud: #Technology & {
 	}
 }
 
-GCPCloudDataFusion: #Technology & {
+CloudDataFusion: {
 	name: "Google Cloud Data Fusion"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_data_fusion/cloud_data_fusion.puml"
@@ -576,7 +580,7 @@ GCPCloudDataFusion: #Technology & {
 	}
 }
 
-GCPFilestore: #Technology & {
+Filestore: {
 	name: "Google Filestore"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/filestore/filestore.puml"
@@ -584,7 +588,7 @@ GCPFilestore: #Technology & {
 	}
 }
 
-GCPCatalog: #Technology & {
+Catalog: {
 	name: "Google Catalog"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/catalog/catalog.puml"
@@ -592,7 +596,7 @@ GCPCatalog: #Technology & {
 	}
 }
 
-GCPCloudAssetInventory: #Technology & {
+CloudAssetInventory: {
 	name: "Google Cloud Asset Inventory"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_asset_inventory/cloud_asset_inventory.puml"
@@ -600,7 +604,7 @@ GCPCloudAssetInventory: #Technology & {
 	}
 }
 
-GCPCloudNaturalLanguageApi: #Technology & {
+CloudNaturalLanguageApi: {
 	name: "Google Cloud Natural Language Api"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_natural_language_api/cloud_natural_language_api.puml"
@@ -608,7 +612,7 @@ GCPCloudNaturalLanguageApi: #Technology & {
 	}
 }
 
-GCPRecommendationsAi: #Technology & {
+RecommendationsAi: {
 	name: "Google Recommendations Ai"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/recommendations_ai/recommendations_ai.puml"
@@ -616,7 +620,7 @@ GCPRecommendationsAi: #Technology & {
 	}
 }
 
-GCPIdentityPlatform: #Technology & {
+IdentityPlatform: {
 	name: "Google Identity Platform"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/identity_platform/identity_platform.puml"
@@ -624,7 +628,7 @@ GCPIdentityPlatform: #Technology & {
 	}
 }
 
-GCPCertificateAuthorityService: #Technology & {
+CertificateAuthorityService: {
 	name: "Google Certificate Authority Service"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/certificate_authority_service/certificate_authority_service.puml"
@@ -632,7 +636,7 @@ GCPCertificateAuthorityService: #Technology & {
 	}
 }
 
-GCPDataLayers: #Technology & {
+DataLayers: {
 	name: "Google Data Layers"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/data_layers/data_layers.puml"
@@ -640,7 +644,7 @@ GCPDataLayers: #Technology & {
 	}
 }
 
-GCPMediaTranslationApi: #Technology & {
+MediaTranslationApi: {
 	name: "Google Media Translation Api"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/media_translation_api/media_translation_api.puml"
@@ -648,7 +652,7 @@ GCPMediaTranslationApi: #Technology & {
 	}
 }
 
-GCPCloudEndpoints: #Technology & {
+CloudEndpoints: {
 	name: "Google Cloud Endpoints"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_endpoints/cloud_endpoints.puml"
@@ -656,7 +660,7 @@ GCPCloudEndpoints: #Technology & {
 	}
 }
 
-GCPCloudRouter: #Technology & {
+CloudRouter: {
 	name: "Google Cloud Router"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_router/cloud_router.puml"
@@ -664,7 +668,7 @@ GCPCloudRouter: #Technology & {
 	}
 }
 
-GCPNetworkSecurity: #Technology & {
+NetworkSecurity: {
 	name: "Google Network Security"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/network_security/network_security.puml"
@@ -672,7 +676,7 @@ GCPNetworkSecurity: #Technology & {
 	}
 }
 
-GCPCloudBuild: #Technology & {
+CloudBuild: {
 	name: "Google Cloud Build"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_build/cloud_build.puml"
@@ -680,15 +684,16 @@ GCPCloudBuild: #Technology & {
 	}
 }
 
-GCPMemorystore: #Technology & {
+Memorystore: {
 	name: "Google Memorystore"
+	type: "Db"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/memorystore/memorystore.puml"
 		id:  "memorystore"
 	}
 }
 
-GCPDataLabeling: #Technology & {
+DataLabeling: {
 	name: "Google Data Labeling"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/data_labeling/data_labeling.puml"
@@ -696,7 +701,7 @@ GCPDataLabeling: #Technology & {
 	}
 }
 
-GCPWebSecurityScanner: #Technology & {
+WebSecurityScanner: {
 	name: "Google Web Security Scanner"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/web_security_scanner/web_security_scanner.puml"
@@ -704,7 +709,7 @@ GCPWebSecurityScanner: #Technology & {
 	}
 }
 
-GCPTest: #Technology & {
+Test: {
 	name: "Google Test"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/test.puml"
@@ -712,7 +717,7 @@ GCPTest: #Technology & {
 	}
 }
 
-GCPGoogleCloudMarketplace: #Technology & {
+GoogleCloudMarketplace: {
 	name: "Google Google Cloud Marketplace"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/google_cloud_marketplace/google_cloud_marketplace.puml"
@@ -720,7 +725,7 @@ GCPGoogleCloudMarketplace: #Technology & {
 	}
 }
 
-GCPTransfer: #Technology & {
+Transfer: {
 	name: "Google Transfer"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/transfer/transfer.puml"
@@ -728,7 +733,7 @@ GCPTransfer: #Technology & {
 	}
 }
 
-GCPWorkflows: #Technology & {
+Workflows: {
 	name: "Google Workflows"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/workflows/workflows.puml"
@@ -736,7 +741,7 @@ GCPWorkflows: #Technology & {
 	}
 }
 
-GCPDataStudio: #Technology & {
+DataStudio: {
 	name: "Google Data Studio"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/data_studio/data_studio.puml"
@@ -744,7 +749,7 @@ GCPDataStudio: #Technology & {
 	}
 }
 
-GCPRealWorldInsights: #Technology & {
+RealWorldInsights: {
 	name: "Google Real-world Insights"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/real-world_insights/real-world_insights.puml"
@@ -752,7 +757,7 @@ GCPRealWorldInsights: #Technology & {
 	}
 }
 
-GCPIotEdge: #Technology & {
+IotEdge: {
 	name: "Google Iot Edge"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/iot_edge/iot_edge.puml"
@@ -760,7 +765,7 @@ GCPIotEdge: #Technology & {
 	}
 }
 
-GCPDataTransfer: #Technology & {
+DataTransfer: {
 	name: "Google Data Transfer"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/data_transfer/data_transfer.puml"
@@ -768,7 +773,7 @@ GCPDataTransfer: #Technology & {
 	}
 }
 
-GCPRetailApi: #Technology & {
+RetailApi: {
 	name: "Google Retail Api"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/retail_api/retail_api.puml"
@@ -776,7 +781,7 @@ GCPRetailApi: #Technology & {
 	}
 }
 
-GCPCloudVpn: #Technology & {
+CloudVpn: {
 	name: "Google Cloud Vpn"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_vpn/cloud_vpn.puml"
@@ -784,7 +789,7 @@ GCPCloudVpn: #Technology & {
 	}
 }
 
-GCPCloudLogging: #Technology & {
+CloudLogging: {
 	name: "Google Cloud Logging"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_logging/cloud_logging.puml"
@@ -792,7 +797,7 @@ GCPCloudLogging: #Technology & {
 	}
 }
 
-GCPGoogleMapsPlatform: #Technology & {
+GoogleMapsPlatform: {
 	name: "Google Google Maps Platform"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/google_maps_platform/google_maps_platform.puml"
@@ -800,7 +805,7 @@ GCPGoogleMapsPlatform: #Technology & {
 	}
 }
 
-GCPBigquery: #Technology & {
+Bigquery: {
 	name: "Google Bigquery"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/bigquery/bigquery.puml"
@@ -808,7 +813,7 @@ GCPBigquery: #Technology & {
 	}
 }
 
-GCPCloudExternalIpAddresses: #Technology & {
+CloudExternalIpAddresses: {
 	name: "Google Cloud External Ip Addresses"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_external_ip_addresses/cloud_external_ip_addresses.puml"
@@ -816,7 +821,7 @@ GCPCloudExternalIpAddresses: #Technology & {
 	}
 }
 
-GCPAutomlTables: #Technology & {
+AutomlTables: {
 	name: "Google Automl Tables"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/automl_tables/automl_tables.puml"
@@ -824,7 +829,7 @@ GCPAutomlTables: #Technology & {
 	}
 }
 
-GCPApigeeApiPlatform: #Technology & {
+ApigeeApiPlatform: {
 	name: "Google Apigee Api Platform"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/apigee_api_platform/apigee_api_platform.puml"
@@ -832,7 +837,7 @@ GCPApigeeApiPlatform: #Technology & {
 	}
 }
 
-GCPApiAnalytics: #Technology & {
+ApiAnalytics: {
 	name: "Google Api Analytics"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/api_analytics/api_analytics.puml"
@@ -840,7 +845,7 @@ GCPApiAnalytics: #Technology & {
 	}
 }
 
-GCPAutoml: #Technology & {
+Automl: {
 	name: "Google Automl"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/automl/automl.puml"
@@ -848,7 +853,7 @@ GCPAutoml: #Technology & {
 	}
 }
 
-GCPAssetInventory: #Technology & {
+AssetInventory: {
 	name: "Google Asset Inventory"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/asset_inventory/asset_inventory.puml"
@@ -856,7 +861,7 @@ GCPAssetInventory: #Technology & {
 	}
 }
 
-GCPNetworkTopology: #Technology & {
+NetworkTopology: {
 	name: "Google Network Topology"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/network_topology/network_topology.puml"
@@ -864,7 +869,7 @@ GCPNetworkTopology: #Technology & {
 	}
 }
 
-GCPQuantumEngine: #Technology & {
+QuantumEngine: {
 	name: "Google Quantum Engine"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/quantum_engine/quantum_engine.puml"
@@ -872,7 +877,7 @@ GCPQuantumEngine: #Technology & {
 	}
 }
 
-GCPAccessContextManager: #Technology & {
+AccessContextManager: {
 	name: "Google Access Context Manager"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/access_context_manager/access_context_manager.puml"
@@ -880,7 +885,7 @@ GCPAccessContextManager: #Technology & {
 	}
 }
 
-GCPCloudFirewallRules: #Technology & {
+CloudFirewallRules: {
 	name: "Google Cloud Firewall Rules"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_firewall_rules/cloud_firewall_rules.puml"
@@ -888,7 +893,7 @@ GCPCloudFirewallRules: #Technology & {
 	}
 }
 
-GCPRiskManager: #Technology & {
+RiskManager: {
 	name: "Google Risk Manager"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/risk_manager/risk_manager.puml"
@@ -896,7 +901,7 @@ GCPRiskManager: #Technology & {
 	}
 }
 
-GCPSecretManager: #Technology & {
+SecretManager: {
 	name: "Google Secret Manager"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/secret_manager/secret_manager.puml"
@@ -904,7 +909,7 @@ GCPSecretManager: #Technology & {
 	}
 }
 
-GCPCloudNat: #Technology & {
+CloudNat: {
 	name: "Google Cloud Nat"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_nat/cloud_nat.puml"
@@ -912,7 +917,7 @@ GCPCloudNat: #Technology & {
 	}
 }
 
-GCPTextToSpeech: #Technology & {
+TextToSpeech: {
 	name: "Google Text-to-speech"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/text-to-speech/text-to-speech.puml"
@@ -920,7 +925,7 @@ GCPTextToSpeech: #Technology & {
 	}
 }
 
-GCPCloudMonitoring: #Technology & {
+CloudMonitoring: {
 	name: "Google Cloud Monitoring"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_monitoring/cloud_monitoring.puml"
@@ -928,7 +933,7 @@ GCPCloudMonitoring: #Technology & {
 	}
 }
 
-GCPPermissions: #Technology & {
+Permissions: {
 	name: "Google Permissions"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/permissions/permissions.puml"
@@ -936,7 +941,7 @@ GCPPermissions: #Technology & {
 	}
 }
 
-GCPCloudApiGateway: #Technology & {
+CloudApiGateway: {
 	name: "Google Cloud Api Gateway"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_api_gateway/cloud_api_gateway.puml"
@@ -944,7 +949,7 @@ GCPCloudApiGateway: #Technology & {
 	}
 }
 
-GCPProducerPortal: #Technology & {
+ProducerPortal: {
 	name: "Google Producer Portal"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/producer_portal/producer_portal.puml"
@@ -952,7 +957,7 @@ GCPProducerPortal: #Technology & {
 	}
 }
 
-GCPApigeeSense: #Technology & {
+ApigeeSense: {
 	name: "Google Apigee Sense"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/apigee_sense/apigee_sense.puml"
@@ -960,7 +965,7 @@ GCPApigeeSense: #Technology & {
 	}
 }
 
-GCPCloudTestLab: #Technology & {
+CloudTestLab: {
 	name: "Google Cloud Test Lab"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_test_lab/cloud_test_lab.puml"
@@ -968,7 +973,7 @@ GCPCloudTestLab: #Technology & {
 	}
 }
 
-GCPSecurityCommandCenter: #Technology & {
+SecurityCommandCenter: {
 	name: "Google Security Command Center"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/security_command_center/security_command_center.puml"
@@ -976,7 +981,7 @@ GCPSecurityCommandCenter: #Technology & {
 	}
 }
 
-GCPPerformanceDashboard: #Technology & {
+PerformanceDashboard: {
 	name: "Google Performance Dashboard"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/performance_dashboard/performance_dashboard.puml"
@@ -984,7 +989,7 @@ GCPPerformanceDashboard: #Technology & {
 	}
 }
 
-GCPCloudComposer: #Technology & {
+CloudComposer: {
 	name: "Google Cloud Composer"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_composer/cloud_composer.puml"
@@ -992,7 +997,7 @@ GCPCloudComposer: #Technology & {
 	}
 }
 
-GCPProject: #Technology & {
+Project: {
 	name: "Google Project"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/project/project.puml"
@@ -1000,7 +1005,7 @@ GCPProject: #Technology & {
 	}
 }
 
-GCPWebRisk: #Technology & {
+WebRisk: {
 	name: "Google Web Risk"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/web_risk/web_risk.puml"
@@ -1008,7 +1013,7 @@ GCPWebRisk: #Technology & {
 	}
 }
 
-GCPDatastore: #Technology & {
+Datastore: {
 	name: "Google Datastore"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/datastore/datastore.puml"
@@ -1016,7 +1021,7 @@ GCPDatastore: #Technology & {
 	}
 }
 
-GCPAiHub: #Technology & {
+AiHub: {
 	name: "Google Ai Hub"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/ai_hub/ai_hub.puml"
@@ -1024,7 +1029,7 @@ GCPAiHub: #Technology & {
 	}
 }
 
-GCPDatashare: #Technology & {
+Datashare: {
 	name: "Google Datashare"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/datashare/datashare.puml"
@@ -1032,7 +1037,7 @@ GCPDatashare: #Technology & {
 	}
 }
 
-GCPPolicyAnalyzer: #Technology & {
+PolicyAnalyzer: {
 	name: "Google Policy Analyzer"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/policy_analyzer/policy_analyzer.puml"
@@ -1040,7 +1045,7 @@ GCPPolicyAnalyzer: #Technology & {
 	}
 }
 
-GCPDatapol: #Technology & {
+Datapol: {
 	name: "Google Datapol"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/datapol/datapol.puml"
@@ -1048,7 +1053,7 @@ GCPDatapol: #Technology & {
 	}
 }
 
-GCPCloudTasks: #Technology & {
+CloudTasks: {
 	name: "Google Cloud Tasks"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_tasks/cloud_tasks.puml"
@@ -1056,7 +1061,7 @@ GCPCloudTasks: #Technology & {
 	}
 }
 
-GCPDataQna: #Technology & {
+DataQna: {
 	name: "Google Data Qna"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/data_qna/data_qna.puml"
@@ -1064,7 +1069,7 @@ GCPDataQna: #Technology & {
 	}
 }
 
-GCPGameServers: #Technology & {
+GameServers: {
 	name: "Google Game Servers"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/game_servers/game_servers.puml"
@@ -1072,7 +1077,7 @@ GCPGameServers: #Technology & {
 	}
 }
 
-GCPCloudHealthcareMarketplace: #Technology & {
+CloudHealthcareMarketplace: {
 	name: "Google Cloud Healthcare Marketplace"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_healthcare_marketplace/cloud_healthcare_marketplace.puml"
@@ -1080,7 +1085,7 @@ GCPCloudHealthcareMarketplace: #Technology & {
 	}
 }
 
-GCPRuntimeConfig: #Technology & {
+RuntimeConfig: {
 	name: "Google Runtime Config"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/runtime_config/runtime_config.puml"
@@ -1088,7 +1093,7 @@ GCPRuntimeConfig: #Technology & {
 	}
 }
 
-GCPCloudSecurityScanner: #Technology & {
+CloudSecurityScanner: {
 	name: "Google Cloud Security Scanner"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_security_scanner/cloud_security_scanner.puml"
@@ -1096,7 +1101,7 @@ GCPCloudSecurityScanner: #Technology & {
 	}
 }
 
-GCPVertexai: #Technology & {
+Vertexai: {
 	name: "Google Vertexai"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/vertexai/vertexai.puml"
@@ -1104,7 +1109,7 @@ GCPVertexai: #Technology & {
 	}
 }
 
-GCPTensorflowEnterprise: #Technology & {
+TensorflowEnterprise: {
 	name: "Google Tensorflow Enterprise"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/tensorflow_enterprise/tensorflow_enterprise.puml"
@@ -1112,7 +1117,7 @@ GCPTensorflowEnterprise: #Technology & {
 	}
 }
 
-GCPDatabaseMigrationService: #Technology & {
+DatabaseMigrationService: {
 	name: "Google Database Migration Service"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/database_migration_service/database_migration_service.puml"
@@ -1120,7 +1125,7 @@ GCPDatabaseMigrationService: #Technology & {
 	}
 }
 
-GCPOsPatchManagement: #Technology & {
+OsPatchManagement: {
 	name: "Google Os Patch Management"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/os_patch_management/os_patch_management.puml"
@@ -1128,7 +1133,7 @@ GCPOsPatchManagement: #Technology & {
 	}
 }
 
-GCPCloudOps: #Technology & {
+CloudOps: {
 	name: "Google Cloud Ops"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_ops/cloud_ops.puml"
@@ -1136,7 +1141,7 @@ GCPCloudOps: #Technology & {
 	}
 }
 
-GCPSupport: #Technology & {
+Support: {
 	name: "Google Support"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/support/support.puml"
@@ -1144,7 +1149,7 @@ GCPSupport: #Technology & {
 	}
 }
 
-GCPSecurityHealthAdvisor: #Technology & {
+SecurityHealthAdvisor: {
 	name: "Google Security Health Advisor"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/security_health_advisor/security_health_advisor.puml"
@@ -1152,7 +1157,7 @@ GCPSecurityHealthAdvisor: #Technology & {
 	}
 }
 
-GCPCloudApis: #Technology & {
+CloudApis: {
 	name: "Google Cloud Apis"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_apis/cloud_apis.puml"
@@ -1160,7 +1165,7 @@ GCPCloudApis: #Technology & {
 	}
 }
 
-GCPCloudInferenceApi: #Technology & {
+CloudInferenceApi: {
 	name: "Google Cloud Inference Api"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_inference_api/cloud_inference_api.puml"
@@ -1168,7 +1173,7 @@ GCPCloudInferenceApi: #Technology & {
 	}
 }
 
-GCPMigrateForComputeEngine: #Technology & {
+MigrateForComputeEngine: {
 	name: "Google Migrate For Compute Engine"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/migrate_for_compute_engine/migrate_for_compute_engine.puml"
@@ -1176,7 +1181,7 @@ GCPMigrateForComputeEngine: #Technology & {
 	}
 }
 
-GCPCloudMediaEdge: #Technology & {
+CloudMediaEdge: {
 	name: "Google Cloud Media Edge"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_media_edge/cloud_media_edge.puml"
@@ -1184,7 +1189,7 @@ GCPCloudMediaEdge: #Technology & {
 	}
 }
 
-GCPUserPreferences: #Technology & {
+UserPreferences: {
 	name: "Google User Preferences"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/user_preferences/user_preferences.puml"
@@ -1192,7 +1197,7 @@ GCPUserPreferences: #Technology & {
 	}
 }
 
-GCPCloudDomains: #Technology & {
+CloudDomains: {
 	name: "Google Cloud Domains"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_domains/cloud_domains.puml"
@@ -1200,7 +1205,7 @@ GCPCloudDomains: #Technology & {
 	}
 }
 
-GCPBatch: #Technology & {
+Batch: {
 	name: "Google Batch"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/batch/batch.puml"
@@ -1208,7 +1213,7 @@ GCPBatch: #Technology & {
 	}
 }
 
-GCPDocumentAi: #Technology & {
+DocumentAi: {
 	name: "Google Document Ai"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/document_ai/document_ai.puml"
@@ -1216,7 +1221,7 @@ GCPDocumentAi: #Technology & {
 	}
 }
 
-GCPEventarc: #Technology & {
+Eventarc: {
 	name: "Google Eventarc"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/eventarc/eventarc.puml"
@@ -1224,7 +1229,7 @@ GCPEventarc: #Technology & {
 	}
 }
 
-GCPConnectivityTest: #Technology & {
+ConnectivityTest: {
 	name: "Google Connectivity Test"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/connectivity_test/connectivity_test.puml"
@@ -1232,7 +1237,7 @@ GCPConnectivityTest: #Technology & {
 	}
 }
 
-GCPCloudIds: #Technology & {
+CloudIds: {
 	name: "Google Cloud Ids"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_ids/cloud_ids.puml"
@@ -1240,7 +1245,7 @@ GCPCloudIds: #Technology & {
 	}
 }
 
-GCPIdentityAndAccessManagement: #Technology & {
+IdentityAndAccessManagement: {
 	name: "Google Identity And Access Management"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/identity_and_access_management/identity_and_access_management.puml"
@@ -1248,7 +1253,7 @@ GCPIdentityAndAccessManagement: #Technology & {
 	}
 }
 
-GCPFreeTrial: #Technology & {
+FreeTrial: {
 	name: "Google Free Trial"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/free_trial/free_trial.puml"
@@ -1256,7 +1261,7 @@ GCPFreeTrial: #Technology & {
 	}
 }
 
-GCPFinancialServicesMarketplace: #Technology & {
+FinancialServicesMarketplace: {
 	name: "Google Financial Services Marketplace"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/financial_services_marketplace/financial_services_marketplace.puml"
@@ -1264,7 +1269,7 @@ GCPFinancialServicesMarketplace: #Technology & {
 	}
 }
 
-GCPCloudVisionApi: #Technology & {
+CloudVisionApi: {
 	name: "Google Cloud Vision Api"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_vision_api/cloud_vision_api.puml"
@@ -1272,7 +1277,7 @@ GCPCloudVisionApi: #Technology & {
 	}
 }
 
-GCPAssuredWorkloads: #Technology & {
+AssuredWorkloads: {
 	name: "Google Assured Workloads"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/assured_workloads/assured_workloads.puml"
@@ -1280,7 +1285,7 @@ GCPAssuredWorkloads: #Technology & {
 	}
 }
 
-GCPAnthos: #Technology & {
+Anthos: {
 	name: "Google Anthos"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/anthos/anthos.puml"
@@ -1288,7 +1293,7 @@ GCPAnthos: #Technology & {
 	}
 }
 
-GCPPhishingProtection: #Technology & {
+PhishingProtection: {
 	name: "Google Phishing Protection"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/phishing_protection/phishing_protection.puml"
@@ -1296,7 +1301,7 @@ GCPPhishingProtection: #Technology & {
 	}
 }
 
-GCPDebugger: #Technology & {
+Debugger: {
 	name: "Google Debugger"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/debugger/debugger.puml"
@@ -1304,7 +1309,7 @@ GCPDebugger: #Technology & {
 	}
 }
 
-GCPApi: #Technology & {
+Api: {
 	name: "Google Api"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/api/api.puml"
@@ -1312,15 +1317,16 @@ GCPApi: #Technology & {
 	}
 }
 
-GCPPubsub: #Technology & {
+Pubsub: {
 	name: "Google Pubsub"
+	type: "Queue"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/pubsub/pubsub.puml"
 		id:  "pubsub"
 	}
 }
 
-GCPGkeOnPrem: #Technology & {
+GkeOnPrem: {
 	name: "Google Gke On-prem"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/gke_on-prem/gke_on-prem.puml"
@@ -1328,7 +1334,7 @@ GCPGkeOnPrem: #Technology & {
 	}
 }
 
-GCPPremiumNetworkTier: #Technology & {
+PremiumNetworkTier: {
 	name: "Google Premium Network Tier"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/premium_network_tier/premium_network_tier.puml"
@@ -1336,7 +1342,7 @@ GCPPremiumNetworkTier: #Technology & {
 	}
 }
 
-GCPCloudCdn: #Technology & {
+CloudCdn: {
 	name: "Google Cloud Cdn"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_cdn/cloud_cdn.puml"
@@ -1344,7 +1350,7 @@ GCPCloudCdn: #Technology & {
 	}
 }
 
-GCPAppEngine: #Technology & {
+AppEngine: {
 	name: "Google App Engine"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/app_engine/app_engine.puml"
@@ -1352,7 +1358,7 @@ GCPAppEngine: #Technology & {
 	}
 }
 
-GCPDataprocMetastore: #Technology & {
+DataprocMetastore: {
 	name: "Google Dataproc Metastore"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/dataproc_metastore/dataproc_metastore.puml"
@@ -1360,7 +1366,7 @@ GCPDataprocMetastore: #Technology & {
 	}
 }
 
-GCPDialogflowCx: #Technology & {
+DialogflowCx: {
 	name: "Google Dialogflow Cx"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/dialogflow_cx/dialogflow_cx.puml"
@@ -1368,7 +1374,7 @@ GCPDialogflowCx: #Technology & {
 	}
 }
 
-GCPDatalab: #Technology & {
+Datalab: {
 	name: "Google Datalab"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/datalab/datalab.puml"
@@ -1376,7 +1382,7 @@ GCPDatalab: #Technology & {
 	}
 }
 
-GCPCloudAuditLogs: #Technology & {
+CloudAuditLogs: {
 	name: "Google Cloud Audit Logs"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_audit_logs/cloud_audit_logs.puml"
@@ -1384,7 +1390,7 @@ GCPCloudAuditLogs: #Technology & {
 	}
 }
 
-GCPAdministration: #Technology & {
+Administration: {
 	name: "Google Administration"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/administration/administration.puml"
@@ -1392,7 +1398,7 @@ GCPAdministration: #Technology & {
 	}
 }
 
-GCPVideoIntelligenceApi: #Technology & {
+VideoIntelligenceApi: {
 	name: "Google Video Intelligence Api"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/video_intelligence_api/video_intelligence_api.puml"
@@ -1400,7 +1406,7 @@ GCPVideoIntelligenceApi: #Technology & {
 	}
 }
 
-GCPApiMonetization: #Technology & {
+ApiMonetization: {
 	name: "Google Api Monetization"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/api_monetization/api_monetization.puml"
@@ -1408,7 +1414,7 @@ GCPApiMonetization: #Technology & {
 	}
 }
 
-GCPProfiler: #Technology & {
+Profiler: {
 	name: "Google Profiler"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/profiler/profiler.puml"
@@ -1416,7 +1422,7 @@ GCPProfiler: #Technology & {
 	}
 }
 
-GCPDialogflowInsights: #Technology & {
+DialogflowInsights: {
 	name: "Google Dialogflow Insights"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/dialogflow_insights/dialogflow_insights.puml"
@@ -1424,7 +1430,7 @@ GCPDialogflowInsights: #Technology & {
 	}
 }
 
-GCPAdvancedSolutionsLab: #Technology & {
+AdvancedSolutionsLab: {
 	name: "Google Advanced Solutions Lab"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/advanced_solutions_lab/advanced_solutions_lab.puml"
@@ -1432,7 +1438,7 @@ GCPAdvancedSolutionsLab: #Technology & {
 	}
 }
 
-GCPCloudFunctions: #Technology & {
+CloudFunctions: {
 	name: "Google Cloud Functions"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_functions/cloud_functions.puml"
@@ -1440,7 +1446,7 @@ GCPCloudFunctions: #Technology & {
 	}
 }
 
-GCPNetworkConnectivityCenter: #Technology & {
+NetworkConnectivityCenter: {
 	name: "Google Network Connectivity Center"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/network_connectivity_center/network_connectivity_center.puml"
@@ -1448,7 +1454,7 @@ GCPNetworkConnectivityCenter: #Technology & {
 	}
 }
 
-GCPAnalyticsHub: #Technology & {
+AnalyticsHub: {
 	name: "Google Analytics Hub"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/analytics_hub/analytics_hub.puml"
@@ -1456,7 +1462,7 @@ GCPAnalyticsHub: #Technology & {
 	}
 }
 
-GCPKuberun: #Technology & {
+Kuberun: {
 	name: "Google Kuberun"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/kuberun/kuberun.puml"
@@ -1464,7 +1470,7 @@ GCPKuberun: #Technology & {
 	}
 }
 
-GCPCloudOptimizationAiFleetRoutingApi: #Technology & {
+CloudOptimizationAiFleetRoutingApi: {
 	name: "Google Cloud Optimization Ai - Fleet Routing Api"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_optimization_ai_-_fleet_routing_api/cloud_optimization_ai_-_fleet_routing_api.puml"
@@ -1472,7 +1478,7 @@ GCPCloudOptimizationAiFleetRoutingApi: #Technology & {
 	}
 }
 
-GCPCloudShell: #Technology & {
+CloudShell: {
 	name: "Google Cloud Shell"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_shell/cloud_shell.puml"
@@ -1480,7 +1486,7 @@ GCPCloudShell: #Technology & {
 	}
 }
 
-GCPCloudRunForAnthos: #Technology & {
+CloudRunForAnthos: {
 	name: "Google Cloud Run For Anthos"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_run_for_anthos/cloud_run_for_anthos.puml"
@@ -1488,7 +1494,7 @@ GCPCloudRunForAnthos: #Technology & {
 	}
 }
 
-GCPCloudCode: #Technology & {
+CloudCode: {
 	name: "Google Cloud Code"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_code/cloud_code.puml"
@@ -1496,15 +1502,16 @@ GCPCloudCode: #Technology & {
 	}
 }
 
-GCPCloudSql: #Technology & {
+CloudSql: {
 	name: "Google Cloud Sql"
+	type: "Db"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_sql/cloud_sql.puml"
 		id:  "cloud_sql"
 	}
 }
 
-GCPContactCenterAi: #Technology & {
+ContactCenterAi: {
 	name: "Google Contact Center Ai"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/contact_center_ai/contact_center_ai.puml"
@@ -1512,7 +1519,7 @@ GCPContactCenterAi: #Technology & {
 	}
 }
 
-GCPCloudNetwork: #Technology & {
+CloudNetwork: {
 	name: "Google Cloud Network"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_network/cloud_network.puml"
@@ -1520,7 +1527,7 @@ GCPCloudNetwork: #Technology & {
 	}
 }
 
-GCPPrivateConnectivity: #Technology & {
+PrivateConnectivity: {
 	name: "Google Private Connectivity"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/private_connectivity/private_connectivity.puml"
@@ -1528,7 +1535,7 @@ GCPPrivateConnectivity: #Technology & {
 	}
 }
 
-GCPServiceDiscovery: #Technology & {
+ServiceDiscovery: {
 	name: "Google Service Discovery"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/service_discovery/service_discovery.puml"
@@ -1536,7 +1543,7 @@ GCPServiceDiscovery: #Technology & {
 	}
 }
 
-GCPNetworkIntelligenceCenter: #Technology & {
+NetworkIntelligenceCenter: {
 	name: "Google Network Intelligence Center"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/network_intelligence_center/network_intelligence_center.puml"
@@ -1544,7 +1551,7 @@ GCPNetworkIntelligenceCenter: #Technology & {
 	}
 }
 
-GCPBinaryAuthorization: #Technology & {
+BinaryAuthorization: {
 	name: "Google Binary Authorization"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/binary_authorization/binary_authorization.puml"
@@ -1552,7 +1559,7 @@ GCPBinaryAuthorization: #Technology & {
 	}
 }
 
-GCPStandardNetworkTier: #Technology & {
+StandardNetworkTier: {
 	name: "Google Standard Network Tier"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/standard_network_tier/standard_network_tier.puml"
@@ -1560,7 +1567,7 @@ GCPStandardNetworkTier: #Technology & {
 	}
 }
 
-GCPSecurityKeyEnforcement: #Technology & {
+SecurityKeyEnforcement: {
 	name: "Google Security Key Enforcement"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/security_key_enforcement/security_key_enforcement.puml"
@@ -1568,7 +1575,7 @@ GCPSecurityKeyEnforcement: #Technology & {
 	}
 }
 
-GCPDataprep: #Technology & {
+Dataprep: {
 	name: "Google Dataprep"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/dataprep/dataprep.puml"
@@ -1576,7 +1583,7 @@ GCPDataprep: #Technology & {
 	}
 }
 
-GCPAiPlatform: #Technology & {
+AiPlatform: {
 	name: "Google Ai Platform"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/ai_platform/ai_platform.puml"
@@ -1584,7 +1591,7 @@ GCPAiPlatform: #Technology & {
 	}
 }
 
-GCPCloudTpu: #Technology & {
+CloudTpu: {
 	name: "Google Cloud Tpu"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_tpu/cloud_tpu.puml"
@@ -1592,7 +1599,7 @@ GCPCloudTpu: #Technology & {
 	}
 }
 
-GCPAutomlNaturalLanguage: #Technology & {
+AutomlNaturalLanguage: {
 	name: "Google Automl Natural Language"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/automl_natural_language/automl_natural_language.puml"
@@ -1600,7 +1607,7 @@ GCPAutomlNaturalLanguage: #Technology & {
 	}
 }
 
-GCPCloudDeploy: #Technology & {
+CloudDeploy: {
 	name: "Google Cloud Deploy"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_deploy/cloud_deploy.puml"
@@ -1608,7 +1615,7 @@ GCPCloudDeploy: #Technology & {
 	}
 }
 
-GCPWorkloadIdentityPool: #Technology & {
+WorkloadIdentityPool: {
 	name: "Google Workload Identity Pool"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/workload_identity_pool/workload_identity_pool.puml"
@@ -1616,7 +1623,7 @@ GCPWorkloadIdentityPool: #Technology & {
 	}
 }
 
-GCPStreamSuite: #Technology & {
+StreamSuite: {
 	name: "Google Stream Suite"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/stream_suite/stream_suite.puml"
@@ -1624,7 +1631,7 @@ GCPStreamSuite: #Technology & {
 	}
 }
 
-GCPTransferAppliance: #Technology & {
+TransferAppliance: {
 	name: "Google Transfer Appliance"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/transfer_appliance/transfer_appliance.puml"
@@ -1632,7 +1639,7 @@ GCPTransferAppliance: #Technology & {
 	}
 }
 
-GCPMyCloud: #Technology & {
+MyCloud: {
 	name: "Google My Cloud"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/my_cloud/my_cloud.puml"
@@ -1640,7 +1647,7 @@ GCPMyCloud: #Technology & {
 	}
 }
 
-GCPBilling: #Technology & {
+Billing: {
 	name: "Google Billing"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/billing/billing.puml"
@@ -1648,7 +1655,7 @@ GCPBilling: #Technology & {
 	}
 }
 
-GCPOnboarding: #Technology & {
+Onboarding: {
 	name: "Google Onboarding"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/onboarding/onboarding.puml"
@@ -1656,7 +1663,7 @@ GCPOnboarding: #Technology & {
 	}
 }
 
-GCPCloudRun: #Technology & {
+CloudRun: {
 	name: "Google Cloud Run"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_run/cloud_run.puml"
@@ -1664,7 +1671,7 @@ GCPCloudRun: #Technology & {
 	}
 }
 
-GCPVisualInspection: #Technology & {
+VisualInspection: {
 	name: "Google Visual Inspection"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/visual_inspection/visual_inspection.puml"
@@ -1672,15 +1679,16 @@ GCPVisualInspection: #Technology & {
 	}
 }
 
-GCPCloudStorage: #Technology & {
+CloudStorage: {
 	name: "Google Cloud Storage"
+	type: "Db"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_storage/cloud_storage.puml"
 		id:  "cloud_storage"
 	}
 }
 
-GCPCloudDns: #Technology & {
+CloudDns: {
 	name: "Google Cloud Dns"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/cloud_dns/cloud_dns.puml"
@@ -1688,7 +1696,7 @@ GCPCloudDns: #Technology & {
 	}
 }
 
-GCPToolsForPowershell: #Technology & {
+ToolsForPowershell: {
 	name: "Google Tools For Powershell"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/tools_for_powershell/tools_for_powershell.puml"
@@ -1696,7 +1704,7 @@ GCPToolsForPowershell: #Technology & {
 	}
 }
 
-GCPDataproc: #Technology & {
+Dataproc: {
 	name: "Google Dataproc"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/dataproc/dataproc.puml"
@@ -1704,7 +1712,7 @@ GCPDataproc: #Technology & {
 	}
 }
 
-GCPAnthosConfigManagement: #Technology & {
+AnthosConfigManagement: {
 	name: "Google Anthos Config Management"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/anthos_config_management/anthos_config_management.puml"
@@ -1712,7 +1720,7 @@ GCPAnthosConfigManagement: #Technology & {
 	}
 }
 
-GCPHealthcareNlpApi: #Technology & {
+HealthcareNlpApi: {
 	name: "Google Healthcare Nlp Api"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/healthcare_nlp_api/healthcare_nlp_api.puml"
@@ -1720,7 +1728,7 @@ GCPHealthcareNlpApi: #Technology & {
 	}
 }
 
-GCPFleetEngine: #Technology & {
+FleetEngine: {
 	name: "Google Fleet Engine"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/fleet_engine/fleet_engine.puml"
@@ -1728,7 +1736,7 @@ GCPFleetEngine: #Technology & {
 	}
 }
 
-GCPComputeEngine: #Technology & {
+ComputeEngine: {
 	name: "Google Compute Engine"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/compute_engine/compute_engine.puml"
@@ -1736,7 +1744,7 @@ GCPComputeEngine: #Technology & {
 	}
 }
 
-GCPKeyAccessJustifications: #Technology & {
+KeyAccessJustifications: {
 	name: "Google Key Access Justifications"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/key_access_justifications/key_access_justifications.puml"
