@@ -31,20 +31,20 @@ myWebApp: c4.#Container & {
 	id:          "web_app"
 	label:       "Web Application"
 	description: "Allows users to compare multiple Twitter timelines"
-	technology:  gcp.CloudStorage
+	technology:  dev.CSharp
 	tags: [elementsTags.aSupprimer]
 }
 
 myothercontainer: c4.#Container & {
 	id:         "othercontainer"
-	label:      "Cool"
+	label:      "Cool2"
 	technology: dev.React
 }
 
-othersample: c4.#System & {
+othersample: c4.#Container & {
 	id:         "sample2"
-	label:      "Twitter"
-	technology: gcp.CloudStorage
+	label:      "Twitter2"
+	technology: gcp.Pubsub
 	link:       "https://www.twitter.com"
 }
 
@@ -58,9 +58,9 @@ twitter: c4.#System & {
 sampleSystem: c4.#System & {
 	id:    "c1"
 	label: "Sample System"
-	containers: [myWebApp, myothercontainer]
+	containers: [myWebApp, othersample, myothercontainer]
 	technology: gcp.CloudSql
-	systems: [twitter, othersample]
+	systems: [twitter]
 }
 
 admin: c4.#Person & {
@@ -69,6 +69,8 @@ admin: c4.#Person & {
 }
 
 C1: c4.#C1 & {
+	elementTags:  elementsTags
+	relationTags: relationsTags
 	Persons: [admin]
 	Systems: [sampleSystem]
 	Relations: [

@@ -38,11 +38,20 @@ package c4
 }
 
 #C1: {
-	elementTags:  elementsTags
-	relationTags: relationsTags
+	elementTags:  #elementsTags
+	relationTags: #relationsTags
 	Technologies: #Depth & {#in: Systems}
 	Persons?: [...#Person]
 	Systems: [...#System]
 	Container?: [...#Container]
 	Relations?: [...#Relation]
+}
+
+// Tags
+#elementsTags: [ID=_]: #ElementTag & {
+	id: "\(ID)"
+}
+
+#relationsTags: [ID=_]: #RelationTag & {
+	id: "\(ID)"
 }
