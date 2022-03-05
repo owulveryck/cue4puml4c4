@@ -86,9 +86,9 @@ noTech: #Technology & {
 	name: string
 }
 #C1: {
-	elementTags:   elementsTags
-	relationTags:  relationsTags
-	Technologies?: _
+	elementTags:  elementsTags
+	relationTags: relationsTags
+	Technologies: #Depth & {#in: Systems}
 	Persons?: [...#Person]
 	Systems: [...#System]
 	Container?: [...#Container]

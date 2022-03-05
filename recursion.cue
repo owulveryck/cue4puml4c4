@@ -1,4 +1,4 @@
-package main
+package c4
 
 import (
 	"list"
@@ -48,6 +48,7 @@ import (
 		}
 	}
 }
+
 #Depth: #RecurseN & {#funcFactory: #GetAllTech}
 
-techs: #Depth & {#in: C1.Systems}
+//techs: #Depth & {#in: C1.Systems}

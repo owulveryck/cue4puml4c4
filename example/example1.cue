@@ -70,7 +70,6 @@ admin: c4.#Person & {
 
 C1: c4.#C1 & {
 	Persons: [admin]
-	Technologies: techs
 	Systems: [sampleSystem]
 	Relations: [
 		{source: admin, dest:    myWebApp, description: "Uses", protocol:            "HTTPS ", tags: [relationsTags.myTest]},
