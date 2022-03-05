@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/owulveryck/cue4puml4c4/technology/gcp"
 	"github.com/owulveryck/cue4puml4c4/technology/dev"
+	"github.com/owulveryck/cue4puml4c4/technology/stdlib"
 	"github.com/owulveryck/cue4puml4c4:c4"
 )
 
@@ -28,7 +29,7 @@ relationsTags: autreFleche: {lineColor: "#ff0000"}
 // Containers
 
 myWebApp: c4.#Container & {
-	id:          "web_app"
+	id:          "web_appp"
 	label:       "Web Application"
 	description: "Allows users to compare multiple Twitter timelines"
 	technology:  dev.CUE
@@ -38,7 +39,7 @@ myWebApp: c4.#Container & {
 myothercontainer: c4.#Container & {
 	id:         "othercontainer"
 	label:      "Cool2"
-	technology: dev.Java
+	technology: stdlib.Kafka
 }
 
 othersample: c4.#Container & {
