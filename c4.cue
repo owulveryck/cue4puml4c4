@@ -1,7 +1,5 @@
 package c4
 
-#id: =~"^[a-zA-Z][a-zA-Z_]*"
-
 #System: {
 	label:        string
 	id:           #id
@@ -10,7 +8,7 @@ package c4
 	technology?:  #Technology
 	type?:        #Type
 	containers?: [...#Container]
-	rels?: [...#Rel]
+	relations?: [...#Relation]
 	systems?: [...#System]
 	link?: #url
 	tags?: [...#ElementTag]
@@ -19,7 +17,7 @@ package c4
 #Container: {
 	id:           #id
 	label:        string
-	technology:   #Technology | *noTech
+	technology:   #Technology | *_noTech
 	description?: string
 	tags?: [...#ElementTag]
 	link?: #url
@@ -30,13 +28,7 @@ package c4
 	label: string
 }
 
-#url: string
-
-noTech: #Technology & {
-	name: "Undefined"
-}
-
-#Rel: {
+#Relation: {
 	source:      #System | #Container | #Person
 	dest:        #System | #Container | #Person
 	description: string | *""
@@ -45,46 +37,6 @@ noTech: #Technology & {
 	tags?: [...#RelationTag]
 }
 
-#color: =~"#[0-9a-f]{6}"
-
-#ElementTag: {
-	id:           string
-	bgColor?:     #color
-	fontColor?:   #color
-	borderColor?: #color
-	legendText?:  string
-	technology?:  #Technology
-	shadowing?:   bool
-	shape?:       "rounded" | "eightsided"
-}
-
-#RelationTag: {
-	id:            string
-	textColor?:    #color
-	lineColor?:    #color
-	lineStyle?:    "dash" | "dot" | "bold"
-	technology?:   #Technology
-	legendText?:   string
-	legendSprite?: "\(technology)"
-}
-
-#Technology: {
-	name: string
-	type: *"" | "Db" | "Queue"
-	sprite?: {
-		id:  string | *"\(name)"
-		url: string
-	}
-}
-
-#Sprite: {
-	name: string
-	url:  #url
-}
-
-#Type: {
-	name: string
-}
 #C1: {
 	elementTags:  elementsTags
 	relationTags: relationsTags
@@ -92,14 +44,5 @@ noTech: #Technology & {
 	Persons?: [...#Person]
 	Systems: [...#System]
 	Container?: [...#Container]
-	Relations?: [...#Rel]
-}
-
-// Tags
-elementsTags: [ID=_]: #ElementTag & {
-	id: "\(ID)"
-}
-
-relationsTags: [ID=_]: #RelationTag & {
-	id: "\(ID)"
+	Relations?: [...#Relation]
 }

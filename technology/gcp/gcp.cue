@@ -1,6 +1,10 @@
 package gcp
 
-Stackdriver: {
+import (
+	"github.com/owulveryck/cue4puml4c4:c4"
+)
+
+Stackdriver: c4.#Technology & {
 	name: "Google Stackdriver"
 	sprite: {
 		url: "https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/stackdriver/stackdriver.puml"
