@@ -31,14 +31,14 @@ myWebApp: c4.#Container & {
 	id:          "web_app"
 	label:       "Web Application"
 	description: "Allows users to compare multiple Twitter timelines"
-	technology:  dev.CSharp
+	technology:  dev.Ruby
 	tags: [elementsTags.aSupprimer]
 }
 
 myothercontainer: c4.#Container & {
 	id:         "othercontainer"
 	label:      "Cool2"
-	technology: dev.React
+	technology: dev.Java
 }
 
 othersample: c4.#Container & {
