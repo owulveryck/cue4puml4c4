@@ -3,7 +3,7 @@
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
 
 !include https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/GCPCommon.puml
-{{- range .Technologies}}
+{{- range .Technologies.tech}}
 {{- if .sprite }}
 !include {{ .sprite.url }} 
 {{end -}}
