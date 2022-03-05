@@ -31,7 +31,7 @@ myWebApp: c4.#Container & {
 	id:          "web_app"
 	label:       "Web Application"
 	description: "Allows users to compare multiple Twitter timelines"
-	technology:  dev.Ruby
+	technology:  dev.CUE
 	tags: [elementsTags.aSupprimer]
 }
 

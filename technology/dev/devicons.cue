@@ -1531,3 +1531,11 @@ Nodejs: c4.#Technology & {
 		id:  "nodejs"
 	}
 }
+
+CUE: c4.#Technology & {
+	name: "CUE"
+	sprite: {
+		url: "https://raw.githubusercontent.com/owulveryck/cue4puml4c4/main/assets/cue.puml"
+		id:  "cue_logo"
+	}
+}
