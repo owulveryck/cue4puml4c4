@@ -494,6 +494,7 @@ Grunt: c4.#Technology & {
 
 Sqllite: c4.#Technology & {
 	name: "Sqllite"
+	type: "Db"
 	sprite: {
 		url: "https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons/sqllite.puml"
 		id:  "sqllite"
@@ -1214,6 +1215,7 @@ Celluloid: c4.#Technology & {
 
 Postgresql: c4.#Technology & {
 	name: "Postgresql"
+	type: "Db"
 	sprite: {
 		url: "https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons/postgresql.puml"
 		id:  "postgresql"
@@ -1414,6 +1416,7 @@ Webplatform: c4.#Technology & {
 
 MsqlServer: c4.#Technology & {
 	name: "Msql Server"
+	type: "Db"
 	sprite: {
 		url: "https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons/msql_server.puml"
 		id:  "msql_server"

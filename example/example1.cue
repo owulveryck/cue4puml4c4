@@ -16,16 +16,23 @@ aSupprimer: c4.#ElementTag & {
 	shadowing:   true
 	shape:       "eightsided"
 }
-myTest: {id: "myTest", lineStyle: "bold"}
-autreFleche: {id: "autreFleche", lineColor: "#ff0000"}
+myTest:      c4.#RelationTag & {id: "myTest", lineStyle:      "bold"}
+autreFleche: c4.#RelationTag & {id: "autreFleche", lineColor: "#ff0000"}
 
 // Containers
+
+appEngine: c4.#System & {
+	id:         "appEngine"
+	label:      "App Engine"
+	technology: gcp.AppEngine
+	containers: [myWebApp]
+}
 
 myWebApp: c4.#Container & {
 	id:          "web_appp"
 	label:       "Web Application"
 	description: "Allows users to compare multiple Twitter timelines"
-	technology:  dev.CUE
+	technology:  dev.Go
 	tags: [aSupprimer]
 }
 
@@ -37,7 +44,7 @@ myothercontainer: c4.#Container & {
 
 othersample: c4.#Container & {
 	id:         "sample2"
-	label:      "Twitter2"
+	label:      "Event Source"
 	technology: gcp.Pubsub
 	link:       "https://www.twitter.com"
 }
@@ -45,16 +52,21 @@ othersample: c4.#Container & {
 twitter: c4.#System & {
 	id:         "twitter"
 	label:      "Twitter"
-	technology: gcp.Vertexai
+	technology: gcp.ComputeEngine
 	link:       "https://www.twitter.com"
+	containers: [{
+		id:         "myDatabase"
+		technology: dev.Postgresql
+		label:      "My Awesome DB"
+	}]
 }
 
 sampleSystem: c4.#System & {
 	id:    "c1"
 	label: "Sample System"
-	containers: [myWebApp, othersample, myothercontainer]
-	technology: gcp.CloudSql
-	systems: [twitter]
+	containers: [othersample, myothercontainer]
+	systems: [appEngine, twitter]
+	technology: dev.CUE
 	relations: [
 		{source: othersample, dest: myothercontainer, tags: [autreFleche]},
 	]
