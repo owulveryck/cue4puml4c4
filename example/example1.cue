@@ -8,14 +8,11 @@ import (
 )
 
 // Tags
-elementsTags: [ID=_]: c4.#ElementTag & {
-	id: "\(ID)"
-}
-
 relationsTags: [ID=_]: c4.#RelationTag & {
 	id: "\(ID)"
 }
-elementsTags: aSupprimer: {
+aSupprimer: c4.#ElementTag & {
+	id:          "aSupprimer"
 	legendText:  "A Migrer en React"
 	bgColor:     "#f0239c"
 	borderColor: "#ff0239c"
@@ -33,7 +30,7 @@ myWebApp: c4.#Container & {
 	label:       "Web Application"
 	description: "Allows users to compare multiple Twitter timelines"
 	technology:  dev.CUE
-	tags: [elementsTags.aSupprimer]
+	tags: [aSupprimer]
 }
 
 myothercontainer: c4.#Container & {
@@ -70,7 +67,6 @@ admin: c4.#Person & {
 }
 
 C1: c4.#C1 & {
-	elementTags:  elementsTags
 	relationTags: relationsTags
 	Persons: [admin]
 	Systems: [sampleSystem]

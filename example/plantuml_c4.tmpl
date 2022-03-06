@@ -20,7 +20,7 @@ AddRelTag("{{.id}}"
 {{end}}
 
 /'Element Tags'/ 
-{{range .elementTags}}
+{{range .elementTags.tags}}
 AddElementTag("{{.id}}"
 {{- if .bgColor}},$bgColor="{{.bgColor}}"{{end -}}
 {{- if .borderColor}},$borderColor="{{.borderColor}}"{{ end -}}

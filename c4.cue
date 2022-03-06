@@ -38,9 +38,9 @@ package c4
 }
 
 #C1: {
-	elementTags:  #elementsTags
+	elementTags:  #FoundElementTags & {#in: Systems}
 	relationTags: #relationsTags
-	Technologies: #Depth & {#in: Systems}
+	Technologies: #FoundTechs & {#in: Systems}
 	Persons?: [...#Person]
 	Systems: [...#System]
 	Container?: [...#Container]
