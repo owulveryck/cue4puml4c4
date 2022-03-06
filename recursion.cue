@@ -49,6 +49,55 @@ import (
 	}
 }
 
-#Depth: #RecurseN & {#funcFactory: #GetAllTech}
+#GetAllElementTags: {
+	#next: _
+	#func: {
+		#in: _
+		tags: {
+			for i, x in #in {
+				if x.tags != _|_ {
+					for tag in x.tags {
+						"\(tag.id)": tag
+					}
+				}
+				if x.systems != _|_ {
+					(#next & {#in: x.systems}).tags
+				}
+				if x.containers != _|_ {
+					(#next & {#in: x.containers}).tags
+				}
+			}
+		}
+	}
+}
 
-//techs: #Depth & {#in: C1.Systems}
+#GetAllRelationTags: {
+	#next: _
+	#func: {
+		#in: _
+		tags: {
+			for i, x in #in {
+				if (x & #Relation) != _|_ {
+					if x.tags != _|_ {
+						for t in x.tags {
+							"\(t.id)": t
+						}
+					}
+				}
+				if x.systems != _|_ {
+					(#next & {#in: x.systems}).tags
+				}
+				if x.containers != _|_ {
+					(#next & {#in: x.containers}).tags
+				}
+				if x.relations != _|_ {
+					(#next & {#in: x.relations}).tags
+				}
+			}
+		}
+	}
+}
+
+#FoundTechs:        #RecurseN & {#funcFactory: #GetAllTech}
+#FoundElementTags:  #RecurseN & {#funcFactory: #GetAllElementTags}
+#FoundRelationTags: #RecurseN & {#funcFactory: #GetAllRelationTags}
