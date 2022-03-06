@@ -71,5 +71,33 @@ import (
 	}
 }
 
-#FoundTechs:       #RecurseN & {#funcFactory: #GetAllTech}
-#FoundElementTags: #RecurseN & {#funcFactory: #GetAllElementTags}
+#GetAllRelationTags: {
+	#next: _
+	#func: {
+		#in: _
+		tags: {
+			for i, x in #in {
+				if (x & #Relation) != _|_ {
+					if x.tags != _|_ {
+						for t in x.tags {
+							"\(t.id)": t
+						}
+					}
+				}
+				if x.systems != _|_ {
+					(#next & {#in: x.systems}).tags
+				}
+				if x.containers != _|_ {
+					(#next & {#in: x.containers}).tags
+				}
+				if x.relations != _|_ {
+					(#next & {#in: x.relations}).tags
+				}
+			}
+		}
+	}
+}
+
+#FoundTechs:        #RecurseN & {#funcFactory: #GetAllTech}
+#FoundElementTags:  #RecurseN & {#funcFactory: #GetAllElementTags}
+#FoundRelationTags: #RecurseN & {#funcFactory: #GetAllRelationTags}

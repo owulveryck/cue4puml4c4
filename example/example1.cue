@@ -7,10 +7,6 @@ import (
 	"github.com/owulveryck/cue4puml4c4:c4"
 )
 
-// Tags
-relationsTags: [ID=_]: c4.#RelationTag & {
-	id: "\(ID)"
-}
 aSupprimer: c4.#ElementTag & {
 	id:          "aSupprimer"
 	legendText:  "A Migrer en React"
@@ -20,8 +16,8 @@ aSupprimer: c4.#ElementTag & {
 	shadowing:   true
 	shape:       "eightsided"
 }
-relationsTags: myTest: {lineStyle: "bold"}
-relationsTags: autreFleche: {lineColor: "#ff0000"}
+myTest: {id: "myTest", lineStyle: "bold"}
+autreFleche: {id: "autreFleche", lineColor: "#ff0000"}
 
 // Containers
 
@@ -59,6 +55,9 @@ sampleSystem: c4.#System & {
 	containers: [myWebApp, othersample, myothercontainer]
 	technology: gcp.CloudSql
 	systems: [twitter]
+	relations: [
+		{source: othersample, dest: myothercontainer, tags: [autreFleche]},
+	]
 }
 
 admin: c4.#Person & {
@@ -67,11 +66,10 @@ admin: c4.#Person & {
 }
 
 C1: c4.#C1 & {
-	relationTags: relationsTags
 	Persons: [admin]
 	Systems: [sampleSystem]
-	Relations: [
-		{source: admin, dest:    myWebApp, description: "Uses", protocol:            "HTTPS ", tags: [relationsTags.myTest]},
+	relations: [
+		{source: admin, dest:    myWebApp, description: "Uses", protocol:            "HTTPS ", tags: [myTest]},
 		{source: myWebApp, dest: twitter, description:  "Get tweets from", protocol: "HTTPS ", link: "https://plantuml.com/link"},
 	]
 }

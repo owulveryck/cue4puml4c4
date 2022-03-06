@@ -10,7 +10,8 @@
 {{end -}}
 
 /'Relation Tags'/ 
-{{range .relationTags}}
+{{if .relationTags}}
+{{range .relationTags.a.tags}}
 AddRelTag("{{.id}}"
 {{- if .textColor}},$textColor="{{.textColor}}"{{end -}}
 {{- if .lineColor}},$lineColor="{{.lineColor}}"{{ end -}}
@@ -18,8 +19,18 @@ AddRelTag("{{.id}}"
 {{- if .legendText}},$legendText="{{.legendText}}"{{ end -}}
 {{- if .technology}},$techn="{{.technology.name}}",$sprite="{{.technology.sprite.id}}"{{ end -}})
 {{end}}
+{{range .relationTags.b.tags}}
+AddRelTag("{{.id}}"
+{{- if .textColor}},$textColor="{{.textColor}}"{{end -}}
+{{- if .lineColor}},$lineColor="{{.lineColor}}"{{ end -}}
+{{- if .lineStyle}},$lineStyle={{if eq .lineStyle  "dot"}}DottedLine(){{end}}{{if eq .lineStyle  "dash"}}DashedLine(){{end}}{{if eq .lineStyle  "bold"}}BoldLine(){{end}}{{ end -}}
+{{- if .legendText}},$legendText="{{.legendText}}"{{ end -}}
+{{- if .technology}},$techn="{{.technology.name}}",$sprite="{{.technology.sprite.id}}"{{ end -}})
+{{end}}
+{{end}}
 
 /'Element Tags'/ 
+{{if .elementTags}}
 {{range .elementTags.tags}}
 AddElementTag("{{.id}}"
 {{- if .bgColor}},$bgColor="{{.bgColor}}"{{end -}}
@@ -29,6 +40,7 @@ AddElementTag("{{.id}}"
 {{- if .fontColor}},$fontColor="{{.fontColor}}"{{ end -}}
 {{- if .legendText}},$legendText="{{.legendText}}"{{ end -}}
 {{- if .technology}},$techn="{{.technology.name}}",$sprite="{{.technology.sprite.id}}"{{ end -}})
+{{end}}
 {{end}}
 
 {{if .Persons}}
@@ -50,7 +62,7 @@ System{{if .isBoundary}}_Boundary{{end}}({{.id}},"{{.label}}"{{if .technology}},
 {{- if .systems}}
 {{template "Systems" .systems}}
 {{end -}}
-{{- range .rels}}
+{{- range .relations}}
 {{template "Rel" .}}
 {{end}}
 }
@@ -72,9 +84,9 @@ Person({{.id}},"{{.label}}")
 	Rel("{{.source.id}}","{{.dest.id}}","{{.description}}"{{if .protocol}},"{{.protocol}}"{{end}}{{if .link}},$link="{{.link}}"{{end}}{{if .tags}},$tags="{{template "tags".tags}}"{{end}})
 {{- end}}
 
-{{if .Relations}}
+{{if .relations}}
 /' Relations '/
-{{ range .Relations}}
+{{ range .relations}}
 {{template "Rel" .}}
 {{end}}
 {{end}}
