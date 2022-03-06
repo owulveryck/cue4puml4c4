@@ -38,11 +38,14 @@ package c4
 }
 
 #C1: {
+	title?:      string
 	elementTags: #FoundElementTags & {#in: Systems}
-	relationTags: {a: #FoundRelationTags & {#in: relations}, b: #FoundRelationTags & {#in: Systems}}
+	relationTags: {a: {if relations != _|_ {#FoundRelationTags & {#in: relations}}}, b: #FoundRelationTags & {#in: Systems}}
 	Technologies: #FoundTechs & {#in: Systems}
 	Persons?: [...#Person]
 	Systems: [...#System]
 	Container?: [...#Container]
 	relations?: [...#Relation]
+	layout:         *"top-down" | "left-right" | "landscape"
+	hideStereotype: bool | *true
 }
