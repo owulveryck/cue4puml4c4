@@ -2526,6 +2526,7 @@ OpenGraph: c4.#Technology & {
 
 Kafka: c4.#Technology & {
 	name: "Kafka"
+	type: "Queue"
 	sprite: {
 		url: "https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/master/sprites/./kafka.puml"
 		id:  "kafka"
@@ -2582,6 +2583,7 @@ Visa: c4.#Technology & {
 
 AwsDynamodb: c4.#Technology & {
 	name: "Aws-dynamodb"
+	type: "Db"
 	sprite: {
 		url: "https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/master/sprites/./aws-dynamodb.puml"
 		id:  "aws-dynamodb"
@@ -2742,6 +2744,7 @@ Stackbit: c4.#Technology & {
 
 MemsqlIcon: c4.#Technology & {
 	name: "Memsql-icon"
+	type: "Db"
 	sprite: {
 		url: "https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/master/sprites/./memsql-icon.puml"
 		id:  "memsql-icon"
@@ -3366,6 +3369,7 @@ PuppyLinux: c4.#Technology & {
 
 Memsql: c4.#Technology & {
 	name: "Memsql"
+	type: "Db"
 	sprite: {
 		url: "https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/master/sprites/./memsql.puml"
 		id:  "memsql"
@@ -6134,6 +6138,7 @@ SegmentIcon: c4.#Technology & {
 
 Mysql: c4.#Technology & {
 	name: "Mysql"
+	type: "Db"
 	sprite: {
 		url: "https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/master/sprites/./mysql.puml"
 		id:  "mysql"
@@ -6630,6 +6635,7 @@ Serverless: c4.#Technology & {
 
 Sqlite: c4.#Technology & {
 	name: "Sqlite"
+	type: "Db"
 	sprite: {
 		url: "https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/master/sprites/./sqlite.puml"
 		id:  "sqlite"
@@ -9718,6 +9724,7 @@ AwsMq: c4.#Technology & {
 
 Postgresql: c4.#Technology & {
 	name: "Postgresql"
+	type: "Db"
 	sprite: {
 		url: "https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/master/sprites/./postgresql.puml"
 		id:  "postgresql"
