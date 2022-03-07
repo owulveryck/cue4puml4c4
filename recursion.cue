@@ -7,7 +7,7 @@ import (
 
 #RecurseN: {
 	// this is the bound on our recursion
-	#maxiter: uint | *4
+	#maxiter: uint | *8
 
 	// This is the function list element
 	// we generate this to simulate recursion
