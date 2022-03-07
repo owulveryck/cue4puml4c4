@@ -22,6 +22,7 @@ Heavy work in progress...
 ### Create your own diagrams
 
 ```shell
+$ mkdir $TMPDIR/mydir && cd $TMPDIR/mydir // obviously change this to something suitable for you
 $ cue mod init
 $ mkdir -p cue.mod/pkg/github.com/owulveryck/cue4puml4c4
 $ git clone https://github.com/owulveryck/cue4puml4c4.git cue.mod/pkg/github.com/owulveryck/cue4puml4c4
@@ -50,4 +51,21 @@ command: genpuml: {
         }
 }
 EOF
+
+$ cue genpuml
 ```
+
+### Live preview
+
+*Prerequisites:*
+
+- Go
+- a running plantuml server
+- run the following command:
+
+```shell
+cd ./cue.mod/pkg/github.com/owulveryck/cue4puml4c4/cmd/
+./cue.mod/pkg/github.com/owulveryck/cue4puml4c4/cmd/cmd
+```
+
+open your browser to [localhost:9090](http://localhost:9090)
