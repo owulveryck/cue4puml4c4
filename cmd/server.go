@@ -167,12 +167,24 @@ const (
 	<html lang="en-EN">
 	
 	<head>
+	  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	  <meta charset="utf-8">
 	  <style>
 	    html,
 	    body {
 	      height: 100%;
 	      margin: 0;
 	      background-color: gray;
+	    }
+	    /* Make the download icon big. */
+	    .download-button{
+	      font-size: 32em;
+	      text-align: center;
+	    }
+      
+	    /* Make the download icon look clickable when you hover over it. */
+	    .download-button i {
+	      cursor: pointer;
 	    }
 	
 	    .container {
@@ -225,7 +237,7 @@ const (
 	<body>
 	  <div class="container">
 	    <object id="output" type="image/svg+xml" data="">Content</object>
-	  </div>
+	</div>
 	</body>
 	
 	<script type="text/javascript">
@@ -243,8 +255,9 @@ const (
 	  ws.onmessage = function (e) {
 	    console.log("[onmessage] receive message.");
 	    var res = JSON.parse(e.data);
-	    document.getElementById("output").setAttribute("data", "data:image/svg+xml;utf8;base64," + res["image"]) // decodeURIComponent(escape(window.atob(res["image"]))))
-	    console.log(res)
+	    document.getElementById("output").setAttribute("data", "data:image/svg+xml;utf8;base64," + res["image"]); // decodeURIComponent(escape(window.atob(res["image"]))))
+	    document.getElementById("dl").setAttribute("href", "data:image/svg+xml;utf8;base64," + res["image"]); // decodeURIComponent(escape(window.atob(res["image"]))))
+	    console.log(res);
 	  }
 	
 	  ws.onclose = function (e) {
