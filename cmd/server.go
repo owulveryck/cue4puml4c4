@@ -186,16 +186,24 @@ html, body {
   max-height: 100%;
   max-width: 100%;
 }
+.svg-container {
+	display: inline-block;
+	width: 100%;
+	position: relative;
+	padding-bottom: 70%;
+	vertical-align: middle;
+	overflow: auto;
+    }
+    
 </style>
 <title>{{.Path}}</title>
 </head>
 <body>
 <div class="container center">
-<img id="image" />
+<div id="output" class="svg-container"> </div>
 </div>
 </body>
 </html>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script type="text/javascript">
 var url = "ws{{if eq .Scheme "https"}}s{{end}}://{{.Host}}{{.Path}}";
 ws = new WebSocket(url);
@@ -211,7 +219,7 @@ ws.onopen = function() {
 ws.onmessage = function(e) {
     console.log("[onmessage] receive message.");
     var res = JSON.parse(e.data);
-    $("#image").attr("src", "data:image/svg+xml;utf8;base64," + res["image"]);
+    document.getElementById("output").innerHTML = decodeURIComponent(escape(window.atob( res["image"] )))
     console.log(res)
     console.log(res["cue"])
     console.log(res["plantuml"])
