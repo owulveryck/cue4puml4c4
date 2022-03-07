@@ -3,13 +3,35 @@ package main
 import (
 	"context"
 	"encoding/base64"
-	"fmt"
+	"html/template"
+	"io/fs"
 	"log"
 	"net/http"
+	"net/url"
+	"path"
+	"path/filepath"
+	"regexp"
 
 	"github.com/fsnotify/fsnotify"
 	"github.com/gorilla/websocket"
+	"github.com/kelseyhightower/envconfig"
 )
+
+var config configuration
+
+func init() {
+	err := envconfig.Process("CUEWATCH", &config)
+	if err != nil {
+		log.Fatal(err.Error())
+	}
+}
+
+type configuration struct {
+	PlantUMLServerAddress string `envconfig:"PLANTML_SERVER" default:"http://localhost:8080"`
+	ListenAddress         string `envconfig:"ADDR" default:":9090"`
+	PollingDir            string `envconfig:"POLLING_DIR" default:"./"`
+	RecursivePoll         bool   `envconfig:"RECURSIVE" default:"true"`
+}
 
 type diagram struct {
 	image    []byte
@@ -17,6 +39,7 @@ type diagram struct {
 }
 
 func main() {
+
 	upgrader := websocket.Upgrader{
 		ReadBufferSize:  1024,
 		WriteBufferSize: 1024,
@@ -26,19 +49,65 @@ func main() {
 		log.Fatal("NewWatcher failed: ", err)
 	}
 
-	err = watcher.Add("./")
+	err = watcher.Add(config.PollingDir)
 	if err != nil {
 		log.Fatal("Add failed:", err)
 	}
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "%v", index)
-	})
-	http.HandleFunc("/connws/", (&client{
-		upgrader: upgrader,
-		watcher:  watcher,
-		watch:    watch,
-	}).ConnWs)
-	err = http.ListenAndServe(":9090", nil)
+	if config.RecursivePoll {
+		tmpl, err := template.New("index").Parse(index)
+		if err != nil {
+			log.Fatal(err)
+		}
+		err = filepath.WalkDir(config.PollingDir, func(p string, d fs.DirEntry, err error) error {
+			if err != nil {
+				return err
+			}
+			if !d.IsDir() {
+				return nil
+			}
+			if isGit, err := regexp.MatchString(".*/.git/?.*", p); isGit || err != nil {
+				return nil
+			}
+			watcher, err := fsnotify.NewWatcher()
+			if err != nil {
+				log.Fatal("NewWatcher failed: ", err)
+			}
+
+			err = watcher.Add(p)
+			if err != nil {
+				return err
+			}
+			cleanP := path.Clean(path.Join("/", p))
+			log.Printf("Registering %v", cleanP)
+			me, err := url.Parse("http://" + config.ListenAddress)
+			if err != nil {
+				return err
+			}
+			if me.Hostname() == "" {
+				me.Host = "localhost" + me.Host
+				me.Path = path.Join(cleanP, "/connws/")
+			}
+			http.HandleFunc(cleanP, func(w http.ResponseWriter, r *http.Request) {
+				log.Println(me)
+				tmpl.Execute(w, me)
+			})
+			http.HandleFunc(path.Join(cleanP, "connws/"), (&client{
+				upgrader: upgrader,
+				watcher: watchedDir{
+					Watcher: watcher,
+					path:    p,
+				},
+				watch: watch,
+			}).ConnWs)
+			return nil
+		})
+		if err != nil {
+			log.Fatal(err)
+		}
+	} else {
+		panic("todo")
+	}
+	err = http.ListenAndServe(config.ListenAddress, nil)
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}
@@ -46,8 +115,13 @@ func main() {
 
 type client struct {
 	upgrader websocket.Upgrader
-	watcher  *fsnotify.Watcher
-	watch    func(ctx context.Context, watcher *fsnotify.Watcher, C chan diagram)
+	watcher  watchedDir
+	watch    func(ctx context.Context, watcher watchedDir, C chan diagram)
+}
+
+type watchedDir struct {
+	path string
+	*fsnotify.Watcher
 }
 
 func (c *client) ConnWs(w http.ResponseWriter, r *http.Request) {
@@ -113,6 +187,7 @@ html, body {
   max-width: 100%;
 }
 </style>
+<title>{{.Path}}</title>
 </head>
 <body>
 <div class="container center">
@@ -122,7 +197,7 @@ html, body {
 </html>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script type="text/javascript">
-var url = "ws://localhost:9090/connws/";
+var url = "ws{{if eq .Scheme "https"}}s{{end}}://{{.Host}}{{.Path}}";
 ws = new WebSocket(url);
 
 ws.onopen = function() {

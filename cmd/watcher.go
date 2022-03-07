@@ -11,13 +11,14 @@ import (
 	"net/http"
 	"net/url"
 	"os/exec"
+	"path"
 	"strings"
 
 	"github.com/fsnotify/fsnotify"
 )
 
-func watch(ctx context.Context, watcher *fsnotify.Watcher, C chan diagram) {
-	err := generateImageAndSend(C)
+func watch(ctx context.Context, watcher watchedDir, C chan diagram) {
+	err := generateImageAndSend(watcher.path, C)
 	if err != nil {
 		log.Println(err)
 	}
@@ -28,7 +29,7 @@ func watch(ctx context.Context, watcher *fsnotify.Watcher, C chan diagram) {
 				return
 			}
 			if event.Op == fsnotify.Write {
-				err := generateImageAndSend(C)
+				err := generateImageAndSend(watcher.path, C)
 				if err != nil {
 					log.Println(err)
 				}
@@ -44,15 +45,17 @@ func watch(ctx context.Context, watcher *fsnotify.Watcher, C chan diagram) {
 	}
 }
 
-func generateImageAndSend(C chan diagram) error {
+func generateImageAndSend(p string, C chan diagram) error {
 	cue := exec.Command("cue", "cmd", "genpuml")
 	var outb, errb bytes.Buffer
 	cue.Stdout = &outb
+	cue.Dir = p
 	cue.Stderr = &errb
 	if err := cue.Run(); err != nil {
 		return fmt.Errorf("%v: %v", err, errb.String())
 	}
-	u, _ := url.Parse("http://localhost:8080/plantuml/svg/")
+	u, _ := url.Parse(config.PlantUMLServerAddress)
+	u.Path = path.Clean(path.Join(u.Path, "/plantuml/svg/"))
 	req := &http.Request{
 		Method: http.MethodPost,
 		URL:    u,
