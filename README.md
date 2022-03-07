@@ -19,30 +19,23 @@ Heavy work in progress...
 
 ## Simple HOWTO
 
-- Create a directory to create a new diagram
-- create a cue file with your diagram
-- import the `c4` package:
+### Create your own diagrams
 
-```cue
-import "github.com/owulveryck/cue4puml4c4:c4"
-```
-
-- create a `C1` diagram of type `c4.#C1` and add at least one system
-
-```cue
+```shell
+$ cue mod init
+$ mkdir -p cue.mod/pkg/github.com/owulveryck/cue4puml4c4
+$ git clone https://github.com/owulveryck/cue4puml4c4.git cue.mod/pkg/github.com/owulveryck/cue4puml4c4
+$ cat <<EOF > test.cue
 package main
 
 import "github.com/owulveryck/cue4puml4c4:c4"
 
-C1: c4.#C1 & {
- Systems: [{id: "sample", label: "my sample"}]
+C1: c4.#C1 & { // the name C1 should be coherent with the name you declare in the command
+        Systems: [{id: "sample", label: "my sample"}]
 }
+EOF
 
-```
-
-- create a tool to dump your `C1` object into plantuml (eg: `plantuml_tool.cue`):
-
-```cue
+$ cat <<EOF > command_tool.cue
 package main
 
 import (
@@ -56,4 +49,5 @@ command: genpuml: {
                 text: template.Execute(c4.plantumlTemplate, C1) // change C1 here with the name of your object
         }
 }
+EOF
 ```
