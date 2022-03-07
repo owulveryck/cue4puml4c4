@@ -149,6 +149,7 @@ func (c *client) ConnWs(w http.ResponseWriter, r *http.Request) {
 		select {
 		case diagram := <-C:
 			str := base64.StdEncoding.EncodeToString(diagram.image)
+			res["img"] = diagram.image
 			res["image"] = str
 
 			if err = ws.WriteJSON(&res); err != nil {
@@ -162,75 +163,99 @@ func (c *client) ConnWs(w http.ResponseWriter, r *http.Request) {
 }
 
 const (
-	index = `
-<html lang="zh-TW">
-<head>
-<style>
-html, body {
-  height: 100%;
-  margin: 0;
-  background-color: gray;
-}
-.container {
-  margin: 0;
-  display: block;
-  height: 100%;
-}
-.center {
-  margin: auto;
-}
-.container img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-height: 100%;
-  max-width: 100%;
-}
-.svg-container {
-	display: inline-block;
-	width: 100%;
-	position: relative;
-	padding-bottom: 70%;
-	vertical-align: middle;
-	overflow: auto;
-    }
-    
-</style>
-<title>{{.Path}}</title>
-</head>
-<body>
-<div class="container center">
-<div id="output" class="svg-container"> </div>
-</div>
-</body>
-</html>
-<script type="text/javascript">
-var url = "ws{{if eq .Scheme "https"}}s{{end}}://{{.Host}}{{.Path}}";
-ws = new WebSocket(url);
-
-ws.onopen = function() {
-  console.log("[onopen] connect ws uri.");
-  var data = {
-    "Action" : "requireConnect"
-  };
-  ws.send(JSON.stringify(data));
-}
-
-ws.onmessage = function(e) {
-    console.log("[onmessage] receive message.");
-    var res = JSON.parse(e.data);
-    document.getElementById("output").innerHTML = decodeURIComponent(escape(window.atob( res["image"] )))
-    console.log(res)
-    console.log(res["cue"])
-    console.log(res["plantuml"])
-}
-
-ws.onclose = function(e) {
-    console.log("[onclose] connection closed (" + e.code + ")");
-}
-
-ws.onerror = function (e) {
-    console.log("[onerror] error!");
-}
-</script>`
+	index = `<!DOCTYPE html>
+	<html lang="en-EN">
+	
+	<head>
+	  <style>
+	    html,
+	    body {
+	      height: 100%;
+	      margin: 0;
+	      background-color: gray;
+	    }
+	
+	    .container {
+	      max-width: 100%;
+	      max-height: 100%;
+	      bottom: 0;
+	      left: 0;
+	      margin: auto;
+	      overflow: auto;
+	      position: fixed;
+	      right: 0;
+	      top: 0;
+	      -o-object-fit: contain;
+	      object-fit: contain;
+	    }
+	
+	    .right {
+	      float: right;
+	      width: 80%;
+	    }
+	
+	    .container {
+	      margin: 0;
+	      display: block;
+	      height: 100%;
+	    }
+	
+	    .center {
+	      margin: auto;
+	    }
+	
+	    .container img {
+	      display: block;
+	      margin-left: auto;
+	      margin-right: auto;
+	      max-height: 100%;
+	      max-width: 100%;
+	    }
+	
+	    object {
+	      aspect-ratio: inherit;
+	      max-height: 100%;
+	      max-width: 100%;
+	
+	    }
+	  </style>
+	  <title>{{.Path}}</title>
+	</head>
+	
+	<body>
+	  <div class="container">
+	    <object id="output" type="image/svg+xml" data="">Content</object>
+	  </div>
+	</body>
+	
+	<script type="text/javascript">
+	  var url = "ws{{if eq .Scheme "https"}}s{{end}}://{{.Host}}{{.Path}}";
+	  ws = new WebSocket(url);
+	
+	  ws.onopen = function () {
+	    console.log("[onopen] connect ws uri.");
+	    var data = {
+	      "Action": "requireConnect"
+	    };
+	    ws.send(JSON.stringify(data));
+	  }
+	
+	  ws.onmessage = function (e) {
+	    console.log("[onmessage] receive message.");
+	    var res = JSON.parse(e.data);
+	    document.getElementById("output").setAttribute("data", "data:image/svg+xml;utf8;base64," + res["image"]) // decodeURIComponent(escape(window.atob(res["image"]))))
+	    console.log(res)
+	  }
+	
+	  ws.onclose = function (e) {
+	    console.log("[onclose] connection closed (" + e.code + ")");
+	  }
+	
+	  ws.onerror = function (e) {
+	    console.log("[onerror] error!");
+	  }
+	</script>
+	
+	</html>
+	`
 )
