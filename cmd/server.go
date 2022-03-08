@@ -5,6 +5,7 @@ import (
 	"encoding/base64"
 	"html/template"
 	"io/fs"
+	"io/ioutil"
 	"log"
 	"net/http"
 	"net/url"
@@ -35,6 +36,8 @@ type configuration struct {
 
 type diagram struct {
 	image    []byte
+	cue      []byte
+	cueErr   []byte
 	plantuml []byte
 }
 
@@ -87,9 +90,38 @@ func main() {
 				me.Host = "localhost" + me.Host
 				me.Path = path.Join(cleanP, "/connws/")
 			}
+			files, err := ioutil.ReadDir(p)
+			if err != nil {
+				return err
+			}
+			type dirEntry struct {
+				Path string
+				Name string
+			}
+			dirEntries := make([]dirEntry, 0)
+			for _, f := range files {
+				if f.IsDir() {
+					dirEntries = append(dirEntries, dirEntry{
+						Name: f.Name(),
+						Path: path.Clean(path.Join(cleanP, f.Name())),
+					})
+				}
+			}
 			http.HandleFunc(cleanP, func(w http.ResponseWriter, r *http.Request) {
 				log.Println(me)
-				tmpl.Execute(w, me)
+				err := tmpl.Execute(w, struct {
+					URL        *url.URL
+					Name       string
+					DirEntries []dirEntry
+				}{
+					DirEntries: dirEntries,
+					Name:       d.Name(),
+					URL:        me,
+				})
+				if err != nil {
+					log.Fatal(err)
+				}
+
 			})
 			http.HandleFunc(path.Join(cleanP, "connws/"), (&client{
 				upgrader: upgrader,
@@ -149,8 +181,9 @@ func (c *client) ConnWs(w http.ResponseWriter, r *http.Request) {
 		select {
 		case diagram := <-C:
 			str := base64.StdEncoding.EncodeToString(diagram.image)
-			res["img"] = diagram.image
 			res["image"] = str
+			res["cue"] = diagram.cueErr
+			res["plantuml"] = diagram.plantuml
 
 			if err = ws.WriteJSON(&res); err != nil {
 				log.Println(err)
@@ -161,114 +194,3 @@ func (c *client) ConnWs(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 }
-
-const (
-	index = `<!DOCTYPE html>
-	<html lang="en-EN">
-	
-	<head>
-	  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-	  <meta charset="utf-8">
-	  <style>
-	    html,
-	    body {
-	      height: 100%;
-	      margin: 0;
-	      background-color: gray;
-	    }
-	    /* Make the download icon big. */
-	    .download-button{
-	      font-size: 32em;
-	      text-align: center;
-	    }
-      
-	    /* Make the download icon look clickable when you hover over it. */
-	    .download-button i {
-	      cursor: pointer;
-	    }
-	
-	    .container {
-	      max-width: 100%;
-	      max-height: 100%;
-	      bottom: 0;
-	      left: 0;
-	      margin: auto;
-	      overflow: auto;
-	      position: fixed;
-	      right: 0;
-	      top: 0;
-	      -o-object-fit: contain;
-	      object-fit: contain;
-	    }
-	
-	    .right {
-	      float: right;
-	      width: 80%;
-	    }
-	
-	    .container {
-	      margin: 0;
-	      display: block;
-	      height: 100%;
-	    }
-	
-	    .center {
-	      margin: auto;
-	    }
-	
-	    .container img {
-	      display: block;
-	      margin-left: auto;
-	      margin-right: auto;
-	      max-height: 100%;
-	      max-width: 100%;
-	    }
-	
-	    object {
-	      aspect-ratio: inherit;
-	      max-height: 100%;
-	      max-width: 100%;
-	
-	    }
-	  </style>
-	  <title>{{.Path}}</title>
-	</head>
-	
-	<body>
-	  <div class="container">
-	    <object id="output" type="image/svg+xml" data="">Content</object>
-	</div>
-	</body>
-	
-	<script type="text/javascript">
-	  var url = "ws{{if eq .Scheme "https"}}s{{end}}://{{.Host}}{{.Path}}";
-	  ws = new WebSocket(url);
-	
-	  ws.onopen = function () {
-	    console.log("[onopen] connect ws uri.");
-	    var data = {
-	      "Action": "requireConnect"
-	    };
-	    ws.send(JSON.stringify(data));
-	  }
-	
-	  ws.onmessage = function (e) {
-	    console.log("[onmessage] receive message.");
-	    var res = JSON.parse(e.data);
-	    document.getElementById("output").setAttribute("data", "data:image/svg+xml;utf8;base64," + res["image"]); // decodeURIComponent(escape(window.atob(res["image"]))))
-	    document.getElementById("dl").setAttribute("href", "data:image/svg+xml;utf8;base64," + res["image"]); // decodeURIComponent(escape(window.atob(res["image"]))))
-	    console.log(res);
-	  }
-	
-	  ws.onclose = function (e) {
-	    console.log("[onclose] connection closed (" + e.code + ")");
-	  }
-	
-	  ws.onerror = function (e) {
-	    console.log("[onerror] error!");
-	  }
-	</script>
-	
-	</html>
-	`
-)

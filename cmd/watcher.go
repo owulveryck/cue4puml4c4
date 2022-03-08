@@ -52,6 +52,10 @@ func generateImageAndSend(p string, C chan diagram) error {
 	cue.Dir = p
 	cue.Stderr = &errb
 	if err := cue.Run(); err != nil {
+		C <- diagram{
+			cue:    outb.Bytes(),
+			cueErr: errb.Bytes(),
+		}
 		return fmt.Errorf("%v: %v", err, errb.String())
 	}
 	u, _ := url.Parse(config.PlantUMLServerAddress)
@@ -81,7 +85,9 @@ func generateImageAndSend(p string, C chan diagram) error {
 	puml, _ := format(bytes.NewReader(outb.Bytes()))
 	fmt.Printf("%s", puml)
 	C <- diagram{
-		plantuml: outb.Bytes(),
+		cue:      outb.Bytes(),
+		cueErr:   errb.Bytes(),
+		plantuml: []byte(puml),
 		image:    res,
 	}
 	return nil
