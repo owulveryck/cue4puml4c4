@@ -83,7 +83,6 @@ func generateImageAndSend(p string, C chan diagram) error {
 	}
 	log.Printf("Senging new image on %v", C)
 	puml, _ := format(bytes.NewReader(outb.Bytes()))
-	fmt.Printf("%s", puml)
 	C <- diagram{
 		cue:      outb.Bytes(),
 		cueErr:   errb.Bytes(),

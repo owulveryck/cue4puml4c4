@@ -69,6 +69,8 @@ const (
 		<div class="row">
 			<div class="column left" style="background-color:#aaa;">
 				<button class="btn"><i class="fa fa-download"><a id="download" download="{{.Name}}.svg"></i> Download SVG</a></button>
+				<button class="btn" onclick="togglePUML()">Display PUML Content</button>
+
 				<ul>
 					<li><a href="{{.URL.Path}}/../../">..<a></li>
 					{{range .DirEntries}}
@@ -79,7 +81,7 @@ const (
 			<div class="column right" style="background-color:#bbb;">
 				<pre id="cue">Generating picture...</pre>
 				<hr>
-				<pre id="plantuml"></pre>
+				<pre id="plantuml"  style="visibility: hidden;"></pre>
 				<object id="output" type="image/svg+xml"></object>
 			</div>
 		</div>
@@ -112,6 +114,13 @@ const (
 	
 		ws.onerror = function (e) {
 			console.log("[onerror] error!");
+		}
+		function togglePUML() {
+			if (document.getElementById("plantuml").style.visibility == "hidden") {
+				document.getElementById("plantuml").style.visibility = "visible";
+			} else {
+				document.getElementById("plantuml").style.visibility = "hidden";
+			}
 		}
 	</script>
 	
