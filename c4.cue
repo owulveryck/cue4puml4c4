@@ -44,6 +44,7 @@ package c4
 	Technologies: #FoundTechs & {#in: Systems}
 	Persons?: [...#Person]
 	Systems: [...#System]
+	SystemsExt?: [...#System]
 	Container?: [...#Container]
 	relations?: [...#Relation]
 	layout:         *"top-down" | "left-right" | "landscape"
