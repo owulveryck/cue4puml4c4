@@ -61,11 +61,35 @@ plantumlTemplate: """
 	/' Persons '/
 	{{template "Persons" .Persons}}
 	{{end}}
-	{{if .Systems}}
+	{{if .SystemsExt}}
+	/' Systems Ext '/
+	{{template "SystemsExt" .SystemsExt}}
+	{{end}}
+		{{if .Systems}}
 	/' Systems '/
 	{{template "Systems" .Systems}}
 	{{end}}
-	
+
+	{{- define "SystemsExt"}}
+	{{- range .}}
+	System_Ext({{.id}},"{{.label}}"{{if .technology}},"{{.technology.name}}","{{.technology.sprite.id}}"{{end}}{{if .link}},$link="{{.link}}"{{end}}{{if .tags}},$tags="{{template "tags".tags}}"{{end}}){{if or .containers .systems}}{
+	{{- range .containers -}}	
+	{{- template "Container" . -}}
+	{{- end -}}
+	{{- if .systems}}
+	{{template "Systems" .systems}}
+	{{end -}}
+	{{if .SystemsExt}}
+	/' Systems Ext '/
+	{{template "SystemsExt" .SystemsExt}}
+	{{end}}
+	{{- range .relations}}
+	{{template "Rel" .}}
+	{{end}}
+	}
+	{{end -}}
+	{{end -}}
+	{{end -}}	
 	
 	{{- define "Systems"}}
 	{{- range .}}
