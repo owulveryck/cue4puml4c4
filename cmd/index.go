@@ -149,7 +149,11 @@ const (
 			console.log(right.width)
 			console.log(document.getElementById("colRight").getBoundingClientRect().width)
 			console.log(svgSize)
-			//svgImage.setAttribute('viewBox', ` + "`" + `0 0 ${fullWidth} ${fullHeight}` + "`" + `);
+			svgImage.getAttribute('viewBox')
+			var box = svgImage.getAttribute('viewBox').split(/\s+|,/);
+			if (box[2] <  right.width) {
+				svgImage.setAttribute('viewBox', ` + "`" + `0 0 ${fullWidth} ${fullHeight}` + "`" + `);
+			}
 			svgSize = { w: svgImage.clientWidth, h: svgImage.clientHeight };
 
 		}
