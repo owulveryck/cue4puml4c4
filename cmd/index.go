@@ -140,21 +140,25 @@ const (
 			document.getElementById("svgContainer").innerHTML = decodeURIComponent(escape(window.atob(res["image"])))// setAttribute("data", "data:image/svg+xml;utf8;base64," + res["image"]); // decodeURIComponent(escape(window.atob(res["image"]))))
 			document.getElementById("dl").setAttribute("href","data:image/svg+xml;utf8;base64," + res["image"]); // decodeURIComponent(escape(window.atob(res["image"]))))
 			document.getElementById("cue").innerHTML = decodeURIComponent(escape(window.atob(res["cue"])))
-			document.getElementById("plantuml").innerHTML = decodeURIComponent(escape(window.atob(res["plantuml"])))
-			svgImage = document.getElementsByTagName("svg")[0];
-			svgImage.style = ""
-			svgImage.removeAttribute("width");
-			svgImage.removeAttribute("height");
-			svgImage.setAttribute("preserveAspectRatio","xMidYMid meet")
-			console.log(right.width)
-			console.log(document.getElementById("colRight").getBoundingClientRect().width)
-			console.log(svgSize)
-			svgImage.getAttribute('viewBox')
-			var box = svgImage.getAttribute('viewBox').split(/\s+|,/);
-			if (box[2] <  right.width) {
-				svgImage.setAttribute('viewBox', ` + "`" + `0 0 ${right.width} ${fullHeight}` + "`" + `);
+			if (document.getElementsByTagName("svg").length > 0) {
+				if ("plantuml" in res) {
+					document.getElementById("plantuml").innerHTML = decodeURIComponent(escape(window.atob(res["plantuml"])))
+				}
+				svgImage = document.getElementsByTagName("svg")[0];
+				svgImage.style = ""
+				svgImage.removeAttribute("width");
+				svgImage.removeAttribute("height");
+				svgImage.setAttribute("preserveAspectRatio","xMidYMid meet")
+				console.log(right.width)
+				console.log(document.getElementById("colRight").getBoundingClientRect().width)
+				console.log(svgSize)
+				svgImage.getAttribute('viewBox')
+				var box = svgImage.getAttribute('viewBox').split(/\s+|,/);
+				if (box[2] <  right.width) {
+					svgImage.setAttribute('viewBox', ` + "`" + `0 0 ${right.width} ${fullHeight}` + "`" + `);
+				}
+				svgSize = { w: svgImage.clientWidth, h: svgImage.clientHeight };
 			}
-			svgSize = { w: svgImage.clientWidth, h: svgImage.clientHeight };
 			var data = {
 				"Action": "ready"
 			};
