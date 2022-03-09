@@ -9,6 +9,7 @@ import (
 	"log"
 	"net/http"
 	"net/url"
+	"os"
 	"path"
 	"path/filepath"
 	"regexp"
@@ -43,10 +44,6 @@ type diagram struct {
 
 func main() {
 
-	upgrader := websocket.Upgrader{
-		ReadBufferSize:  1024,
-		WriteBufferSize: 1024,
-	}
 	watcher, err := fsnotify.NewWatcher()
 	if err != nil {
 		log.Fatal("NewWatcher failed: ", err)
@@ -55,6 +52,10 @@ func main() {
 	err = watcher.Add(config.PollingDir)
 	if err != nil {
 		log.Fatal("Add failed:", err)
+	}
+	cwd, err := os.Getwd()
+	if err != nil {
+		log.Fatal(err)
 	}
 	if config.RecursivePoll {
 		tmpl, err := template.New("index").Parse(index)
@@ -76,7 +77,7 @@ func main() {
 				log.Fatal("NewWatcher failed: ", err)
 			}
 
-			err = watcher.Add(p)
+			err = watcher.Add(filepath.Clean(filepath.Join(cwd, p)))
 			if err != nil {
 				return err
 			}
@@ -108,7 +109,6 @@ func main() {
 				}
 			}
 			http.HandleFunc(cleanP, func(w http.ResponseWriter, r *http.Request) {
-				log.Println(me)
 				err := tmpl.Execute(w, struct {
 					URL        *url.URL
 					Name       string
@@ -124,7 +124,10 @@ func main() {
 
 			})
 			http.HandleFunc(path.Join(cleanP, "connws/"), (&client{
-				upgrader: upgrader,
+				upgrader: websocket.Upgrader{
+					ReadBufferSize:  1024,
+					WriteBufferSize: 1024,
+				},
 				watcher: watchedDir{
 					Watcher: watcher,
 					path:    p,
