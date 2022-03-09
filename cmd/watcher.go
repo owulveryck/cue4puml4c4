@@ -28,7 +28,7 @@ func watch(ctx context.Context, watcher watchedDir, C chan diagram) {
 			if !ok {
 				return
 			}
-			if event.Op == fsnotify.Write {
+			if event.Op == fsnotify.Write || event.Op == fsnotify.Create {
 				err := generateImageAndSend(watcher.path, C)
 				if err != nil {
 					log.Println(err)
