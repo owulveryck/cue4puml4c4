@@ -152,9 +152,13 @@ const (
 			svgImage.getAttribute('viewBox')
 			var box = svgImage.getAttribute('viewBox').split(/\s+|,/);
 			if (box[2] <  right.width) {
-				svgImage.setAttribute('viewBox', ` + "`" + `0 0 ${fullWidth} ${fullHeight}` + "`" + `);
+				svgImage.setAttribute('viewBox', ` + "`" + `0 0 ${right.width} ${fullHeight}` + "`" + `);
 			}
 			svgSize = { w: svgImage.clientWidth, h: svgImage.clientHeight };
+			var data = {
+				"Action": "ready"
+			};
+			ws.send(JSON.stringify(data));
 
 		}
 	

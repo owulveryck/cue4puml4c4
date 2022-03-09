@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en-EN">
+
+<head>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+		type="text/css" />
+	<meta charset="utf-8">
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		html,
+		body {
+			margin: 0;
+			background-color: gray;
+		}
+
+		/* Create two unequal columns that floats next to each other */
+		.column {
+			float: left;
+			padding: 10px;
+		}
+
+		.left {
+			width: 15vh;
+			height: 100vh;
+		}
+
+		.right {
+			height: 100vh;
+			float: none;
+		}
+
+		/* Clear floats after the columns */
+		.row:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+
+		.container {
+			width: 91vw;
+			height: 100%;
+			left: 16vh;
+			position: fixed;
+			float: none;
+		}
+	</style>
+	<title>{{.Path}}</title>
+</head>
+
+<body>
+	<div class="row">
+		<div id="colLeft" class="column left" style="background-color:#aaa;">
+			<button class="btn"><i class="fa fa-download"></i> Download SVG</button>
+			<button class="btn" onclick="togglePUML()">Display PUML Content</button>
+			<ul>
+				<li><a href="../">..</a></li>
+				{{range .DirEntries}}
+				<li>{{.}}</li>
+				{{end}}
+			</ul>
+			Zoom: <span id="zoomValue">1</span>
+		</div>
+		<div id="colRight" class="column right" style="background-color:#bbb;">
+			<div class="container" id="svgContainer">
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+					contentScriptType="application/ecmascript" contentStyleType="text/css"
+					height="2255px" preserveAspectRatio="none"
+					style="width:1602px;height:2255px;background:#FFFFFF;" version="1.1"
+					viewBox="0 0 1602 2255" width="1602px" zoomAndPan="magnify">
+					<defs />
+					<g>
+						<!--MD5=[90d4fc4d898cf94fc058283a46d7a8f4]
+				cluster trendspotter-->
+						<rect fill="#D3D3D3" height="2057"
+							style="stroke:#3C7FC0;stroke-width:1.5;" width="1403" x="193"
+							y="7" /><text fill="#000000" font-family="sans-serif"
+							font-size="16" font-weight="bold" lengthAdjust="spacing"
+							textLength="102" x="843.5" y="24.4688">trendspotter</text>
+						<!--MD5=[0c36443ff8540160ec666eaa9811bf38]
+				cluster webapp_domain-->
+						<rect fill="#EBECF0" height="395" rx="12.5" ry="12.5"
+							style="stroke:#3C7FC0;stroke-width:1.5;" width="1348.5" x="217"
+							y="52" /><text fill="#000000" font-family="sans-serif"
+							font-size="16" font-weight="bold" lengthAdjust="spacing"
+							textLength="68" x="857.25" y="69.4688">WebApp</text>
+						<!--MD5=[24acd77d2183c0622eb057291a38be55]
+				cluster webHosting-->
+						<rect fill="#1168BD" height="326"
+							style="stroke:#3C7FC0;stroke-width:1.5;" width="1300.5" x="241"
+							y="97" />
+						<image height="64" width="64" x="859.25"
+							xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAADmUlEQVR4Xu2ZPW7VQBSFs4XZQZaQJbCELOGVlIiagoo21DRpqKGlQQgkGoR4BRIUNCloKCjYAUe+ytXNOWM/z1+sSJaO0LM9Y9/v/s1MOEuP3z9onemth6UdYGvtAFtrB5jXxbPPT17/PLz6ro86aiDA8ze/rj/9hoYyjAI4f/rRrIeu3t3ogF4aBXD58psDQEgnHdNFowA8f0woBh3TRUMAYv6MzqIhAJQ/pkcvvujIdg0BQMIghSD8sN+IwKAsGgJwnxoFgDJAzkBIJ/yLSx3TRT0BYCXMRbZ8+PH3ePOPhJt4hAE6sUV9AGA6UjxrtwrDMLhXTDoAwKkrTSeMLtFoBUCHUePWC9P1nUVqAkBOq03Hybto/LGN4nIuSo1rXD1A1noYisTI5reV+Nuvf3RWSxwqAbBDVjtWbptb5qpqALC1pM8jPYr2mxisGZWN20nVACBPWqw3KUNdMRQDqPvndmkYaYsx4bmnURL0qgpHFANQ38y6TYvVd6PWlHwkdYKKai4GoLirzxZWBuutkJcsxRMv1y8uaxWABx1eJINoJHUYGETAzuDkVFF+X12T1RIAXgGDbDdvDGQf9T6MiabbgmDtP2LgbTEISCp9p53pMBKXyyQZALgZ0zDZD1OempQeVL4Rjx7F0HkQ9BHk5x5bv012Hsp2CwaAET5NAajmyDf+9FpSK4VUQX0bgEWVyiA6Sy3R9Y4BAKrT3CsEQEuPP822Jn+6DOBzly1xNQFQBDzBYCK9FvLG6gB2fy4Cy5a4GCCbQtEr8WO0oY8LE30pTry+3ajqrDgxFmEBgDUNYES5oXMfc8X162o6QF5Oh0y/iXZk7vd3etxM8Vtqhu6XGGBZFG5NFWopKuuhXgBpxcq4rDKAdNfHR2mXloFqt8mSJ7qfQqoeOaliACqD+ElYY/bBzbjvrsUPXLrvYyskd2hOnlQxQFxu9auHaeV2wWi3m3yfJPvBqSl+UsUAST58vLunuJj+YyYabcLNmN8HOZdVuD/VASSpPGJIU6AuwnmAXEt5eKzKflMlQLbbIFtO9hAMyFZ5dp+zRpUAKZcDjqEN25YXWshdFL0i1QOkeQYTsgKCv6nVkFqsT40AqfbviiY7M+g7i9QKkKb0mMuNBV3dHpIa1QHAhCpciYFh1SWr6gZgglMP02nOVmKXrcR41MXrUZ0BSOfTmVjvd9RYgHvQDrC1doCttQNsrR1ga+0AW2sH2Fr/ARE5B72rm2cJAAAAAElFTkSuQmCC"
+							y="99" /><text fill="#FFFFFF" font-family="sans-serif"
+							font-size="16" font-weight="bold" lengthAdjust="spacing"
+							textLength="96" x="843.25" y="178.4688">App Engine</text><text
+							fill="#FFFFFF" font-family="sans-serif" font-size="14"
+							lengthAdjust="spacing" textLength="0" x="893.25"
+							y="195.3789" /><text fill="#FFFFFF" font-family="sans-serif"
+							font-size="14" lengthAdjust="spacing" textLength="132"
+							x="827.25" y="211.8672">Google App Engine</text>
+						<!--MD5=[e3fa3feb9ad58e862aa037ca6847a0ad]
+				cluster prerocessing_domain--><a href="https://github.com/loreal-techaccelerator/trendspotter-preprocessing"
+							target="_top"
+							title="https://github.com/loreal-techaccelerator/trendspotter-preprocessing"
+							link:actuate="onRequest"
+							xlink:href="https://github.com/loreal-techaccelerator/trendspotter-preprocessing"
+							xlink:show="new"
+							xlink:title="https://github.com/loreal-techaccelerator/trendspotter-preprocessing"
+							xlink:type="simple">
+							<rect fill="#EBECF0" height="404" rx="12.5" ry="12.5"
+								style="stroke:#3C7FC0;stroke-width:1.5;" width="462"
+								x="518" y="1354" /><text fill="#000000"
+								font-family="sans-serif" font-size="16"
+								font-weight="bold" lengthAdjust="spacing"
+								textLength="117" x="690.5"
+								y="1371.4688">Preprocessing</text>
+						</a>
+						<!--MD5=[ede20bec987cd9e178030ee7de86a668]
+				cluster hosting-->
+						<rect fill="#1168BD" height="319"
+							style="stroke:#3C7FC0;stroke-width:1.5;" width="398" x="550"
+							y="1407" />
+						<image height="64" width="64" x="717"
+							xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAC8klEQVR4Xu2WK65UQRBA3xZ6ByyBJbAEloBEEjRiFBY0BoMGiyEEEgwhjCABgXkCg0CwAyrppFOZ6tNVdb8ZcpOjhnpz+/Q9Pc1NefjuqrmxH10Xh8DeHAJ7818LPHr14/7zr/Zzy53HHx68+GY/3wBH4Hz79+XHXxGNN19+P3t7az9fm5HA3SefRKDiasgbkDHRkL+y/7oeIwHh/fc/zWGsIRW1sS1zcgSkCi1QkbTspCB6bWaznByBGsYF8lrspB3eJidHQB8DTXdluqLG2jk5AsUcg0qkosaqOfkC3WMgC7WTxVTUWC8nX4DWJMHY4W5FjTVy8gXoGNDvabeixuI5+QIFjgEthd5YY9mcQgLdY0A/puOKGkvlFBKgTb339LMdLl5FjdPrn/Zvs4QE6BjQCkjYMj+nkECBYyCPt5MlXFFjTk5Rge4xOMOVXMIVNehlukQFqAq6kml+wLScogJ0DOhKzlbUyOYUFShwDM5wJZd8RY1UTgkBOgZ0JU+oqBHPKSFAC6IreXJFDdoaTUKAjgFdyWVGRQ03p4RA4WNAVzK9tBTjnHICdAxon6Qick4hX0I55QRkR8XBMvjtEzc7PwF6yTkBWU0XesXyVDucRe5K+qUuKQH5FvvtFTtckTdjh1NQOY2EAG0n9TMQDkLZaBICtJ30GBKOMM5GkxCwj6nYyQoJu7jZaKIC1AP9b5TmXeh9ElEB6oGeR/MD4tloogLUAz2S5olUNpqogH3kabl+6DVGCAnQgmjb4v1My0YTEqAF0QUc7IcukBQhAVqQnSz8ui6Yk40mJGAff+L9o9fVmJ+NxhegHaUtpNdVIe3J+AK0o91dJNsKOc/BF+juKP2Aku2y2Wh8AbuaE+9l13bxbDSOACXR3c7uMKkuhSPQTSLYz3rZaByBbhJ0AevhVbPROAIXS5dNpdtX97N2NpqRgF7TYOmV2s822WhGAm1N46VXZGyzbDQjAWk9HkN8cllGAlfBIbA3h8DeHAJ78w8abKeGwNv/IwAAAABJRU5ErkJggg=="
+							y="1409" /><text fill="#FFFFFF" font-family="sans-serif"
+							font-size="16" font-weight="bold" lengthAdjust="spacing"
+							textLength="86" x="706" y="1488.4688">Cloud Run</text><text
+							fill="#FFFFFF" font-family="sans-serif" font-size="14"
+							lengthAdjust="spacing" textLength="0" x="751"
+							y="1505.3789" /><text fill="#FFFFFF" font-family="sans-serif"
+							extLength="125" x="688.5" y="1521.867
+						">Google Cloud Run</text>
+						<!--MD5=[b3606c71a17f9f055b779999e4543d5b]
+				cluster classifier_domain--><a href="http://localhost:9090/ml/classifier" target="_top"
+							title="http://localhost:9090/ml/classifier"
+							xlink:actuate="onRequest"
+							xlink:href="http://localhost:9090/ml/classifier"
+							xlink:show="new"
+							xlink:title="http://localhost:9090/ml/classifier"
+							xlink:type="simple">
+							<rect fill="#EBECF0" height="438" rx="12.5" ry="12.5"
+								style="stroke:#3C7FC0;stroke-width:1.5;" width="421"
+								x="1151" y="1602" /><text fill="#000000"
+								font-family="sans-serif" font-size="16"
+								font-weight="bold" lengthAdjust="spacing"
+								textLength="76" x="1323.5"
+								y="1619.4688">Classifier</text>
+						</a>
+						<!--MD5=[8dbdb5933398fe12af00f847a7a3cb16]
+				cluster hosting_classifier_X--><a href="https://console.cloud.google.com/run/detail/europe-west1/trendspotter-run-classification-X-ew1-dv/"
+							target="_top"
+							title="https://console.cloud.google.com/run/detail/europe-west1/trendspotter-run-classification-X-ew1-dv/"
+							xlink:actuate="onRequest"
+							xlink:href="https://console.cloud.google.com/run/detail/europe-west1/trendspotter-run-classification-X-ew1-dv/"
+							xlink:show="new"
+							xlink:title="https://console.cloud.google.com/run/detail/europe-west1/trendspotter-run-classification-X-ew1-dv/"
+							xlink:type="simple">
+							<rect fill="#1168BD" height="353"
+								style="stroke:#3C7FC0;stroke-width:1.5;" width="357"
+								x="1183" y="1655" />
+							<image height="64" width="64" x="1329.5"
+								xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAC8klEQVR4Xu2WK65UQRBA3xZ6ByyBJbAEloBEEjRiFBY0BoMGiyEEEgwhjCABgXkCg0CwAyrppFOZ6tNVdb8ZcpOjhnpz+/Q9Pc1NefjuqrmxH10Xh8DeHAJ7818LPHr14/7zr/Zzy53HHx68+GY/3wBH4Hz79+XHXxGNN19+P3t7az9fm5HA3SefRKDiasgbkDHRkL+y/7oeIwHh/fc/zWGsIRW1sS1zcgSkCi1QkbTspCB6bWaznByBGsYF8lrspB3eJidHQB8DTXdluqLG2jk5AsUcg0qkosaqOfkC3WMgC7WTxVTUWC8nX4DWJMHY4W5FjTVy8gXoGNDvabeixuI5+QIFjgEthd5YY9mcQgLdY0A/puOKGkvlFBKgTb339LMdLl5FjdPrn/Zvs4QE6BjQCkjYMj+nkECBYyCPt5MlXFFjTk5Rge4xOMOVXMIVNehlukQFqAq6kml+wLScogJ0DOhKzlbUyOYUFShwDM5wJZd8RY1UTgkBOgZ0JU+oqBHPKSFAC6IreXJFDdoaTUKAjgFdyWVGRQ03p4RA4WNAVzK9tBTjnHICdAxon6Qick4hX0I55QRkR8XBMvjtEzc7PwF6yTkBWU0XesXyVDucRe5K+qUuKQH5FvvtFTtckTdjh1NQOY2EAG0n9TMQDkLZaBICtJ30GBKOMM5GkxCwj6nYyQoJu7jZaKIC1AP9b5TmXeh9ElEB6oGeR/MD4tloogLUAz2S5olUNpqogH3kabl+6DVGCAnQgmjb4v1My0YTEqAF0QUc7IcukBQhAVqQnSz8ui6Yk40mJGAff+L9o9fVmJ+NxhegHaUtpNdVIe3J+AK0o91dJNsKOc/BF+juKP2Aku2y2Wh8AbuaE+9l13bxbDSOACXR3c7uMKkuhSPQTSLYz3rZaByBbhJ0AevhVbPROAIXS5dNpdtX97N2NpqRgF7TYOmV2s822WhGAm1N46VXZGyzbDQjAWk9HkN8cllGAlfBIbA3h8DeHAJ78w8abKeGwNv/IwAAAABJRU5ErkJggg=="
+								y="1657" /><text fill="#FFFFFF" font-family="sans-serif"
+								font-size="16" font-weight="bold" lengthAdjust="spacing"
+								textLength="341" x="1191"
+								y="1736.4688">trendspotter-run-classification-X-ew1-*</text><text
+								fill="#FFFFFF" font-family="sans-serif" font-size="14"
+								lengthAdjust="spacing" textLength="0" x="1363.5"
+								y="1753.3789" /><text fill="#FFFFFF"
+								font-family="sans-serif" font-size="14"
+								lengthAdjust="spacing" textLength="125" x="1301"
+								y="1769.8672">Google Cloud Run</text>
+						</a>
+						<!--MD5=[b0839a620d13a32dc3bb90f801a07465]
+				cluster main_repo--><a href="https://github.com/loreal-techaccelerator/trendspotter-main" target="_top"
+							title="https://github.com/loreal-techaccelerator/trendspotter-main"
+							xlink:actuate="onRequest"
+							xlink:href="https://github.com/loreal-techaccelerator/trendspotter-main"
+							xlink:show="new"
+							xlink:title="https://github.com/loreal-techaccelerator/trendspotter-main"
+							xlink:type="simple">
+							<rect fill="#EBECF0" height="846" rx="12.5" ry="12.5"
+								style="stroke:#3C7FC0;stroke-width:1.5;" width="368"
+								x="565" y="484" /><text fill="#000000"
+								font-family="sans-serif" font-size="16"
+								font-weight="bold" lengthAdjust="spacing"
+								textLength="198" x="650" y="501.4688">Main Repo
+								Trendspotter</text>
+						</a>
+						<!--MD5=[f6c1ba353fa415317b0c32fe38cd8fc4]
+				cluster hosting_main_repo--><a href="https://console.cloud.google.com/run/detail/europe-west1/trendspotter-run-classification-ew1-dv/"
+							target="_top"
+							title="https://console.cloud.google.com/run/detail/europe-west1/trendspotter-run-classification-ew1-dv/"
+							xlink:actuate="onRequest"
+							xlink:href="https://console.cloud.google.com/run/detail/europe-west1/trendspotter-run-classification-ew1-dv/"
+							xlink:show="new"
+							xlink:title="https://console.cloud.google.com/run/detail/europe-west1/trendspotter-run-classification-ew1-dv/"
+							xlink:type="simple">
+							<rect fill="#1168BD" height="777"
+								style="stroke:#3C7FC0;stroke-width:1.5;" width="320"
+								x="589" y="529" />
+							<image height="64" width="64" x="717"
+								xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAABb0lEQVR4Xu3aMU4CQRjFca7ADTyCR+AIHMHS0lBbUNFqTWNjrS2NMZjYECOFiRY0FDQUFt7AL7vJ7HMfDN8S3BnCS37VOs58/1A4Ap3u5dNR6/Cj46KA1E4joH/7fjNZtswO5UmYK+Dq/mu+/GmZHcqTMAX8GwUABexDAUAB+zhkwMX44/Ft7fH8+c2jIFvAv7WRHcqTMFeAX28046GR84Lgp4C/Mg04G0zPr18jwspGAbwPskN5EuYKsFOHD4uIsLJRAO+DnK+VAgphpQIqCgAKUMB2CiiElWXAxjtp+TD3gG5x74jAlbwPShbgx/sgBYCdAeXl0QO35X1QqwF+ePfmnyIFAAVUFFCngIYUUKeAhtIE2BXA7skeO1PTBPhZKo+Ccg+w+XgUpIA6V0D8A467l1VYmWlA/CMm+2c3rFRARQFAARUF1ClAAdscMqAf/dLfEN6Zs8uc/dmOwPe2bFteEGBqhCsgZwpITQGp/QLmajc2ZEOAkAAAAABJRU5ErkJggg=="
+								y="531" /><text fill="#FFFFFF" font-family="sans-serif"
+								font-size="16" font-weight="bold" lengthAdjust="spacing"
+								textLength="304" x="597"
+								y="610.4688">europe-west1-trendspotter-c-*-gke</text><text
+								fill="#FFFFFF" font-family="sans-serif" font-size="14"
+								lengthAdjust="spacing" textLength="0" x="751"
+								y="627.3789" /><text fill="#FFFFFF"
+								font-family="sans-serif" font-size="14"
+								lengthAdjust="spacing" textLength="169" x="666.5"
+								y="643.8672">Google Cloud Composer</text>
+						</a>
+						<!--MD5=[0fddc72c5b095760eafcc57428c9d951]
+				cluster hosting_airflow-->
+						<rect fill="#1168BD" height="287"
+							style="stroke:#3C7FC0;stroke-width:1.5;" width="236" x="631"
+							y="671" />
+						<image height="51" width="51" x="723.5"
+							xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAIAAAC1w6d9AAADDklEQVR4Xs3XPW4UQRAFYF+hb8AROAJH2CMQEo6ICYhIISYhccykJGgFEglCECBBQGAHTkBCCAkRkCxPXXKpXK9/qtur3bWeJXu2p+vbnq6Z3bP04PUp5N6T9+7IGQ86Spbzr+7IScjAOkUZTPeff0bc8SPLxFSWvXh7dfHjr8uny9/FbL/8/PXnHwasH75zmdFYVkGG3zsP38RliBvMJSNBM/ZlkriMcRM+x2rJksGxycmKuM2zjywohlkdGYLyQRzLsPmwa9nhwqaQDHn66rIha+BwBLh2czBoQJaue4JNXZzIajjWDMskDGJcTYbg7dnZuBnnZamHE1/xgkpsTzDlVjIExViDR4r+21g2BLs2BVgzspR7wsqwEhpeNieTsIPjioZkyN1H75iluK6si8PbcxWjMgmzJHbZ2KTRjxXMupUMzcUmCWaPyHAfdqbHL78JS7ajTVSGWwCDbCIyx7IvccWojCmcIZl7iSuGZIwo5oLuZ0UWvzQpY0EtXRYfr7FSV8blG8F25qprvtnyQRuum9oy24zFqtJTWIxNbs/dbueWrbGKGq4rqcpwa0U99DnPpZGGxxj4dtc/clDCp2hwFuZHFS7dkfFcHPmeKBEc/pD1Q+GiDGsvA2Slua6mLOMZbYBAAcvS8OZTB4fr2ozJANIwSy5QxNRlpaKMQWu+cJbFOLl8+2KliEwEzHI42fL7YqWuTAuzyeG0HxssDGs0o4uX6W0C2zzCUpzKGCSmJX8EYkEtXiazq2lCxh91dB4u30hBNsqSqGybb2Msk0vhvlA14mVzLCeTLcEsSfCaVmVcWyPDGjJZtjU/gpZ8Q7EyOc4UFy9jh4tejk1+zGvQMbxs7bDGZky2ufmkg1JfWkwTKK7rY5BmQLZUmksHFGVt35a+MmkGZHyyO0sqTeCKPRGV8Zku0jdOFsHJsJWubEjGjmLwGXhCprjtzSvbl7GgEfTEBM4O1qk6MteM8dRwzHIyxXVkXHIoWEItHJdt8xOyJeNKh0xVxkMPnLKMxx0+BRkPOkq8bLoZ957/ozFSJrNYv8UAAAAASUVORK5CYII="
+							y="673" /><text fill="#FFFFFF" font-family="sans-serif"
+							font-size="16" font-weight="bold" lengthAdjust="spacing"
+							textLength="62" x="718" y="739.4688">AirFlow</text><text
+							fill="#FFFFFF" font-family="sans-serif" font-size="14"
+							lengthAdjust="spacing" textLength="0" x="751"
+							y="756.3789" /><text fill="#FFFFFF" font-family="sans-serif"
+							font-size="14" lengthAdjust="spacing" textLength="49" x="726.5"
+							y="772.8672">Airflow</text>
+						<!--MD5=[678b4bc069ee57fc6cd24a88015084f9]
+				cluster hosting_vertex-->
+						<rect fill="#1168BD" height="300"
+							style="stroke:#3C7FC0;stroke-width:1.5;" width="236" x="631"
+							y="982" />
+						<image height="64" width="64" x="717"
+							xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAADdElEQVR4Xu2aMY7UQBBF9wp9gznCHoEjcIQNCUfEBBuRLjEJCTGkJGgFEglCbIAEAckGJAQE3ICvLrnUqvJvu+zu8ayw9IKZtseu164qt717kZ68f9Bc+KGHxS6wNbvA1vxPAoenH67f/AT44Lc24fGLr1cvv4WOHxB4++X33f1f8OrjL791PQhdJuj4+offyggI3H7/IwL44LeuR6IX/FbGGQk8ev5Zokci+a2MMxJIucwun33y4xXOS2ABDQQwZyhrMHPyMM2oV99t8BXlC3p1ISag3Qkf/K88CHG027DxOgEBHFcCNSeQQS/GYN2GjdcJCKTcKIAZVDFkhf+JR7uNOdQpBBjI/lDiYme/f3cBKdabd/f+3E3oLqBFbJYSyASUr+9C+CrRmHHWbfoK4GSsWFXMdCFcK2mv+FCOs27TVyDxYmViTIAFyoq7TkAg5azwdyv4jIphSSMCTboNIybAGO0qbHwzAVasUZgADivFHTp+QIAVK1IFm4BZBiMOZD8wATEBLe7QlZkrMKcLrSzivgJpKFY/01EB1m30vtGxC40WJRNAHJJCoYCixARGYQKnISAgxYoKNjMaFWCpslkXYgIshTYrYolyvgArYhYoG68TEEAXus393syo3gfMOBNgqcJSq05AIAoTaEsbgdH2Whfw+y9jWgDX1BdiCVuNMgF2IyuRNJvzkD0hgNNo7ZrnD0V3mFnEWqmsWBG3/BBMOkwI4BAa311+mPRNmrVXJlDpNof8Bl+jB34fw4QArnIpINNs1kLYR05m3PQ+YMYP+c3c0T0Ty/5l9P6YngmBlNNR370pkxMTpUwbvW6T0ac5AgIOZxxgNXmC0e7k9zFpA1i9eeYKpKLblFSKTJ+JK+/7Nf1KKt3JExBIJJ1G23ziRaxgmk3o1/E/wMUEhLK3VtKpInCZnzZN9JWLWWGJQBrWP/V00rWNcdPUUm6qN8o6CwXS8KrUp1M9B5qkTclyAWE0nUans2HalKwVSCSdTB9smzYlDQRS7uUmnaCk64XmaVPSRkA4Dm9/y+gx0/KhYdqUtBRI+caE6GWOZZol9cVk5uogRGOBNCwNgM40row4tEqbkvYCaVgwlwJSCX7P9XQRuBr+7wTNB0klX9umvtJFQLOoxO/WhC4CAqZfXp9UVqPr6ShwGnaBrdkFtmYX2Jp/Hc7fWc+DBG4AAAAASUVORK5CYII="
+							y="984" /><text fill="#FFFFFF" font-family="sans-serif"
+							font-size="16" font-weight="bold" lengthAdjust="spacing"
+							textLength="68" x="715" y="1063.4688">VertexAI</text><text
+							fill="#FFFFFF" font-family="sans-serif" font-size="14"
+							lengthAdjust="spacing" textLength="0" x="751"
+							y="1080.3789" /><text fill="#FFFFFF" font-family="sans-serif"
+							font-size="14" lengthAdjust="spacing" textLength="110" x="696"
+							y="1096.8672">Google Vertexai</text>
+						<!--MD5=[77349be1bd27b81b697a0f9b3aded3c8]
+				cluster infrastructure--><a href="http://localhost:9090/infra" target="_top" title="http://localhost:9090/infra"
+							xlink:actuate="onRequest"
+							xlink:href="http://localhost:9090/infra" xlink:show="new"
+							xlink:title="http://localhost:9090/infra" xlink:type="simple">
+							<rect fill="#EBECF0" height="1107" rx="12.5" ry="12.5"
+								style="stroke:#3C7FC0;stroke-width:1.5;" width="373"
+								x="1175" y="471" /><text fill="#000000"
+								font-family="sans-serif" font-size="16"
+								font-weight="bold" lengthAdjust="spacing"
+								textLength="114" x="1304.5"
+								y="488.4688">Infrastructure</text>
+						</a>
+						<!--MD5=[c40d413ce142acdab268d2f9c8d0713a]
+				cluster googleCloudStorage-->
+						<rect fill="#1168BD" height="536"
+							style="stroke:#3C7FC0;stroke-width:1.5;" width="325" x="1199"
+							y="684" />
+						<image height="64" width="64" x="1329.5"
+							xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAABgElEQVR4Xu2YMUpEQQyG9wrexCN4BI9h6QEsrGz1Bq+xdlsbG8FGxCktLNzCRhsRxMJGA+GFIcGZ9yC8JI+Ej2V3CfP+b8nAzmz2jm5Cs5FfxSIFrEkBa1LAmhSwhgvsn9wdnN3XHF48GgIBMBK9dgSOL5+G21di+/BWdp+GQIbTq2cC4qXAstQC59e7FFicWgDe+xL4+Pr5rQo+yh6/Aiz9fw4kAPOjI/Dy/j0LGR3h2cdibfoC/IG9ktHb67A2EsA8UQXw59cRkEPSRkZHePCxWJu+gBazNjHlcSRQhINMX5wLTAEy0PykgAVrEKiJJwAB6jywoTsCDo+UNf0jZThSwJrVCTjcxHkvJBZdklUJhL9WCS8wePsvNP1A41Fg1pES50dHQB7b28joCM8+FmvTF+AP7JWM3l6HtZEA5okqoHmtIoekjYyO8OBjsTZ9AS1mbWLK40igCAeZvjgXmMKwgluJFBCLLkkdJqTANu+FvJMC1qSANSlgTQpYE17gD8UqB0G3KVJVAAAAAElFTkSuQmCC"
+							y="686" /><text fill="#FFFFFF" font-family="sans-serif"
+							font-size="16" font-weight="bold" lengthAdjust="spacing"
+							textLength="114" x="1304.5" y="765.4688">Cloud
+							Storage</text><text fill="#FFFFFF" font-family="sans-serif"
+							font-size="14" lengthAdjust="spacing" textLength="0" x="1363.5"
+							y="782.3789" /><text fill="#FFFFFF" font-family="sans-serif"
+							font-size="14" lengthAdjust="spacing" textLength="151" x="1288"
+							y="798.8672">Google Cloud Storage</text>
+						<!--MD5=[b1e3d2dcb3697de9e6328d1cb436cbc4]
+				entity frontend--><a href="https://github.com/loreal-techaccelerator/trendspotter-webapp-front" target="_top"
+							title="https://github.com/loreal-techaccelerator/trendspotter-webapp-front"
+							xlink:actuate="onRequest"
+							xlink:href="https://github.com/loreal-techaccelerator/trendspotter-webapp-front"
+							xlink:show="new"
+							xlink:title="https://github.com/loreal-techaccelerator/trendspotter-webapp-front"
+							xlink:type="simple">
+							<path d="M275,263 L415,263 L433,281 L433,378.9531 L415,396.9531 L275,396.9531 L257,378.9531 L257,281 L275,263 "
+								fill="#438DD5"
+								style="stroke:#3C7FC0;stroke-width:1.5;" />
+							<image height="48" width="48" x="321"
+								xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAADHUlEQVR4Xu2YT4oVMRDG5245gBd4B5gLzAE8gK5ciTsXs3D5dq7EneDGhcgThAEZGBhQVFAEof3oH68oq5J0Rtt/0OHj0Z1UJV/qX9LvpNx5+U/hJHf9XWyElrARWsJ/Tuju48vzZ9f6PX34Jo96SMCE82gHo4R2D15//PJtcu1w9blKS50a8pKX77/euvcqS1YxSog17j+9ErOzRxf7F+9YTDbwYtavB4lJWCp6fX7xKc9ZxRAhzZsn1aZhSb+96lfyXvLJ4YP6B400ROj2/q1mrEaDLIRTBAyTZVCXwfJQxhAhUenMCKcpuc8gxdZ+MlYgZCGshzxa5jBfmRA2128eIj7kKcK5Grwd9YwhQmxR+RL6QwbpoSNWrREZQ4QEzShj8Ezm40f6sRDWgpOWt7RaP8sEqmKoeItNWlLRr5DnrGKBkCyBI6xpARmDJFdayVqCdi/wbIVAYtK1+q4H9YQSldEkJCo+fYhZEps6qSWzFoAuQUMASd1mE8tOPNUJWWnxe9IWIYHNbFLZRuwFixKSgCogFfOXprKzJcc+qBBCJ58AZqTJBbh4eKdYrSKQEQ7lW9NirWohjYT85gLwFA2uMkm4AugVO2VhDzv48lAkxJ5aRRln2Y45E0Iz3U6pNN3suJsRYls3IlQ1tulmr0VCHZcxRPORbp3T7DL6+y4rx73ldIuEirtRBOmfCGrLeT+PBXXoBxVC5Vg8WNhoWcElkrxbSXv/Oh2jJ6S9HS/ZWaBOqMwOshqtSS2NmZfOrAUojHiKvUndl9lWjJYOIUAp84ESjg7x3s0nBtCredyToGmHHSpggZABf/mzabAd1j1cgerY5AK5HD+7WFIGk1UEOxb4cAvXjzxtFUOEWkUMTuGClq+q61/QOnfQcIX1VhxRzxgi9IuXfAycLVfFCoTsrtIqLesT6syIp/ofiv39BAwRIsvCuW0nAP2SIagP6SJFf/VEyxgiVNwnzm7+5GidAOa+/Y9/NrTCK2OUkAyAU6y1rsan6e8YVcVB85RxQuBs/hxTAi8uQOU8/31/WP0xbISWsBFawkZoCd8BxQnrYvxstngAAAAASUVORK5CYII="="273" />
+							<text fill="#FFFFFF" font-family="sans-serif" font-size="16"
+								font-weight="bold" lengthAdjust="spacing"
+								textLength="122" x="284" y="336.4688">Service
+								Default</text><text fill="#FFFFFF"
+								font-family="sans-serif" font-size="12"
+								font-style="italic" lengthAdjust="spacing"
+								textLength="40" x="325" y="351.4453">[React]</text><text
+								fill="#FFFFFF" font-family="sans-serif" font-size="14"
+								lengthAdjust="spacing" textLength="0" x="347"
+								y="367.5117" /><text fill="#FFFFFF"
+								font-family="sans-serif" font-size="14"
+								lengthAdjust="spacing" textLength="152" x="271"
+								y="384">Web Front Application</text>
+						</a>
+						<!--MD5=[4e8ecd94af36cce41665c9f079adf9fd]
+				entity backend-->
+						<path d="M701,263 L797,263 L815,281 L815,378.9531 L797,396.9531 L701,396.9531 L683,378.9531 L683,281 L701,263 "
+							fill="#438DD5" style="stroke:#3C7FC0;stroke-width:1.5;" />
+						<image height="48" width="48" x="725"
+							xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAABrklEQVR4Xu2VQUpDMRCG3916AC/gAbyAB/AAunIl7ly4cNmdK3EnuHEhUkEoSKFQUFRQBCF+9K/TkPR1sijqYsJPSTLJzDcvk7Qb7N/+K3X11N8qgDwFkKcA8hRAngLIUwB5CiBPAeRpk0Cj6fvw5mnr8K42tWvDQCmli9FLbWpXAHlaAnH2e8PHeoW0fXy/c/JQz5uV7X1AbFxTWAfnE7bbcAF0dDlN84bTOvDp1UzW6/FbvrmwquVALGaL5glRbCR/LgHh8IA02bHn9eMr90hjncy7Z+Paaq7xWFsNyJK0Nnn+tGwJgXODA0NwHV9Mq/k2ea5aV2Svhl9ZLXs61jcgY8WJTjP9JMMJqsMvVlAQTMAsgXTMRtAORDANixoSkGgUxV4pAxIKYlgCFQTtQAwJgERQALFGZZsXXw5ECJUa57UCyA5+DZB9EjumvJIMCFCzEsVoBKQyVd0QlHpCC6DiZmHGhQ3rS2R3mA7DPmt+xVKWhkREaPTQiE/QTQ+jAq98EQZz15j6rOQ96v+P080nZ7M2Af2mAshTAHkKIE8B5CmAPAWQpwDyFECevgEQhdI9tPO0MwAAAABJRU5ErkJggg=="
+							y="273" /><text fill="#FFFFFF" font-family="sans-serif"
+							font-size="16" font-weight="bold" lengthAdjust="spacing"
+							textLength="112" x="693" y="336.4688">service server</text><text
+							fill="#FFFFFF" font-family="sans-serif" font-size="12"
+							font-style="italic" lengthAdjust="spacing" textLength="49"
+							x="724.5" y="351.4453">[Nodejs]</text><text fill="#FFFFFF"
+							font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+							textLength="0" x="751" y="367.5117" /><text fill="#FFFFFF"
+							font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+							textLength="103" x="699.5" y="384">Backend server</text>
+						<!--MD5=[23ec4f1fff159d71b633b9f85a9aab58]
+				entity cache-->
+						<path d="M1197.5,241.5 C1197.5,231.5 1361.5,231.5 1361.5,231.5 C1361.5,231.5 1525.5,231.5 1525.5,241.5 L1525.5,396.9414 C1525.5,406.9414 1361.5,406.9414 1361.5,406.9414 C1361.5,406.9414 1197.5,406.9414 1197.5,396.9414 L1197.5,241.5 "
+							fill="#438DD5" style="stroke:#3C7FC0;stroke-width:1.5;" />
+						<path d="M1197.5,241.5 C1197.5,251.5 1361.5,251.5 1361.5,251.5 C1361.5,251.5 1525.5,251.5 1525.5,241.5 "
+							fill="none" style="stroke:#3C7FC0;stroke-width:1.5;" />
+						<image height="64" width="64" x="1329.5"
+							xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAACr0lEQVR4Xu2aP0rEQBSH9257AC+wB9gLeAAP4FZWwc7CwnI6K7ETbCxEVhAWRFgQBBGsffhgGOb35s2/JLPRwIcsIZl5X5Lfm3HZxfL0cdIs8NC0mAVa858ENtdvl3fvBXS3e7o2nRPzirOHyBC42X5u998F3O++zMNHOiSMs4fIEKChsbgUZgGNPyewvng5vtqJjJYByj3OzlB5EQFqAjgiQ3VgcSnkCphfBzxIUHnTEKC3SHSYkoDo0EYA64jCAujQQICivzp/xtF0rABjjzcQoOqPzp5wNB1PwD6HuADNR61KpKCN0sQ8JpaoQFdxGfTXfuAa6ENEQMFkLmT0xOjeL/MFupqFTCFXwG4qJylA75u9cJIC7po/qgBNhjuQ3L0QZ9cdE6tUUPZC8RDXt1Gb3WIB03YvhP8QFgjgGswMLuBmt1JAdBhcAPfrNQLoMKyAl11LjYDnMKAAZtdSKeA6xAW4jXq7ID6it1HMroXEsCEynbPTtFC5XgG2jHgbVTDhhUzMbgoYU779eGaIfgTE7Eahh4bVNxAIZVdHCcaoApRdPDMF8e3vQSA3xMq+BSez0GhYt4VDLJYRD3FxG0WUYIjZdQmdEG+jPQrg3WJC2XXBNZhpL6Bk1wXXYKa9gJJdF1yDmcYClEIcVsQKeA4tBWhDga9ECFfAdYgLcBsVEduogieg3BoPcS/ENeBT9QUUjLSQKbiTJWaX6WoWMoUagcTsHqhAenYPUaDsm12cPYQvsOrvy13eSqRn1yKGmImHWJmvoI1mZdcl1HDjbbRfgazsuuAazIwqUFy9OZC9EGUGB0kE12BmegKewyQFXIe4wLq/nxoUC4htlGvg1qwJKJjMhaxYoKtZyBTMLJDIUAKjZWAogU3mj/428Gu+RJTviZEMgcNkFmjNLNCaH8GH0XU1IAC1AAAAAElFTkSuQmCC"
+							y="255.5" /><text fill="#FFFFFF" font-family="sans-serif"
+							font-size="16" font-weight="bold" lengthAdjust="spacing"
+							textLength="49" x="1337" y="334.9688">Cache</text><text
+							fill="#FFFFFF" font-family="sans-serif" font-size="12"
+							font-style="italic" lengthAdjust="spacing" textLength="127"
+							x="1298" y="349.9453">[Google Memorystore]</text><text
+							fill="#FFFFFF" font-family="sans-serif" font-size="14"
+							lengthAdjust="spacing" textLength="0" x="1363.5"
+							y="366.0117" /><text fill="#FFFFFF" font-family="sans-serif"
+							font-size="14" lengthAdjust="spacing" textLength="0" x="1363.5"
+							y="382.5" /><text fill="#FFFFFF" font-family="sans-serif"
+							font-size="14" lengthAdjust="spacing" textLength="308"
+							x="1207.5"
+							y="398.9883">trendspotter-memorystore-metadata-ew1-*</text>
+						<!--MD5=[839529e8711a56e2bc1927757a72830a]
+				entity preprocessor-->
+						<path d="M592,1549 L906,1549 L924,1567 L924,1664.9531 L906,1682.9531 L592,1682.9531 L574,1664.9531 L574,1567 L592,1549 "
+							fill="#438DD5" style="stroke:#3C7FC0;stroke-width:1.5;" />
+						<image height="48" width="48" x="725"
+							xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAACLklEQVR4Xu2XPUoEQRBG925zAC/gAbyAB/AAGhmJmYGB4WZGYiaYGIisICzIgiAoKiiCsD6m2WGs6qqebmfZRefjC+ant+pR3VPdO6p2r9fKI/1otR6AUh6AUv5DQJuHtzvj++OLRzy+esJcHJw/8JBXenxHlwCR+PXja+5q8vBehpUNRCVCyiQTKmDKBgqZtk+mXDNBPwGkqJOO4DsPaGP/Zl7XJtxSAImgpIP4zgNqCPZOZ8A10+eIYTqO40Kg7vpnQFW9jKKWIAv1DESXu5y+sYqTliALATR7/myGnU1e/F7gAYEiw+cLIIHLrVM2E6jLF9RFGggRXGf0gJw1kaso0NzuT3Eglo4MUKpq0dyFQq/XjgOxfcoARWIJk1g+rcW2o/OaQL0sZz4u5ovtTL6oBavOawJZUdoiH8MsU2NoyCp/tpC178aBSCYDtES1QzOko0S9dXTHZucH4a3OawI5FSIZy8JP1kV5FbJKTW2sRZorlqnOawJZJ6+wD8inRcr7yqJlCF+NfFoqpl7nNYGwbq8AFRw/orJWtAekZ61HIHYCnTEBVKml3ReQ1RKDPaCqXkzt/4EOUBjjmwhObYITQMIOEJ0wah3Ed29AlpyzWNRLAWrvzasHCgedZuRygSrjtNVWQxBudQTf2UDJszbzRZFCy3DOzpazgSrVnyz5/cZyCVBV9yfnVBmKpH/VxYVAjdkj6XXsM7QcLqwts7t/C9S7B6CUB6CU1w7oG3EhlXyvYa6vAAAAAElFTkSuQmCC"
+							y="1559" /><text fill="#FFFFFF" font-family="sans-serif"
+							font-size="16" font-weight="bold" lengthAdjust="spacing"
+							textLength="330" x="584"
+							y="1622.4688">trendspotter-run-preprocessing-ew1-*</text><text
+							fill="#FFFFFF" font-family="sans-serif" font-size="12"
+							font-style="italic" lengthAdjust="spacing" textLength="46"
+							x="726" y="1637.4453">[Python]</text><text fill="#FFFFFF"
+							font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+							textLength="0" x="751" y="1653.5117" /><text fill="#FFFFFF"
+							font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+							textLength="168" x="667" y="1670">Pre process the raw
+							data</text>
+						<!--MD5=[70c1c8cfddc0466c52d94feb3bc80344]
+				entity classifier_X--><a href="https://github.com/loreal-techaccelerator/trendspotter-classification" target="_top"
+							title="https://github.com/loreal-techaccelerator/trendspotter-classification"
+							xlink:actuate="onRequest"
+							xlink:href="https://github.com/loreal-techaccelerator/trendspotter-classification"
+							xlink:show="new"
+							xlink:title="https://github.com/loreal-techaccelerator/trendspotter-classification"
+							xlink:type="simple">
+							<path d="M1277,1797.5 L1446,1797.5 L1464,1815.5 L1464,1946.4297 L1446,1964.4297 L1277,1964.4297 L1259,1946.4297 L1259,1815.5 L1277,1797.5 "
+								fill="#438DD5"
+								style="stroke:#3C7FC0;stroke-width:1.5;" />
+							<image height="48" width="48" x="1337.5"
+								xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAACLklEQVR4Xu2XPUoEQRBG925zAC/gAbyAB/AAGhmJmYGB4WZGYiaYGIisICzIgiAoKiiCsD6m2WGs6qqebmfZRefjC+ant+pR3VPdO6p2r9fKI/1otR6AUh6AUv5DQJuHtzvj++OLRzy+esJcHJw/8JBXenxHlwCR+PXja+5q8vBehpUNRCVCyiQTKmDKBgqZtk+mXDNBPwGkqJOO4DsPaGP/Zl7XJtxSAImgpIP4zgNqCPZOZ8A10+eIYTqO40Kg7vpnQFW9jKKWIAv1DESXu5y+sYqTliALATR7/myGnU1e/F7gAYEiw+cLIIHLrVM2E6jLF9RFGggRXGf0gJw1kaso0NzuT3Eglo4MUKpq0dyFQq/XjgOxfcoARWIJk1g+rcW2o/OaQL0sZz4u5ovtTL6oBavOawJZUdoiH8MsU2NoyCp/tpC178aBSCYDtES1QzOko0S9dXTHZucH4a3OawI5FSIZy8JP1kV5FbJKTW2sRZorlqnOawJZJ6+wD8inRcr7yqJlCF+NfFoqpl7nNYGwbq8AFRw/orJWtAekZ61HIHYCnTEBVKml3ReQ1RKDPaCqXkzt/4EOUBjjmwhObYITQMIOEJ0wah3Ed29AlpyzWNRLAWrvzasHCgedZuRygSrjtNVWQxBudQTf2UDJszbzRZFCy3DOzpazgSrVnyz5/cZyCVBV9yfnVBmKpH/VxYVAjdkj6XXsM7QcLqwts7t/C9S7B6CUB6CU1w7oG3EhlXyvYa6vAAAAAElFTkSuQmCC"
+								y="1807.5" /><text fill="#FFFFFF"
+								font-family="sans-serif" font-size="16"
+								font-weight="bold" lengthAdjust="spacing"
+								textLength="162" x="1280.5" y="1870.9688">Classifier for
+								lang X</text><text fill="#FFFFFF"
+								font-family="sans-serif" font-size="12"
+								font-style="italic" lengthAdjust="spacing"
+								textLength="46" x="1338.5"
+								y="1885.9453">[Python]</text><text fill="#FFFFFF"
+								font-family="sans-serif" font-size="14"
+								lengthAdjust="spacing" textLength="0" x="1363.5"
+								y="1902.0117" /><text fill="#FFFFFF"
+								font-family="sans-serif" font-size="14"
+								lengthAdjust="spacing" textLength="167" x="1278"
+								y="1918.5">Classify a post: skincare,</text><text
+								fill="#FFFFFF" font-family="sans-serif" font-size="14"
+								lengthAdjust="spacing" textLength="181" x="1269"
+								y="1934.9883">haircare, makeup,
+								nothing</text><text fill="#FFFFFF"
+								font-family="sans-serif" font-size="14"
+								lengthAdjust="spacing" textLength="74" x="1324.5"
+								y="1951.4766">interesting</text>
+						</a>
+						<!--MD5=[763df71d51fb1ec3fc22178d94f45d52]
+				entity trendspottermain--><a href="https://github.com/loreal-techaccelerator/trendspotter-main" target="_top"
+							title="https://github.com/loreal-techaccelerator/trendspotter-main"
+							xlink:actuate="onRequest"
+							xlink:href="https://github.com/loreal-techaccelerator/trendspotter-main"
+							xlink:show="new"
+							xlink:title="https://github.com/loreal-techaccelerator/trendspotter-main"
+							xlink:type="simple">
+							<path d="M665,792 L833,792 L851,810 L851,924.4414 L833,942.4414 L665,942.4414 L647,924.4414 L647,810 L665,792 "
+								fill="#438DD5"
+								style="stroke:#3C7FC0;stroke-width:1.5;" />
+							<image height="48" width="48" x="725"
+								xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAACLklEQVR4Xu2XPUoEQRBG925zAC/gAbyAB/AAGhmJmYGB4WZGYiaYGIisICzIgiAoKiiCsD6m2WGs6qqebmfZRefjC+ant+pR3VPdO6p2r9fKI/1otR6AUh6AUv5DQJuHtzvj++OLRzy+esJcHJw/8JBXenxHlwCR+PXja+5q8vBehpUNRCVCyiQTKmDKBgqZtk+mXDNBPwGkqJOO4DsPaGP/Zl7XJtxSAImgpIP4zgNqCPZOZ8A10+eIYTqO40Kg7vpnQFW9jKKWIAv1DESXu5y+sYqTliALATR7/myGnU1e/F7gAYEiw+cLIIHLrVM2E6jLF9RFGggRXGf0gJw1kaso0NzuT3Eglo4MUKpq0dyFQq/XjgOxfcoARWIJk1g+rcW2o/OaQL0sZz4u5ovtTL6oBavOawJZUdoiH8MsU2NoyCp/tpC178aBSCYDtES1QzOko0S9dXTHZucH4a3OawI5FSIZy8JP1kV5FbJKTW2sRZorlqnOawJZJ6+wD8inRcr7yqJlCF+NfFoqpl7nNYGwbq8AFRw/orJWtAekZ61HIHYCnTEBVKml3ReQ1RKDPaCqXkzt/4EOUBjjmwhObYITQMIOEJ0wah3Ed29AlpyzWNRLAWrvzasHCgedZuRygSrjtNVWQxBudQTf2UDJszbzRZFCy3DOzpazgSrVnyz5/cZyCVBV9yfnVBmKpH/VxYVAjdkj6XXsM7QcLqwts7t/C9S7B6CUB6CU1w7oG3EhlXyvYa6vAAAAAElFTkSuQmCC"
+								y="802" /><text fill="#FFFFFF" font-family="sans-serif"
+								font-size="16" font-weight="bold" lengthAdjust="spacing"
+								textLength="107" x="695.5"
+								y="865.4688">Trendspotter</text><text fill="#FFFFFF"
+								font-family="sans-serif" font-size="12"
+								font-style="italic" lengthAdjust="spacing"
+								textLength="46" x="726"
+								y="880.4453">[Python]</text><text fill="#FFFFFF"
+								font-family="sans-serif" font-size="14"
+								lengthAdjust="spacing" textLength="0" x="751"
+								y="896.5117" /><text fill="#FFFFFF"
+								font-family="sans-serif" font-size="14"
+								lengthAdjust="spacing" textLength="176" x="661"
+								y="913">Main repo that detect
+								and</text><text fill="#FFFFFF" font-family="sans-serif"
+								font-size="14" lengthAdjust="spacing" textLength="100"
+								x="699" y="929.4883">present trends</text>
+						</a>
+						<!--MD5=[4271ba6dea0a31ba41d20f42532698d3]
+				entity trendspotterKPI--><a href="https://github.com/loreal-techaccelerator/trendspotter-main" target="_top"
+							title="https://github.com/loreal-techaccelerator/trendspotter-main"
+							xlink:actuate="onRequest"
+							xlink:href="https://github.com/loreal-techaccelerator/trendspotter-main"
+							xlink:show="new"
+							xlink:title="https://github.com/loreal-techaccelerator/trendspotter-main"
+							xlink:type="simple">
+							<path d="M665,1116 L833,1116 L851,1134 L851,1248.4414 L833,1266.4414 L665,1266.4414 L647,1248.4414 L647,1134 L665,1116 "
+								fill="#438DD5"
+								style="stroke:#3C7FC0;stroke-width:1.5;" />
+							<image height="48" width="48" x="725"
+								xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAACLklEQVR4Xu2XPUoEQRBG925zAC/gAbyAB/AAGhmJmYGB4WZGYiaYGIisICzIgiAoKiiCsD6m2WGs6qqebmfZRefjC+ant+pR3VPdO6p2r9fKI/1otR6AUh6AUv5DQJuHtzvj++OLRzy+esJcHJw/8JBXenxHlwCR+PXja+5q8vBehpUNRCVCyiQTKmDKBgqZtk+mXDNBPwGkqJOO4DsPaGP/Zl7XJtxSAImgpIP4zgNqCPZOZ8A10+eIYTqO40Kg7vpnQFW9jKKWIAv1DESXu5y+sYqTliALATR7/myGnU1e/F7gAYEiw+cLIIHLrVM2E6jLF9RFGggRXGf0gJw1kaso0NzuT3Eglo4MUKpq0dyFQq/XjgOxfcoARWIJk1g+rcW2o/OaQL0sZz4u5ovtTL6oBavOawJZUdoiH8MsU2NoyCp/tpC178aBSCYDtES1QzOko0S9dXTHZucH4a3OawI5FSIZy8JP1kV5FbJKTW2sRZorlqnOawJZJ6+wD8inRcr7yqJlCF+NfFoqpl7nNYGwbq8AFRw/orJWtAekZ61HIHYCnTEBVKml3ReQ1RKDPaCqXkzt/4EOUBjjmwhObYITQMIOEJ0wah3Ed29AlpyzWNRLAWrvzasHCgedZuRygSrjtNVWQxBudQTf2UDJszbzRZFCy3DOzpazgSrVnyz5/cZyCVBV9yfnVBmKpH/VxYVAjdkj6XXsM7QcLqwts7t/C9S7B6CUB6CU1w7oG3EhlXyvYa6vAAAAAElFTkSuQmCC"
+								y="1126" /><text fill="#FFFFFF" font-family="sans-serif"
+								font-size="16" font-weight="bold" lengthAdjust="spacing"
+								textLength="107" x="695.5"
+								y="1189.4688">Trendspotter</text><text fill="#FFFFFF"
+								font-family="sans-serif" font-size="12"
+								font-style="italic" lengthAdjust="spacing"
+								textLength="46" x="726"
+								y="1204.4453">[Python]</text><text fill="#FFFFFF"
+								font-family="sans-serif" font-size="14"
+								lengthAdjust="spacing" textLength="0" x="751"
+								y="1220.5117" /><text fill="#FFFFFF"
+								font-family="sans-serif" font-size="14"
+								lengthAdjust="spacing" textLength="176" x="661"
+								y="1237">Main repo that detect
+								and</text><text fill="#FFFFFF" font-family="sans-serif"
+								font-size="14" lengthAdjust="spacing" textLength="100"
+								x="699" y="1253.4883">present trends</text>
+						</a>
+						<!--MD5=[1e880088a5e95a14aa5718a9b6aa003f]
+				entity databasekpi-->
+						<path d="M1257,518.5 C1257,508.5 1361.5,508.5 1361.5,508.5 C1361.5,508.5 1466,508.5 1466,518.5 L1466,657.4531 C1466,667.4531 1361.5,667.4531 1361.5,667.4531 C1361.5,667.4531 1257,667.4531 1257,657.4531 L1257,518.5 "
+							fill="#438DD5" style="stroke:#3C7FC0;stroke-width:1.5;" />
+						<path d="M1257,518.5 C1257,528.5 1361.5,528.5 1361.5,528.5 C1361.5,528.5 1466,528.5 1466,518.5 "
+							fill="none" style="stroke:#3C7FC0;stroke-width:1.5;" />
+						<image height="64" width="64" x="1329.5"
+							xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAADWElEQVR4Xu2aQWoVQRRFs7dagBtwAW7ABfwFxJGj4MxBBg57lpE4E5w4EIkgBEQICIIIjr3kYlH2fa/6VXXV/wQ+HEJoOtX3/K7/3usmF+ny06PmQg89Ls4Cp+YsUOXZ669Ajw9klgByX727Xz7+xM8XN9+fvvqi5wxhvACyMjrB72SSxkgB5EPKHH0lQA7LtycvP+vfdjNGAJk0uikwXGOvAHIgjeauC5Dnb+72a/QLbEbfFMgaunicTgFc9fr9D42raGKT7mrbLBCPDnCLcL7GNcG3qEOjQQCrx6OXRZObTRObtGqEBFalvQ7ONOs9DjZpmIsoIQGs+OHut2YNRi9hr9DEJbzPsNU/V6ICt/d/ADTe3v4yozfdd0+j3KJTBLJGvgwu2V0HOS/l6Ksv2ESBrBG8Rh2vrAUX7xegA3bCnm7qpT+SwJ5bUYl+bAGCL3fwksF+ElwtJIB9oolNoFH5TuennAiVdUpCAunh2lhUE5vgzFVVHdIKTaICBJ8KPmNNbIJ9ghyVRwXlqrGfpFYB0qShKU1g2xqd9AgQfMlQfzRxq8CeVpiCAmz7Wu+5PeoamngzOpcdWYVYRr22hSOVOqu5ycF5LMbxicMcNcylWWciAuankKS1mVdRmgWI17aggRCegDflm63NXF/pFMga5iYumwbTeKW90tpGCtQ78SJti8CtEn2ztY0U8O5AREPh04wmnihQvwMl7L66AmnqyiMFUrhtEW0awbdgxOsPJlEBstm2MmXTmBSdtAmkrbalGlofPbzWVqdZgMQ1NKjSF52EBHBbzQqjbUvRuCVeV8bK5hWVkAA/bK/C1J91NHSObq6WK9XIKlSWUa0wxNPQ6F5rW1WqkQKr7e6Npcl61llF9zbG4d8QegyBUkNPTv83Daap1Efv/cp0gazhXYlNY/HfL3jRxwtsjhLeWIptZu60yhA6RaByB0qWwDy3OYROEUCsptcQpkY8+uJXKiUkQLTCVCibRnB+JteN71caBEjrWDp1kksdAiQ+lmpQpS866RRIsZdCEYE9k1zaI0A2x1JNPCo62StAKmOp5l78IbSDMQLE1NDowfoYZKQAWY2lOXq8tDcxXoDkpsHoTaW9iVkC5PDwzx56fCBzBY7AWeDUnAVOzV/0DXAstPofzwAAAABJRU5ErkJggg=="
+							y="532.5" /><text fill="#FFFFFF" font-family="sans-serif"
+							font-size="16" font-weight="bold" lengthAdjust="spacing"
+							textLength="75" x="1324" y="611.9688">Database</text><text
+							fill="#FFFFFF" font-family="sans-serif" font-size="12"
+							font-style="italic" lengthAdjust="spacing" textLength="106"
+							x="1308.5" y="626.9453">[Google
+							Cloud Sql]</text><text fill="#FFFFFF" font-family="sans-serif"
+							font-size="14" lengthAdjust="spacing" textLength="0" x="1363.5"
+							y="643.0117" /><text fill="#FFFFFF" font-family="sans-serif"
+							font-size="14" lengthAdjust="spacing" textLength="185" x="1271"
+							y="659.5">Store all the KPI and trends</text>
+						<!--MD5=[a3d4761ea5b73b161168f68a8dcfb545]
+				entity vpc1-->
+						<rect fill="#1168BD" height="135.8203"
+							style="stroke:#3C7FC0;stroke-width:1.5;" width="217" x="1253"
+							y="1239" />
+						<image height="64" width="64" x="1329.5"
+							xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAABkUlEQVR4Xu2aMU7DMBSGewVuwBE4go/AERgZETMDE2uYu3TpTFcWhEBiQRUMSDB06cDSoQM36K9ashz/oomVEPeVX/pUtVXee/7U5tlOMjo6fzDNiL+yhQRKc3ACZ+OP6n7JXN8tLqZfzMnVCydtD8K51o5yp7dvSYZUAMHvyx9mNl9Nnr8Zd/PKw2oPBsS1wOPnmmsBOCQZJPDPBRDOtQYVwEmPExHjwKt/kwUGxLUGFfAdI4CPfMwOkJZrSYDSSeBX9k7AO7QHGbjWoAKuWxs1Pw9IQAJ7J4DlAJIGEOAjQ99I1gLHl088rPYgPC4HfGsK5bBUicvx9iMVSEBA0iX5mH5JyvGIExoEIG1bwPwvYF4Af6F45h9GIK7Y2OWaBeIuhox8TL/4LhSQgARykUAdCWQjgToSyEYCdSSQjQTqYDleViB7P8Cb+tl8FV+ScH+8qZ9sL5iGctmb+sr6ZRUJ5CEBCVTWb3BUB3aLSQISyBUw/6iB69ZGXfGHPToKlJ8HJNC3gPmH/swhgdJIoDQbArUS++BxmjsAAAAASUVORK5CYII="
+							y="1249" /><text fill="#FFFFFF" font-family="sans-serif"
+							font-size="16" font-weight="bold" lengthAdjust="spacing"
+							textLength="32" x="1345.5" y="1328.4688">VPC</text><text
+							fill="#FFFFFF" font-family="sans-serif" font-size="14"
+							lengthAdjust="spacing" textLength="0" x="1363.5"
+							y="1345.3789" /><text fill="#FFFFFF" font-family="sans-serif"
+							font-size="14" lengthAdjust="spacing" textLength="193" x="1267"
+							y="1361.8672">Google Virtual Private Cloud</text>
+						<!--MD5=[e14bfcad9336735f4435ed6c525b255e]
+				entity iam-->
+						<rect fill="#1168BD" height="152.3086"
+							style="stroke:#3C7FC0;stroke-width:1.5;" width="214" x="1254.5"
+							y="1410" />
+						<image height="64" width="64" x="1329.5"
+							xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAADBklEQVR4Xu2aLZIUMRiG9wq5wRyBI3CEOQISSaERrbCLxrRBr8YgoAqDwCAQGAQH4a39alK9eZPvJ8n0MNRUPWan0j3vk3xJJ71zl15+umru+KPr4iZwaW4CKsd335+//cafT+QsAs/efH3x/sf9x9/rlz/Lwy+AP/EhtxxnsgD6G3GROyMCwqsPP6cPyByBw+vPucsLtgIZlBYu4ft0MCqAwkC/cm5dQJhSV50C6D/04vK0Wqpw7gL4jwxIWGA7QT1w4hZ9AxIQ4AnqgYPqRCe6LaBMUA8c0YmzrgwBROdMIThZCAwIp9piCHR3PC6U2QnQC5zMjz4O8wVwCRex1CGH87CrANor3ycrbxTlhmm6gLkOdozDfgLmhEuPtcQRdfYTMLtfgCenVNhPQP+mTHQm6LedJoCWfHmVf1RgvfYRWP+DOXD1q9DqGIRo9+8tgPaKQ8dTbNlZQMA0Le4jJ08O5+ECAutpN4ouB93RhcsIZDhQlCGBJX6GLOBAUTjVFkNAf2XSItePvFocPNNwqi2GQOhIidz6m4XD6WWMH/PZYgjg+zhoFV55FOQFhwf0CF++xRBAd3LWgnv1FNYCl3hWJz6dFhgCgBOPpxc82wqlIAVbYFEXIrOHdMxa4ksKbAF9GnR3v6APgjkBkkcA38G5M9w+CufOmPWTPAJJrSJuHIVzZ7gx4xJApXL0cws412WXQGpvirhlFI4uOGeXV6A1lbllFI6++Kav4BVIjUHgZlE4vb/7U0igOhMGnwNYZzi9s/qFgEBqbE49i12V6kPA3L0VxARSrZD6dhPV9EukeISwQHV7p5/lmWrlLI6tGxMWSO0VyVm7rf2P8/KCHoHUPuiggpUaOLT/T+NfNws6BVLbAeVU7UvlLNadPo0IpHYtiYYcL81jZNXWz5BAajwctnDiLR2ztmBUIJ0WRI6uC2C2hBauFhMEBFQCPyJaAoNls2WaQGr8KKGIjgbKMtXBTAEhz9pC4Oj77UOU+QIZlPjx8acGU2q9xRkF9uEmcGluApfmLxZ1MwMRLZipAAAAAElFTkSuQmCC"
+							y="1420" /><text fill="#FFFFFF" font-family="sans-serif"
+							font-size="16" font-weight="bold" lengthAdjust="spacing"
+							textLength="166" x="1278.5" y="1499.4688">access
+							management</text><text fill="#FFFFFF" font-family="sans-serif"
+							font-size="14" lengthAdjust="spacing" textLength="0" x="1363.5"
+							y="1516.3789" /><text fill="#FFFFFF" font-family="sans-serif"
+							font-size="14" lengthAdjust="spacing" textLength="186"
+							x="1268.5" y="1532.8672">Google Identity And Access</text><text
+							fill="#FFFFFF" font-family="sans-serif" font-size="14"
+							lengthAdjust="spacing" textLength="89" x="1317"
+							y="1549.3555">Management</text>
+						<!--MD5=[ba1dea265d37be4e5ab93072e21c2cbc]
+				entity googleCloudStoragePublication-->
+						<path d="M1217,828.5 C1217,818.5 1361.5,818.5 1361.5,818.5 C1361.5,818.5 1506,818.5 1506,828.5 L1506,983.9414 C1506,993.9414 1361.5,993.9414 1361.5,993.9414 C1361.5,993.9414 1217,993.9414 1217,983.9414 L1217,828.5 "
+							fill="#438DD5" style="stroke:#3C7FC0;stroke-width:1.5;" />
+						<path d="M1217,828.5 C1217,838.5 1361.5,838.5 1361.5,838.5 C1361.5,838.5 1506,838.5 1506,828.5 "
+							fill="none" style="stroke:#3C7FC0;stroke-width:1.5;" />
+						<image height="64" width="64" x="1329.5"
+							xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAABfElEQVR4Xu2YsUoEQQyG7918DR/AF/Ax9AHEzsLCcjurw87SwmIEwebgQFC08BAEDYQNQ4IzuxA2yZLwcdwdYfb/jgzczObo7DE0G/lVLFLAmhSwJgWsSQFruMDx5dPJ1XPN6c2LIRAAI9FrR+D8djc8vBHb8lH2X4ZAhou7PQHxUmBZaoHr+9cUWJxaAN77Evg8/PxWBR9lj18Blv4/BxKA+dER2L1/z0JGR3j2sVibvgB/YK9k9PY6rI0EME9UAfz5dQTkkLSR0REefCzWpi+gxaxNTHkcCRThINMX5wJTgAw0PylgwRoEauIJQIA6D2zojoDDI2VN/0gZjhSwZnUCDjdx3guJRZdkVQLhr1XCCwze/gtNP9B4FJh1pMT50RGQx/Y2MjrCs4/F2vQF+AN7JaO312FtJIB5ogpoXqvIIWkjoyM8+FisTV9Ai1mbmPI4EijCQaYvzgWmMKzgViIFxKJLUocJKbDNeyHvpIA1KWBNCliTAtaEF/gDdVBfvztai8sAAAAASUVORK5CYII="
+							y="842.5" /><text fill="#FFFFFF" font-family="sans-serif"
+							font-size="16" font-weight="bold" lengthAdjust="spacing"
+							textLength="93" x="1315" y="921.9688">publication</text><text
+							fill="#FFFFFF" font-family="sans-serif" font-size="12"
+							font-style="italic" lengthAdjust="spacing" textLength="132"
+							x="1295.5" y="936.9453">[Google
+							Cloud Storage]</text><text fill="#FFFFFF"
+							font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+							textLength="0" x="1363.5" y="953.0117" /><text fill="#FFFFFF"
+							font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+							textLength="0" x="1363.5" y="969.5" /><text fill="#FFFFFF"
+							font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+							textLength="269" x="1227"
+							y="985.9883">trendspotter-gcs-publications-ew1-dv</text>
+						<!--MD5=[dec3c01acf1fdbba2ff27a05e361cb40]
+				entity googleCloudStorageClassification-->
+						<path d="M1215,1038.5 C1215,1028.5 1361.5,1028.5 1361.5,1028.5 C1361.5,1028.5 1508,1028.5 1508,1038.5 L1508,1193.9414 C1508,1203.9414 1361.5,1203.9414 1361.5,1203.9414 C1361.5,1203.9414 1215,1203.9414 1215,1193.9414 L1215,1038.5 "
+							fill="#438DD5" style="stroke:#3C7FC0;stroke-width:1.5;" />
+						<path d="M1215,1038.5 C1215,1048.5 1361.5,1048.5 1361.5,1048.5 C1361.5,1048.5 1508,1048.5 1508,1038.5 "
+							fill="none" style="stroke:#3C7FC0;stroke-width:1.5;" />
+						<image height="64" width="64" x="1329.5"
+							xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAABfElEQVR4Xu2YsUoEQQyG7918DR/AF/Ax9AHEzsLCcjurw87SwmIEwebgQFC08BAEDYQNQ4IzuxA2yZLwcdwdYfb/jgzczObo7DE0G/lVLFLAmhSwJgWsSQFruMDx5dPJ1XPN6c2LIRAAI9FrR+D8djc8vBHb8lH2X4ZAhou7PQHxUmBZaoHr+9cUWJxaAN77Evg8/PxWBR9lj18Blv4/BxKA+dER2L1/z0JGR3j2sVibvgB/YK9k9PY6rI0EME9UAfz5dQTkkLSR0REefCzWpi+gxaxNTHkcCRThINMX5wJTgAw0PylgwRoEauIJQIA6D2zojoDDI2VN/0gZjhSwZnUCDjdx3guJRZdkVQLhr1XCCwze/gtNP9B4FJh1pMT50RGQx/Y2MjrCs4/F2vQF+AN7JaO312FtJIB5ogpoXqvIIWkjoyM8+FisTV9Ai1mbmPI4EijCQaYvzgWmMKzgViIFxKJLUocJKbDNeyHvpIA1KWBNCliTAtaEF/gDdVBfvztai8sAAAAASUVORK5CYII="
+							y="1052.5" /><text fill="#FFFFFF" font-family="sans-serif"
+							font-size="16" font-weight="bold" lengthAdjust="spacing"
+							textLength="108" x="1307.5"
+							y="1131.9688">classification</text><text fill="#FFFFFF"
+							font-family="sans-serif" font-size="12" font-style="italic"
+							lengthAdjust="spacing" textLength="132" x="1295.5"
+							y="1146.9453">[Google Cloud Storage]</text><text fill="#FFFFFF"
+							font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+							textLength="0" x="1363.5" y="1163.0117" /><text fill="#FFFFFF"
+							font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+							textLength="0" x="1363.5" y="1179.5" /><text fill="#FFFFFF"
+							font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+							textLength="273" x="1225"
+							y="1195.9883">trendspotter-gcs-classification-ew1-dv</text>
+						<!--MD5=[8fc3522a43f8c7199df5e09e5bb0188e]
+				entity user-->
+						<rect fill="#08427B" height="86.8438"
+							style="stroke:#073B6F;stroke-width:1.5;" width="114" x="7"
+							y="286.5" />
+						<image height="48" width="48" x="40"
+							xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAACD0lEQVR4Xu2YoU4EMRCGT+4j8Ai8AhaH4QHgAUjQuFMECUgMIUgwJAgMhgQsAYUiJCiQIBBY+EITsjfTdme6V24v4c8vyGbb+ZjOtN0bNcvjQXmkH83WvYBWto6PLm6v7p7uH1/w2fXD+PBycX1Pv2l3IdDm/vn7x+dXQiAubRzoURa7gRZWd0iGRIiJbOnhnfYBQZNJjNbuyY2eJG8fkDE3bbG4ep6MHUAsgYxmE3nVs6VsBWJSGccsOlFPmLIViMzLOB7pCVO2AtHJMohH7Fh6zqitQK7m0rJvAVYgGcEpe//PLdDz65sM4pF9N7ICcXDKIB5Nv6j7tD0NoSdM2QrU9Gg0ewE1LqBhHR3BBdvj2vapnidjHxD/q6vd7Pvhr31AwcY8eXMTXAKECZZJFXuEq27aLgQK5uLMohCenGGuGewOxSjBvYBqeG6B+Nqiblggdjnc+ZXDy+FNFpFzw76O3UBAROuXh6FoiAcf5g9eTvUgzy0nWg6I8cXHRUpg5bOVBCo+KDpFajOf23GgPme7RSQ+lacIENUgJ6gg1k6HjgOlqnLqip4tEuhv0hNEMXUD0clyXE3p6pZA0S2nnvTlXwLJEZWlb7cTQH1+USgTN4VhAenm/wea1OCAOmqo6fE1WCb9WSKBah+rbUWPWAmE2Rvk0ApiB45eOyNAzU8xcTvj8KvkKEoOaIYeHNA3ZuygAvFMUO0AAAAASUVORK5CYII="
+							y="296.5" /><text fill="#FFFFFF" font-family="sans-serif"
+							font-size="16" font-weight="bold" lengthAdjust="spacing"
+							textLength="94" x="17" y="359.9688">Prospective</text>
+						<!--MD5=[8bf231b61cdcb9985487657c51012b5f]
+				link backend to cache-->
+						<path d="M815.04,328.83 C903.51,327.23 1064.97,324.32 1189.36,322.08 "
+							fill="none" id="backend-to-cache"
+							style="stroke:#000000;stroke-width:1.0;stroke-dasharray:1.0,3.0;" />
+						<polygon fill="#000000"
+							points="1197.5,321.94,1189.4477,319.0833,1189.5548,325.0824,1197.5,321.94"
+							style="stroke:#000000;stroke-width:1.0;" /><text fill="#000000"
+							font-family="sans-serif" font-size="12" lengthAdjust="spacing"
+							textLength="24" x="1041.5" y="320.6016">****</text>
+						<!--MD5=[bd606b2753a479dfaff996c7926d0075]
+				link frontend to backend-->
+						<path d="M433.23,330 C505.35,330 606.6,330 674.61,330 " fill="none"
+							id="frontend-to-backend"
+							style="stroke:#000000;stroke-width:1.0;stroke-dasharray:1.0,3.0;" />
+						<polygon fill="#000000"
+							points="682.74,330,674.74,327,674.74,333,682.74,330"
+							style="stroke:#000000;stroke-width:1.0;" /><text fill="#000000"
+							font-family="sans-serif" font-size="12" lengthAdjust="spacing"
+							textLength="24" x="470.5" y="312.6016">****</text><text
+							fill="#000000" font-family="sans-serif" font-size="12"
+							font-style="italic" lengthAdjust="spacing" textLength="37"
+							x="464" y="326.7344">[https]</text>
+						<!--MD5=[122aa4dd056032f23668896f93924b57]
+				link user to frontend-->
+						<path d="M121.12,330 C157.67,330 206.29,330 248.78,330 " fill="none"
+							id="user-to-frontend"
+							style="stroke:#666666;stroke-width:1.0;" />
+						<polygon fill="#666666"
+							points="256.92,330,248.92,327,248.92,333,256.92,330"
+							style="stroke:#666666;stroke-width:1.0;" /><text fill="#666666"
+							font-family="sans-serif" font-size="12" lengthAdjust="spacing"
+							textLength="24" x="152" y="326.6016">****</text>
+						<!--MD5=[6eb5349e25d5625c72d80eab7b75c3cb]
+				link backend to databasekpi-->
+						<path d="M815.04,357.49 C918.67,401.28 1122.47,487.41 1249.5,541.09 "
+							fill="none" id="backend-to-databasekpi"
+							style="stroke:#666666;stroke-width:1.0;" />
+						<polygon fill="#666666"
+							points="1257,544.26,1250.8023,538.3788,1248.4634,543.9042,1257,544.26"
+							style="stroke:#666666;stroke-width:1.0;" /><text fill="#666666"
+							font-family="sans-serif" font-size="12" font-weight="bold"
+							lengthAdjust="spacing" textLength="92" x="1007.5"
+							y="431.6016">fetch
+							elements</text>
+						<!--MD5=[f3e064277bcd8e36edb330a0e5305903]
+				link preprocessor to googleCloudStoragePublication-->
+						<path d="M800.8,1548.92 C850.43,1482.44 927.16,1377.05 988,1282 C1062.8,1165.13 1041.52,1105.63 1143,1011 C1162.54,992.78 1185.82,977.13 1209.78,963.89 "
+							fill="none" id="preprocessor-to-googleCloudStoragePublication"
+							style="stroke:#666666;stroke-width:1.0;" />
+						<polygon fill="#666666"
+							points="1216.89,960.04,1208.4277,961.219,1211.2896,966.4925,1216.89,960.04"
+							style="stroke:#666666;stroke-width:1.0;" /><text fill="#666666"
+							font-family="sans-serif" font-size="12" font-weight="bold"
+							lengthAdjust="spacing" textLength="92" x="1007.5"
+							y="1044.6016">write
+							elements</text>
+						<!--MD5=[3cfb85b6069b99de291d9a4104abd596]
+				link preprocessor to hosting_classifier_X-->
+						<path d="M924.21,1600.68 C991.52,1604.47 1063.59,1622.12 1111,1672 C1158.56,1722.04 1093.8,1932.58 1143,1981 C1147.255,1985.1875 1153.7559,1988.6322 1161.8857,1991.4535 C1165.9506,1992.8641 1170.4226,1994.1189 1175.2248,1995.2327 C1177.6258,1995.7896 1180.1094,1996.3113 1182.6659,1996.7997 "
+							fill="none" id="preprocessor-to-hosting_classifier_X"
+							style="stroke:#666666;stroke-width:1.0;" />
+						<polygon fill="#666666"
+							points="1182.6659,1996.7997,1175.3708,1992.3519,1174.2451,1998.2454,1182.6659,1996.7997"
+							style="stroke:#666666;stroke-width:1.0;" /><text fill="#666666"
+							font-family="sans-serif" font-size="12" font-weight="bold"
+							lengthAdjust="spacing" textLength="21" x="1043"
+							y="1594.6016">call</text><text fill="#666666"
+							font-family="sans-serif" font-size="12" font-style="italic"
+							lengthAdjust="spacing" textLength="37" x="1035"
+							y="1608.7344">[https]</text>
+						<!--MD5=[c67cabee16cf12cf8cecb4c2b574558c]
+				link googleCloudStoragePublication to hosting-->
+						<path d="M1216.84,948.4 C1187.9,963.56 1160.9,983.88 1143,1011 C1100.17,1075.89 1166.62,1655.68 1111,1710 C1054.045,1765.63 964.755,1768.0325 889.2288,1756.3288 C851.4656,1750.4769 817.1434,1741.0984 792.0245,1733.0836 C785.7448,1731.0799 780.0403,1729.1614 775.001,1727.4045 C773.7412,1726.9653 772.5229,1726.5362 771.3477,1726.1184 "
+							fill="none" id="googleCloudStoragePublication-to-hosting"
+							style="stroke:#00CC00;stroke-width:1.0;" />
+						<polygon fill="#00CC00"
+							points="771.3477,1726.1184,777.8806,1731.6249,779.8904,1725.9715,771.3477,1726.1184"
+							style="stroke:#00CC00;stroke-width:1.0;" /><text fill="#00CC00"
+							font-family="sans-serif" font-size="12" lengthAdjust="spacing"
+							textLength="0" x="1001" y="1692.6016" /><text fill="#00CC00"
+							font-family="sans-serif" font-size="12" font-weight="bold"
+							lengthAdjust="spacing" textLength="109" x="1001"
+							y="1692.6016">send
+							cloudevents</text><text fill="#00CC00" font-family="sans-serif"
+							font-size="12" font-style="italic" lengthAdjust="spacing"
+							textLength="39" x="1034" y="1706.7344">[event]</text>
+						<!--MD5=[b4c27c4f9fa51915e57b9c8414518f69]
+				link trendspottermain to googleCloudStoragePublication-->
+						<path d="M851.15,873.46 C948.51,879.68 1096.99,889.17 1208.57,896.29 "
+							fill="none"
+							id="trendspottermain-to-googleCloudStoragePublication"
+							style="stroke:#666666;stroke-width:1.0;" />
+						<polygon fill="#666666"
+							points="1216.87,896.82,1209.0793,893.3121,1208.6937,899.2997,1216.87,896.82"
+							style="stroke:#666666;stroke-width:1.0;" /><text fill="#666666"
+							font-family="sans-serif" font-size="12" font-weight="bold"
+							lengthAdjust="spacing" textLength="92" x="1007.5"
+							y="865.6016">Write Raw
+							data</text><text fill="#666666" font-family="sans-serif"
+							font-size="12" font-style="italic" lengthAdjust="spacing"
+							textLength="27" x="1040" y="879.7344">[gcs]</text>
+						<rect fill="#FFFFFF" height="162.3945" rx="5" ry="5"
+							style="stroke:#FFFFFF;stroke-width:1.0;" width="212" x="1368"
+							y="2077" />
+						<rect height="16.4883" style="stroke:none;stroke-width:1.0;fill:none;"
+							width="200" x="1374" y="2084" /><text fill="#000000"
+							font-family="sans-serif" font-size="14" font-weight="bold"
+							lengthAdjust="spacing" textLength="51" x="1374"
+							y="2097.5352">Legend</text><text fill="#FFFFFF"
+							font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+							textLength="0" x="1429" y="2097.5352" />
+						<rect fill="#08427B" height="16.4883"
+							style="stroke:none;stroke-width:1.0;" width="200" x="1374"
+							y="2100.4883" /><text fill="#073B6F" font-family="sans-serif"
+							font-size="14" lengthAdjust="spacing" textLength="8" x="1378"
+							y="2114.0234">▯</text><text fill="#FFFFFF"
+							font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+							textLength="0" x="1390" y="2114.0234" /><text fill="#FFFFFF"
+							font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+							textLength="48" x="1394" y="2114.0234">person</text><text
+							fill="#FFFFFF" font-family="sans-serif" font-size="14"
+							lengthAdjust="spacing" textLength="0" x="1450" y="2114.0234" />
+						<rect fill="#1168BD" height="16.4883"
+							style="stroke:none;stroke-width:1.0;" width="200" x="1374"
+							y="2116.9766" /><text fill="#3C7FC0" font-family="sans-serif"
+							font-size="14" lengthAdjust="spacing" textLength="8" x="1378"
+							y="2130.5117">▯</text><text fill="#FFFFFF"
+							font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+							textLength="0" x="1390" y="2130.5117" /><text fill="#FFFFFF"
+							font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+							textLength="47" x="1394" y="2130.5117">system</text><text
+							fill="#FFFFFF" font-family="sans-serif" font-size="14"
+							lengthAdjust="spacing" textLength="0" x="1449" y="2130.5117" />
+						<rect fill="#438DD5" height="16.4883"
+							style="stroke:none;stroke-width:1.0;" width="200" x="1374"
+							y="2133.4648" /><text fill="#3C7FC0" font-family="sans-serif"
+							font-size="14" lengthAdjust="spacing" textLength="8" x="1378"
+							y="2147">▯</text><text fill="#FFFFFF" font-family="sans-serif"
+							font-size="14" lengthAdjust="spacing" textLength="0" x="1390"
+							y="2147" /><text fill="#FFFFFF" font-family="sans-serif"
+							font-size="14" lengthAdjust="spacing" textLength="65" x="1394"
+							y="2147">container</text><text fill="#FFFFFF"
+							font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+							textLength="0" x="1467" y="2147" /><text fill="#00CC00"
+							font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+							textLength="14" x="1378" y="2163.4883">─</text><text
+							fill="#FFFFFF" font-family="sans-serif" font-size="14"
+							lengthAdjust="spacing" textLength="0" x="1396"
+							y="2163.4883" /><text fill="#00CC00" font-family="sans-serif"
+							font-size="14" lengthAdjust="spacing" textLength="64" x="1404"
+							y="2163.4883">Event Arc</text><text fill="#FFFFFF"
+							font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+							textLength="0" x="1476" y="2163.4883" /><text fill="#000000"
+							font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+							textLength="14" x="1378" y="2179.9766">─</text><text
+							fill="#FFFFFF" font-family="sans-serif" font-size="14"
+							lengthAdjust="spacing" textLength="0" x="1396"
+							y="2179.9766" /><text fill="#000000" font-family="sans-serif"
+							font-size="14" lengthAdjust="spacing" textLength="166" x="1400"
+							y="2179.9766">Internal Communication</text><text fill="#FFFFFF"
+							font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+							textLength="0" x="1574" y="2179.9766" />
+						<rect fill="#F0E68C" height="16.4883"
+							style="stroke:none;stroke-width:1.0;" width="200" x="1374"
+							y="2182.9297" /><text fill="#F0E68C" font-family="sans-serif"
+							font-size="14" lengthAdjust="spacing" textLength="8" x="1378"
+							y="2196.4648">▯</text><text fill="#FFFFFF"
+							font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+							textLength="0" x="1390" y="2196.4648" /><text fill="#66622E"
+							font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+							textLength="33" x="1394" y="2196.4648">code</text><text
+							fill="#FFFFFF" font-family="sans-serif" font-size="14"
+							lengthAdjust="spacing" textLength="0" x="1435" y="2196.4648" />
+						<rect fill="#EBECF0" height="16.4883"
+							style="stroke:none;stroke-width:1.0;" width="200" x="1374"
+							y="2199.418" /><text fill="#EBECF0" font-family="sans-serif"
+							font-size="14" lengthAdjust="spacing" textLength="8" x="1378"
+							y="2212.9531">▯</text><text fill="#FFFFFF"
+							font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+							textLength="0" x="1390" y="2212.9531" /><text fill="#000000"
+							font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+							textLength="53" x="1394" y="2212.9531">Domain</text><text
+							fill="#FFFFFF" font-family="sans-serif" font-size="14"
+							lengthAdjust="spacing" textLength="0" x="1455" y="2212.9531" />
+						<rect fill="#D3D3D3" height="16.4883"
+							style="stroke:none;stroke-width:1.0;" width="200" x="1374"
+							y="2215.9063" /><text fill="#D3D3D3" font-family="sans-serif"
+							font-size="14" lengthAdjust="spacing" textLength="8" x="1378"
+							y="2229.4414">▯</text><text fill="#FFFFFF"
+							font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+							textLength="0" x="1390" y="2229.4414" /><text fill="#000000"
+							font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+							textLength="79" x="1394" y="2229.4414">GCP Project</text><text
+							fill="#FFFFFF" font-family="sans-serif" font-size="14"
+							lengthAdjust="spacing" textLength="0" x="1481" y="2229.4414" />
+						<line style="stroke:#00000000;stroke-width:1.0;" x1="1374" x2="1574"
+							y1="2084" y2="2084" />
+						<line style="stroke:#00000000;stroke-width:1.0;" x1="1374" x2="1574"
+							y1="2100.4883" y2="2100.4883" />
+						<line style="stroke:#00000000;stroke-width:1.0;" x1="1374" x2="1574"
+							y1="2116.9766" y2="2116.9766" />
+						<line style="stroke:#00000000;stroke-width:1.0;" x1="1374" x2="1574"
+							y1="2133.4648" y2="2133.4648" />
+						<line style="stroke:#00000000;stroke-width:1.0;" x1="1374" x2="1574"
+							y1="2149.9531" y2="2149.9531" />
+						<line style="stroke:#00000000;stroke-width:1.0;" x1="1374" x2="1574"
+							y1="2166.4414" y2="2166.4414" />
+						<line style="stroke:#00000000;stroke-width:1.0;" x1="1374" x2="1574"
+							y1="2182.9297" y2="2182.9297" />
+						<line style="stroke:#00000000;stroke-width:1.0;" x1="1374" x2="1574"
+							y1="2199.418" y2="2199.418" />
+						<line style="stroke:#00000000;stroke-width:1.0;" x1="1374" x2="1574"
+							y1="2215.9063" y2="2215.9063" />
+						<line style="stroke:#00000000;stroke-width:1.0;" x1="1374" x2="1574"
+							y1="2232.3945" y2="2232.3945" />
+						<line style="stroke:#00000000;stroke-width:1.0;" x1="1374" x2="1374"
+							y1="2084" y2="2232.3945" />
+						<line style="stroke:#00000000;stroke-width:1.0;" x1="1574" x2="1574"
+							y1="2084" y2="2232.3945" />
+
+					</g>
+				</svg>
+				<pre id="cue">Generating picture...</pre>
+			</div>
+
+			<hr>
+			<p id="plantuml"></p>
+		</div>
+	</div>
+	</div>
+</body>
+
+<script type="text/javascript">
+
+	const svgContainer = document.getElementById("svgContainer");
+	const right = document.getElementById("colRight").getBoundingClientRect();
+	const left = document.getElementById("colLeft").getBoundingClientRect();
+	const svgImage = document.getElementsByTagName("svg")[0];
+	svgImage.style = ""
+	svgImage.removeAttribute("width");
+	svgImage.removeAttribute("height");
+	console.log(window.innerHeight)
+
+
+	// Full height, including the scroll part
+	const fullHeight = Math.max(
+		document.body.scrollHeight,
+		document.documentElement.scrollHeight,
+		document.body.offsetHeight,
+		document.documentElement.offsetHeight,
+		document.body.clientHeight,
+		document.documentElement.clientHeight
+	);
+	svgImage.setAttribute('viewBox', `0 0 ${right.width} ${fullHeight}`);
+	console.log(fullHeight)
+
+	var viewBox = { x: 0, y: 0, w: right.width, h: fullHeight };
+	//svgImage.setAttribute('viewBox', `${viewBox.x} ${viewBox.y} ${viewBox.w} ${viewBox.h}`);
+	const svgSize = { w: svgImage.clientWidth, h: svgImage.clientHeight };
+	var isPanning = false;
+	var startPoint = { x: 0, y: 0 };
+	var endPoint = { x: 0, y: 0 };;
+	var scale = 1;
+
+
+	//var url = "ws{{if eq .URL.Scheme "https"}}s{{end}}://{{.URL.Host}}{{.URL.Path}}";
+	var url = "ws://localhost"
+	ws = new WebSocket(url);
+
+	ws.onopen = function () {
+		console.log("[onopen] connect ws uri.");
+		var data = {
+			"Action": "requireConnect"
+		};
+		ws.send(JSON.stringify(data));
+	}
+
+	ws.onmessage = function (e) {
+		console.log("[onmessage] receive message.");
+		var res = JSON.parse(e.data);
+		document.getElementById("svgContainer").innerHTML = decodeURIComponent(escape(window.atob(res["image"])))// setAttribute("data", "data:image/svg+xml;utf8;base64," + res["image"]); // decodeURIComponent(escape(window.atob(res["image"]))))
+		document.getElementById("download").setAttribute("href", "data:image/svg+xml;utf8;base64," + res["image"]);
+		document.getElementById("cue").innerHTML = decodeURIComponent(escape(window.atob(res["cue"])))
+		document.getElementById("plantuml").innerHTML = decodeURIComponent(escape(window.atob(res["plantuml"])))
+		svgImage.setAttribute('viewBox', `0 0 ${right.width} ${fullHeight}`);
+	}
+
+	ws.onclose = function (e) {
+		console.log("[onclose] connection closed (" + e.code + ")");
+	}
+
+	ws.onerror = function (e) {
+		console.log("[onerror] error!");
+	}
+	function togglePUML() {
+		if (document.getElementById("plantuml").style.visibility == "hidden") {
+			document.getElementById("plantuml").style.visibility = "visible";
+		} else {
+			document.getElementById("plantuml").style.visibility = "hidden";
+		}
+	}
+
+	svgContainer.onmousewheel = function (e) {
+		e.preventDefault();
+		var w = viewBox.w;
+		var h = viewBox.h;
+		var mx = e.offsetX;//mouse x  
+		var my = e.offsetY;
+		var dw = w * Math.sign(e.deltaY) * 0.05;
+		var dh = h * Math.sign(e.deltaY) * 0.05;
+		var dx = dw * mx / svgSize.w;
+		var dy = dh * my / svgSize.h;
+		viewBox = { x: viewBox.x + dx, y: viewBox.y + dy, w: viewBox.w - dw, h: viewBox.h - dh };
+		scale = svgSize.w / viewBox.w;
+		zoomValue.innerText = `${Math.round(scale * 100) / 100}`;
+		svgImage.setAttribute('viewBox', `${viewBox.x} ${viewBox.y} ${viewBox.w} ${viewBox.h}`);
+	}
+
+
+	svgContainer.onmousedown = function (e) {
+		isPanning = true;
+		startPoint = { x: e.x, y: e.y };
+	}
+
+	svgContainer.onmousemove = function (e) {
+		if (isPanning) {
+			endPoint = { x: e.x, y: e.y };
+			var dx = (startPoint.x - endPoint.x) / scale;
+			var dy = (startPoint.y - endPoint.y) / scale;
+			var movedViewBox = { x: viewBox.x + dx, y: viewBox.y + dy, w: viewBox.w, h: viewBox.h };
+			svgImage.setAttribute('viewBox', `${movedViewBox.x} ${movedViewBox.y} ${movedViewBox.w} ${movedViewBox.h}`);
+		}
+	}
+
+	svgContainer.onmouseup = function (e) {
+		if (isPanning) {
+			endPoint = { x: e.x, y: e.y };
+			var dx = (startPoint.x - endPoint.x) / scale;
+			var dy = (startPoint.y - endPoint.y) / scale;
+			viewBox = { x: viewBox.x + dx, y: viewBox.y + dy, w: viewBox.w, h: viewBox.h };
+			svgImage.setAttribute('viewBox', `${viewBox.x} ${viewBox.y} ${viewBox.w} ${viewBox.h}`);
+			isPanning = false;
+		}
+	}
+
+	svgContainer.onmouseleave = function (e) {
+		isPanning = false;
+	}
+	function togglePUML() {
+		if (document.getElementById("plantuml").style.visibility == "hidden") {
+			document.getElementById("plantuml").style.visibility = "visible";
+		} else {
+			document.getElementById("plantuml").style.visibility = "hidden";
+		}
+	}
+</script>
+
+</html>
