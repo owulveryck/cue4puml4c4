@@ -1,8 +1,8 @@
 package c4
 
 #System: {
-	label:        string
 	id:           #id
+	label:        *id | string
 	description?: string
 	isBoundary:   bool | *false
 	technology?:  #Technology
@@ -16,7 +16,7 @@ package c4
 
 #Container: {
 	id:           #id
-	label:        string
+	label:        *id | string
 	technology:   #Technology | *_noTech
 	description?: string
 	tags?: [...#ElementTag]
@@ -25,7 +25,7 @@ package c4
 
 #Person: {
 	id:    #id
-	label: string
+	label: *id | string
 }
 
 #Relation: {
