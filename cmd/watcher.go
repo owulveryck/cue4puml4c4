@@ -60,8 +60,9 @@ func generateImageAndSend(p string, C chan diagram) error {
 	cue.Stderr = &errb
 	if err := cue.Run(); err != nil {
 		C <- diagram{
-			cue:    outb.Bytes(),
-			cueErr: errb.Bytes(),
+			cue:      outb.Bytes(),
+			cueErr:   errb.Bytes(),
+			plantuml: []byte(`error`),
 		}
 		return fmt.Errorf("%v: %v", err, errb.String())
 	}
