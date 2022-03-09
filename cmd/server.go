@@ -43,6 +43,10 @@ type diagram struct {
 }
 
 func main() {
+	upgrader := websocket.Upgrader{
+		ReadBufferSize:  1024,
+		WriteBufferSize: 1024,
+	}
 
 	watcher, err := fsnotify.NewWatcher()
 	if err != nil {
@@ -124,10 +128,7 @@ func main() {
 
 			})
 			http.HandleFunc(path.Join(cleanP, "connws/"), (&client{
-				upgrader: websocket.Upgrader{
-					ReadBufferSize:  1024,
-					WriteBufferSize: 1024,
-				},
+				upgrader: upgrader,
 				watcher: watchedDir{
 					Watcher: watcher,
 					path:    p,
@@ -178,9 +179,15 @@ func (c *client) ConnWs(w http.ResponseWriter, r *http.Request) {
 		log.Println(err)
 		return
 	}
+	defer ws.Close()
 
 	res := map[string]interface{}{}
 	for {
+		_, _, err := ws.ReadMessage()
+		if err != nil {
+			log.Println(err)
+			return
+		}
 		select {
 		case diagram := <-C:
 			str := base64.StdEncoding.EncodeToString(diagram.image)

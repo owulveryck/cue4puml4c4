@@ -12,6 +12,7 @@ import (
 	"net/url"
 	"os/exec"
 	"path"
+	"regexp"
 	"strings"
 
 	"github.com/fsnotify/fsnotify"
@@ -28,7 +29,13 @@ func watch(ctx context.Context, watcher watchedDir, C chan diagram) {
 			if !ok {
 				return
 			}
-			if event.Op == fsnotify.Write || event.Op == fsnotify.Create {
+			isCue, err := regexp.MatchString(`\.cue$`, event.Name)
+			if err != nil {
+				log.Println(err)
+				continue
+			}
+			if (event.Op == fsnotify.Write || event.Op == fsnotify.Create) && isCue {
+				log.Printf("%v modified", event.Name)
 				err := generateImageAndSend(watcher.path, C)
 				if err != nil {
 					log.Println(err)
