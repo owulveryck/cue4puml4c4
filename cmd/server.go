@@ -34,6 +34,10 @@ func (c *connexionHandler) ConnWs(w http.ResponseWriter, r *http.Request) {
 	log.Printf("New Connection with %v", C)
 	defer func() {
 		// drain and close
+		for len(errC) > 0 {
+			<-errC
+		}
+		close(errC)
 		for len(C) > 0 {
 			<-C
 		}
