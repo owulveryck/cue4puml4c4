@@ -110,8 +110,8 @@
 		document.body.clientWidth,
 		document.documentElement.clientWidth
 	);
-	//svgImage.setAttribute('viewBox', ` + "`" + `0 0 ${right.width} ${fullWidth}` + "`" + `);
-	svgImage.setAttribute('viewBox', ` + "`" + `0 0 1200 ${fullHeight}` + "`" + `);
+	//svgImage.setAttribute('viewBox', `0 0 ${right.width} ${fullWidth}`);
+	svgImage.setAttribute('viewBox', `0 0 1200 ${fullHeight}`);
 	console.log(fullHeight)
 
 	var viewBox = { x: 0, y: 0, w: right.width, h: fullHeight };
@@ -158,7 +158,7 @@
 				svgImage.getAttribute('viewBox')
 				var box = svgImage.getAttribute('viewBox').split(/\s+|,/);
 				if (box[2] < right.width) {
-					svgImage.setAttribute('viewBox', ` + "`" + `0 0 ${right.width} ${fullHeight}` + "`" + `);
+					svgImage.setAttribute('viewBox', `0 0 ${right.width} ${fullHeight}`);
 				}
 				svgSize = { w: svgImage.clientWidth, h: svgImage.clientHeight };
 			}
@@ -197,8 +197,8 @@
 		var dy = dh * my / svgSize.h;
 		viewBox = { x: viewBox.x + dx, y: viewBox.y + dy, w: viewBox.w - dw, h: viewBox.h - dh };
 		scale = svgSize.w / viewBox.w;
-		zoomValue.innerText = ` + "`" + `${Math.round(scale * 100) / 100}` + "`" + `;
-		svgImage.setAttribute('viewBox', ` + "`" + `${viewBox.x} ${viewBox.y} ${viewBox.w} ${viewBox.h}` + "`" + `);
+		zoomValue.innerText = ` ${Math.round(scale * 100) / 100}`;
+		svgImage.setAttribute('viewBox', `${viewBox.x} ${viewBox.y} ${viewBox.w} ${viewBox.h}`);
 	}
 
 
@@ -213,7 +213,7 @@
 			var dx = (startPoint.x - endPoint.x) / scale;
 			var dy = (startPoint.y - endPoint.y) / scale;
 			var movedViewBox = { x: viewBox.x + dx, y: viewBox.y + dy, w: viewBox.w, h: viewBox.h };
-			svgImage.setAttribute('viewBox', ` + "`" + `${movedViewBox.x} ${movedViewBox.y} ${movedViewBox.w} ${movedViewBox.h}` + "`" + `);
+			svgImage.setAttribute('viewBox', `${movedViewBox.x} ${movedViewBox.y} ${movedViewBox.w} ${movedViewBox.h}`);
 		}
 	}
 
@@ -223,7 +223,7 @@
 			var dx = (startPoint.x - endPoint.x) / scale;
 			var dy = (startPoint.y - endPoint.y) / scale;
 			viewBox = { x: viewBox.x + dx, y: viewBox.y + dy, w: viewBox.w, h: viewBox.h };
-			svgImage.setAttribute('viewBox', ` + "`" + `${viewBox.x} ${viewBox.y} ${viewBox.w} ${viewBox.h}` + "`" + `);
+			svgImage.setAttribute('viewBox', `${viewBox.x} ${viewBox.y} ${viewBox.w} ${viewBox.h}`);
 			isPanning = false;
 		}
 	}
