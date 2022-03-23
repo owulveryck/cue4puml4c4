@@ -1,6 +1,6 @@
 # cue4puml4c4
 
-Heavy work in progress...
+Heavy work in progress... For more information, please refer to [this article](https://blog.owulveryck.info/2022/03/10/ccccue-generating-c4-diagrams-with-cue.html) on my Blog.
 
 ## Pure cue
 
