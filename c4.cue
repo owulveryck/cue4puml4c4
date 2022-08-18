@@ -1,9 +1,12 @@
 package c4
 
+import "strings"
+
 #System: {
 	id:           #id
 	label:        *id | string
 	description?: string
+	desc:         "" | *strings.Replace(description, "\n", "\\n", -1)
 	isBoundary:   bool | *false
 	technology?:  #Technology
 	type?:        #Type
@@ -19,6 +22,7 @@ package c4
 	label:        *id | string
 	technology:   #Technology | *_noTech
 	description?: string
+	desc:         "" | *strings.Replace(description, "\n", "\\n", -1)
 	tags?: [...#ElementTag]
 	link?: #url
 }
@@ -32,6 +36,7 @@ package c4
 	source:      #System | #Container | #Person
 	dest:        #System | #Container | #Person
 	description: string | *""
+	desc:        "" | *strings.Replace(description, "\n", "\\n", -1)
 	protocol?:   string
 	link?:       #url
 	tags?: [...#RelationTag]
