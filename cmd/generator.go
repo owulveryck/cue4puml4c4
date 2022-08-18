@@ -48,7 +48,7 @@ func callPlantumlServer(plantumlURL *url.URL, payload []byte) ([]byte, error) {
 		Method: http.MethodPost,
 		URL:    plantumlURL,
 		Header: map[string][]string{
-			"Content-Type": {"text/plain"},
+			"Content-Type": {"text/plain; charset=UTF-8"},
 		},
 		Body: io.NopCloser(bytes.NewReader(payload)),
 	}
