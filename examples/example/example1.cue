@@ -29,10 +29,13 @@ appEngine: c4.#System & {
 }
 
 myWebApp: c4.#Container & {
-	id:          "web_appp"
-	label:       "Web Application"
-	description: "Allows users to compare multiple Twitter timelines"
-	technology:  dev.Go
+	id:    "web_appp"
+	label: "Web Application"
+	description: """
+		Allows users
+		to compare multiple Twitter timelines
+		"""
+	technology: dev.Go
 	tags: [aSupprimer]
 }
 
