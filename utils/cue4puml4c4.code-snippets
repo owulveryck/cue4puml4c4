@@ -1,0 +1,79 @@
+{
+	"Add a c4.System": {
+		"scope": "cue",
+		"prefix": "system",
+		"body": [
+			"${1}: c4.#System & {",
+			"\tid: \"$1\"",
+			"\tlabel: \"$1\"",
+			"\tdescription: \"$1\"",
+			"}"
+		],
+		"description": "Add a new System"
+	},
+	"Add a c4.Container": {
+		"scope": "cue",
+		"prefix": "container",
+		"body": [
+			"${1}: c4.#Container & {",
+			"\tid: \"$1\"",
+			"\tlabel: \"$1\"",
+			"\tdescription: \"$1\"",
+			"}"
+		],
+		"description": "Add a new Container"
+	},
+	"Add a unamed relation": {
+		"scope": "cue",
+		"prefix": "relation",
+		"body": [
+			"{source: \"$1\", dest: \"$2\", description: \"$3\"}",
+		],
+		"description": "Add a new anonymous Relation"
+	},
+	"Add an element tag": {
+		"scope": "cue",
+		"prefix": "tagE",
+		"body": [
+			"$1: c4.#ElementTag & {",
+			"\tid: \"$1\"",
+			"\tlegendText:  \"$2\"",
+			"\tshape:       \"${3|rounded,eightsided|}\"",
+			"\tbgColor:     \"#$4\"",
+			"\tborderColor: \"#$5\"",
+			"}"
+		],
+	},
+	"Add an relation tag": {
+		"scope": "cue",
+		"prefix": "tagR",
+		"body": [
+			"$1: c4.#RelationTag & {",
+			"\tid: \"$1\"",
+			"\tlegendText:  \"$2\"",
+			"\tlineStyle:       \"${3|dash,dot,bold|}\"",
+			"\ttextColor:     \"#$4\"",
+			"\tlineColor: \"#$5\"",
+			"}"
+		],
+	},
+	"Add a genpuml command": {
+		"scope": "cue",
+		"prefix": "genpuml",
+		"body": [
+			"package ${1:main}",
+			"",
+			"import (",
+			"\t\"tool/cli\"",
+			"\t\"text/template\"",
+			"\t\"github.com/owulveryck/cue4puml4c4:c4\"",
+			")",
+			"",
+			"command: genpuml: {",
+			"\tc1: cli.Print & {",
+			"\t\ttext: template.Execute(c4.plantumlTemplate, ${2:C1}) // change C1 here with the name of your object",
+			"\t}",
+			"}"
+		],
+	}
+}
