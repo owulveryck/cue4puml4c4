@@ -27,7 +27,7 @@
 		"scope": "cue",
 		"prefix": "relation",
 		"body": [
-			"{source: \"$1\", dest: \"$2\", description: \"$3\"}",
+			"{source: $1, dest: $2, description: \"$3\"}",
 		],
 		"description": "Add a new anonymous Relation"
 	},
