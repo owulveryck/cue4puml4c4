@@ -1,13 +1,16 @@
 package main
 
 import (
+	"bytes"
 	"html/template"
+	"io"
 	"io/fs"
 	"io/ioutil"
 	"log"
 	"net/http"
 	"net/url"
 	"os"
+	"os/exec"
 	"path"
 	"path/filepath"
 	"regexp"
@@ -116,6 +119,25 @@ func (ctx *ctx) process(p string, d fs.DirEntry, err error) error {
 			log.Fatal(err)
 		}
 
+	})
+	ctx.mux.HandleFunc(path.Join(me.Path, "png"), func(w http.ResponseWriter, r *http.Request) {
+		cue := exec.Command("cue", "cmd", "genpuml")
+		var outb, errb bytes.Buffer
+		cue.Stdout = &outb
+		cue.Dir = p
+		cue.Stderr = &errb
+		if err := cue.Run(); err != nil {
+			http.Error(w, errb.String(), http.StatusInternalServerError)
+			return
+		}
+		u, _ := url.Parse(config.PlantUMLServerAddress)
+		u.Path = path.Clean(path.Join(u.Path, "/plantuml/png/"))
+		pngImage, err := callPlantumlServer(u, outb.Bytes())
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusBadGateway)
+			return
+		}
+		io.Copy(w, bytes.NewReader(pngImage))
 	})
 	ctx.mux.HandleFunc(path.Join(cleanP, "connws/"), (&connexionHandler{
 		upgrader: ctx.upgrader,
