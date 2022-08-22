@@ -59,6 +59,8 @@
 <body>
 	<div class="row">
 		<div id="colLeft" class="column left" style="background-color:#aaa;">
+			<button class="btn"><a id="dlpng" download="{{.Name}}.png" href="{{.URL.Path}}/png"><i class="fa fa-download"></i>
+					Download PNG</a></button>
 			<button class="btn"><a id="dl" download="{{.Name}}.svg" href=""><i class="fa fa-download"></i>
 					Download SVG</a></button>
 			<button class="btn" onclick="togglePUML()">Display PUML Content</button>
