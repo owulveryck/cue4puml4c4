@@ -1,0 +1,984 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="352px" preserveAspectRatio="none" style="width:350px;height:352px;background:#FFFFFF;" version="1.1" viewBox="0 0 350 352" width="350px" zoomAndPan="magnify"><defs/><g><!--MD5=[ec9049f7174e08f4465a29473aee24a1]
+entity ptf--><rect fill="#9BCBE5" height="71.8203" rx="12.5" ry="12.5" style="stroke:#6B9BC1;stroke-width:1.5;" width="44" x="55" y="7"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="24" x="65" y="32.4688">ptf</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="79" y="49.3789"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="19" x="69.5" y="65.8672">ptf</text><!--MD5=[f440a66ce4d14e6a27ee217caea4830d]
+entity complicatedSubSystem--><path d="M152.5,7 L325.5,7 L343.5,25 L343.5,60.8203 L325.5,78.8203 L152.5,78.8203 L134.5,60.8203 L134.5,25 L152.5,7 " fill="#F4C399" style="stroke:#D39450;stroke-width:1.5;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="189" x="144.5" y="32.4688">complicatedSubSystem</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="241" y="49.3789"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="157" x="162.5" y="65.8672">complicatedSubSystem</text><!--MD5=[e0736ee8dc343236dddce409a6bbbf0a]
+entity streamAligned--><rect fill="#FAE1A4" height="71.8203" rx="12.5" ry="12.5" style="stroke:#F2C24F;stroke-width:1.5;" width="140" x="7" y="139"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="120" x="17" y="164.4688">streamAligned</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="79" y="181.3789"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="100" x="29" y="197.8672">streamAligned</text><!--MD5=[21c17cc94fe8d84dbed5dbf26a98fe09]
+entity enabling--><rect fill="#AD98C2" height="71.8203" rx="12.5" ry="12.5" style="stroke:#6B5294;stroke-width:1.5;" width="92" x="182" y="139"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="72" x="192" y="164.4688">enabling</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="230" y="181.3789"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="60" x="200" y="197.8672">enabling</text><!--MD5=[00b21d772eb95e0298494a379ce8d738]
+link ptf to complicatedSubSystem--><!--MD5=[8fc942f23474fcc4a9633908c8c58d1c]
+link ptf to streamAligned--><!--MD5=[05fc063829b60e0756ccf085294a6046]
+link streamAligned to enabling--><rect fill="#FFFFFF" height="112.9297" rx="5" ry="5" style="stroke:#FFFFFF;stroke-width:1.0;" width="244" x="84.5" y="223.8203"/><rect height="16.4883" style="stroke:none;stroke-width:1.0;fill:none;" width="232" x="90.5" y="230.8203"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="51" x="90.5" y="244.3555">Legend</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="145.5" y="244.3555"/><rect fill="#1168BD" height="16.4883" style="stroke:none;stroke-width:1.0;" width="232" x="90.5" y="247.3086"/><text fill="#3C7FC0" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="94.5" y="260.8438">▯</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="106.5" y="260.8438"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47" x="110.5" y="260.8438">system</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="165.5" y="260.8438"/><rect fill="#F4C399" height="16.4883" style="stroke:none;stroke-width:1.0;" width="232" x="90.5" y="263.7969"/><text fill="#D39450" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="94.5" y="277.332">▯</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="106.5" y="277.332"/><text fill="#66622E" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="204" x="110.5" y="277.332">Complicated-subsystem team</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="322.5" y="277.332"/><rect fill="#AD98C2" height="16.4883" style="stroke:none;stroke-width:1.0;" width="232" x="90.5" y="280.2852"/><text fill="#6B5294" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="94.5" y="293.8203">▯</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="106.5" y="293.8203"/><text fill="#66622E" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="110.5" y="293.8203">Enabling team</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="216.5" y="293.8203"/><rect fill="#9BCBE5" height="16.4883" style="stroke:none;stroke-width:1.0;" width="232" x="90.5" y="296.7734"/><text fill="#6B9BC1" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="94.5" y="310.3086">▯</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="106.5" y="310.3086"/><text fill="#66622E" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="96" x="110.5" y="310.3086">Platform team</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="214.5" y="310.3086"/><rect fill="#FAE1A4" height="16.4883" style="stroke:none;stroke-width:1.0;" width="232" x="90.5" y="313.2617"/><text fill="#F2C24F" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="94.5" y="326.7969">▯</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="106.5" y="326.7969"/><text fill="#66622E" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="110.5" y="326.7969">Stream-aligned team</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="263.5" y="326.7969"/><line style="stroke:#00000000;stroke-width:1.0;" x1="90.5" x2="322.5" y1="230.8203" y2="230.8203"/><line style="stroke:#00000000;stroke-width:1.0;" x1="90.5" x2="322.5" y1="247.3086" y2="247.3086"/><line style="stroke:#00000000;stroke-width:1.0;" x1="90.5" x2="322.5" y1="263.7969" y2="263.7969"/><line style="stroke:#00000000;stroke-width:1.0;" x1="90.5" x2="322.5" y1="280.2852" y2="280.2852"/><line style="stroke:#00000000;stroke-width:1.0;" x1="90.5" x2="322.5" y1="296.7734" y2="296.7734"/><line style="stroke:#00000000;stroke-width:1.0;" x1="90.5" x2="322.5" y1="313.2617" y2="313.2617"/><line style="stroke:#00000000;stroke-width:1.0;" x1="90.5" x2="322.5" y1="329.75" y2="329.75"/><line style="stroke:#00000000;stroke-width:1.0;" x1="90.5" x2="90.5" y1="230.8203" y2="329.75"/><line style="stroke:#00000000;stroke-width:1.0;" x1="322.5" x2="322.5" y1="230.8203" y2="329.75"/><!--MD5=[6b6bbfd8be2120da56929dcbbf1e39e9]
+@startuml MyDiagram
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+!include https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/GCPCommon.puml
+LAYOUT_TOP_DOWN()
+
+
+HIDE_STEREOTYPE()
+
+
+/'Relation Tags'/ 
+
+
+
+
+
+/'Element Tags'/ 
+
+
+AddElementTag("complicatedSubsystemTeam",$bgColor="#f4c399",$borderColor="#d39450",$shape="EightSidedShape()",$legendText="Complicated-subsystem team")
+
+AddElementTag("enablingTeam",$bgColor="#ad98c2",$borderColor="#6b5294",$shape="RoundedBoxShape()",$legendText="Enabling team")
+
+AddElementTag("platformTeam",$bgColor="#9bcbe5",$borderColor="#6b9bc1",$shape="RoundedBoxShape()",$legendText="Platform team")
+
+AddElementTag("streamAlignedTeam",$bgColor="#fae1a4",$borderColor="#f2c24f",$shape="RoundedBoxShape()",$legendText="Stream-aligned team")
+
+
+
+
+
+	
+/' Systems '/
+
+System(ptf,"ptf","ptf",$tags="platformTeam+ ")
+System(complicatedSubSystem,"complicatedSubSystem","complicatedSubSystem",$tags="complicatedSubsystemTeam+ ")
+System(streamAligned,"streamAligned","streamAligned",$tags="streamAlignedTeam+ ")
+System(enabling,"enabling","enabling",$tags="enablingTeam+ ")
+
+
+
+
+
+
+
+
+
+
+SHOW_LEGEND()
+@enduml
+
+@startuml MyDiagram
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam defaultTextAlignment center
+
+skinparam wrapWidth 200
+skinparam maxMessageSize 150
+
+skinparam LegendBorderColor transparent
+skinparam LegendBackgroundColor transparent
+skinparam LegendFontColor #FFFFFF
+
+skinparam shadowing<<legendArea>> false
+skinparam rectangle<<legendArea>> {
+    backgroundcolor #00000000
+    bordercolor #00000000
+}
+
+skinparam rectangle {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam database {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam queue {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam arrow {
+    Color #666666
+    FontColor #666666
+    FontSize 12
+}
+
+skinparam actor {
+    StereotypeFontSize 12
+    shadowing false
+    style awesome
+}
+
+skinparam person {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam rectangle<<boundary>> {
+    Shadowing false
+    StereotypeFontSize 6
+    StereotypeFontColor transparent
+    BorderStyle dashed
+}
+
+skinparam package {
+    StereotypeFontSize 6
+    StereotypeFontColor transparent
+    FontStyle plain
+    BackgroundColor transparent
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam database<<boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam queue<<boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam actor<<boundary>> {
+    FontColor transparent
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam person<<boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam package<<boundary>>StereotypeFontColor transparent
+skinparam rectangle<<boundary>>StereotypeFontColor transparent
+
+
+skinparam rectangle<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam database<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam queue<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam actor<<enterprise_boundary>> {
+    FontColor transparent
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam person<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam package<<enterprise_boundary>>StereotypeFontColor transparent
+skinparam rectangle<<enterprise_boundary>>StereotypeFontColor transparent
+
+
+
+skinparam rectangle<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam database<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam queue<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam actor<<system_boundary>> {
+    FontColor transparent
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam person<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam package<<system_boundary>>StereotypeFontColor transparent
+skinparam rectangle<<system_boundary>>StereotypeFontColor transparent
+
+
+
+skinparam rectangle<<container_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam database<<container_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam queue<<container_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam actor<<container_boundary>> {
+    FontColor transparent
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam person<<container_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam package<<container_boundary>>StereotypeFontColor transparent
+skinparam rectangle<<container_boundary>>StereotypeFontColor transparent
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam database<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam queue<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam actor<<person>> {
+    StereotypeFontColor #08427B
+    FontColor #08427B
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam person<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+
+
+skinparam rectangle<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam database<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam queue<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam actor<<external_person>> {
+    StereotypeFontColor #686868
+    FontColor #686868
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam person<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+
+
+skinparam rectangle<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam database<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam queue<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam actor<<system>> {
+    StereotypeFontColor #1168BD
+    FontColor #1168BD
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam person<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+
+
+skinparam rectangle<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam database<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam queue<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam actor<<external_system>> {
+    StereotypeFontColor #999999
+    FontColor #999999
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam person<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+
+
+
+skinparam rectangle<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam database<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam queue<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam actor<<enterprise_boundary>> {
+    FontColor transparent
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam person<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam package<<enterprise_boundary>>StereotypeFontColor transparent
+skinparam rectangle<<enterprise_boundary>>StereotypeFontColor transparent
+
+
+
+skinparam rectangle<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam database<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam queue<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam actor<<system_boundary>> {
+    FontColor transparent
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam person<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam package<<system_boundary>>StereotypeFontColor transparent
+skinparam rectangle<<system_boundary>>StereotypeFontColor transparent
+
+
+
+
+
+
+
+sprite $person [48x48/16] {
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+0000000000000000000049BCCA7200000000000000000000
+0000000000000000006EFFFFFFFFB3000000000000000000
+00000000000000001CFFFFFFFFFFFF700000000000000000
+0000000000000001EFFFFFFFFFFFFFF80000000000000000
+000000000000000CFFFFFFFFFFFFFFFF6000000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+00000000000001FFFFFFFFFFFFFFFFFFF900000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFF00000000000000
+0000000000000BFFFFFFFFFFFFFFFFFFFF40000000000000
+0000000000000EFFFFFFFFFFFFFFFFFFFF70000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000DFFFFFFFFFFFFFFFFFFFF60000000000000
+0000000000000AFFFFFFFFFFFFFFFFFFFF40000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFE00000000000000
+00000000000000EFFFFFFFFFFFFFFFFFF800000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+000000000000000BFFFFFFFFFFFFFFFF5000000000000000
+0000000000000001DFFFFFFFFFFFFFF70000000000000000
+00000000000000000BFFFFFFFFFFFF500000000000000000
+0000000000000000005DFFFFFFFFA1000000000000000000
+0000000000000000000037ABB96100000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000025788300000000005886410000000000000
+000000000007DFFFFFFD9643347BFFFFFFFB400000000000
+0000000004EFFFFFFFFFFFFFFFFFFFFFFFFFFB1000000000
+000000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFD200000000
+00000006FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE10000000
+0000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB0000000
+000000BFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5000000
+000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD000000
+000009FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF200000
+00000DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF600000
+00000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF800000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA00000
+00000EFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF700000
+000006FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE100000
+0000008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD3000000
+000000014555555555555555555555555555555300000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+}
+
+sprite $person2 [48x48/16] {
+0000000000000000000049BCCA7200000000000000000000
+0000000000000000006EFFFFFFFFB3000000000000000000
+00000000000000001CFFFFFFFFFFFF700000000000000000
+0000000000000001EFFFFFFFFFFFFFF80000000000000000
+000000000000000CFFFFFFFFFFFFFFFF6000000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+00000000000001FFFFFFFFFFFFFFFFFFF900000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFF00000000000000
+0000000000000BFFFFFFFFFFFFFFFFFFFF40000000000000
+0000000000000EFFFFFFFFFFFFFFFFFFFF70000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000DFFFFFFFFFFFFFFFFFFFF60000000000000
+0000000000000AFFFFFFFFFFFFFFFFFFFF40000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFE00000000000000
+00000000000000EFFFFFFFFFFFFFFFFFF800000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+000000000000000BFFFFFFFFFFFFFFFF5000000000000000
+0000000000000001DFFFFFFFFFFFFFF70000000000000000
+00000000000000000BFFFFFFFFFFFF500000000000000000
+0000000000000000005DFFFFFFFFA1000000000000000000
+0000000000000000000037ABB96100000000000000000000
+000000000002578888300000000005888864100000000000
+0000000007DFFFFFFFFD9643347BFFFFFFFFFB4000000000
+00000004EFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB10000000
+0000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD2000000
+000006FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE100000
+00003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+0000BFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF50000
+0003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD0000
+0009FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2000
+000DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6000
+000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA000
+000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+000DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6000
+0009FFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFF2000
+0003FFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFD0000
+0000BFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFF50000
+00003FFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFB00000
+000006FFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFE100000
+0000007FFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFD2000000
+00000004EFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFB10000000
+0000000007DF8FFFFFFFFFFFFFFFFFFFFFF8FB4000000000
+000000000002578888888888888888888864100000000000
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+skinparam database<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+skinparam queue<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+skinparam actor<<container>> {
+    StereotypeFontColor #438DD5
+    FontColor #438DD5
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+skinparam person<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+
+
+skinparam rectangle<<external_container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+skinparam database<<external_container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+skinparam queue<<external_container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+skinparam actor<<external_container>> {
+    StereotypeFontColor #B3B3B3
+    FontColor #B3B3B3
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+skinparam person<<external_container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+
+
+
+skinparam rectangle<<container_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam database<<container_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam queue<<container_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam actor<<container_boundary>> {
+    FontColor transparent
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam person<<container_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam package<<container_boundary>>StereotypeFontColor transparent
+skinparam rectangle<<container_boundary>>StereotypeFontColor transparent
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam defaultTextAlignment center
+
+skinparam wrapWidth 200
+skinparam maxMessageSize 150
+
+skinparam rectangle {
+    StereotypeFontSize 12
+}
+
+skinparam Arrow {
+    Color #666666
+    FontColor #666666
+    FontSize 12
+}
+
+
+
+
+
+
+
+
+
+top to bottom direction
+
+
+hide stereotype
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<complicatedSubsystemTeam>> {
+    BackgroundColor #f4c399
+    BorderColor #d39450
+    RoundCorner 0
+    DiagonalCorner 18
+}
+skinparam database<<complicatedSubsystemTeam>> {
+    BackgroundColor #f4c399
+    BorderColor #d39450
+}
+skinparam queue<<complicatedSubsystemTeam>> {
+    BackgroundColor #f4c399
+    BorderColor #d39450
+}
+skinparam actor<<complicatedSubsystemTeam>> {
+    StereotypeFontColor #f4c399
+    FontColor #f4c399
+    BackgroundColor #f4c399
+    BorderColor #d39450
+}
+skinparam person<<complicatedSubsystemTeam>> {
+    BackgroundColor #f4c399
+    BorderColor #d39450
+}
+
+
+
+skinparam rectangle<<enablingTeam>> {
+    BackgroundColor #ad98c2
+    BorderColor #6b5294
+    RoundCorner 25
+    DiagonalCorner 0
+}
+skinparam database<<enablingTeam>> {
+    BackgroundColor #ad98c2
+    BorderColor #6b5294
+}
+skinparam queue<<enablingTeam>> {
+    BackgroundColor #ad98c2
+    BorderColor #6b5294
+}
+skinparam actor<<enablingTeam>> {
+    StereotypeFontColor #ad98c2
+    FontColor #ad98c2
+    BackgroundColor #ad98c2
+    BorderColor #6b5294
+}
+skinparam person<<enablingTeam>> {
+    BackgroundColor #ad98c2
+    BorderColor #6b5294
+}
+
+
+
+skinparam rectangle<<platformTeam>> {
+    BackgroundColor #9bcbe5
+    BorderColor #6b9bc1
+    RoundCorner 25
+    DiagonalCorner 0
+}
+skinparam database<<platformTeam>> {
+    BackgroundColor #9bcbe5
+    BorderColor #6b9bc1
+}
+skinparam queue<<platformTeam>> {
+    BackgroundColor #9bcbe5
+    BorderColor #6b9bc1
+}
+skinparam actor<<platformTeam>> {
+    StereotypeFontColor #9bcbe5
+    FontColor #9bcbe5
+    BackgroundColor #9bcbe5
+    BorderColor #6b9bc1
+}
+skinparam person<<platformTeam>> {
+    BackgroundColor #9bcbe5
+    BorderColor #6b9bc1
+}
+
+
+
+skinparam rectangle<<streamAlignedTeam>> {
+    BackgroundColor #fae1a4
+    BorderColor #f2c24f
+    RoundCorner 25
+    DiagonalCorner 0
+}
+skinparam database<<streamAlignedTeam>> {
+    BackgroundColor #fae1a4
+    BorderColor #f2c24f
+}
+skinparam queue<<streamAlignedTeam>> {
+    BackgroundColor #fae1a4
+    BorderColor #f2c24f
+}
+skinparam actor<<streamAlignedTeam>> {
+    StereotypeFontColor #fae1a4
+    FontColor #fae1a4
+    BackgroundColor #fae1a4
+    BorderColor #f2c24f
+}
+skinparam person<<streamAlignedTeam>> {
+    BackgroundColor #fae1a4
+    BorderColor #f2c24f
+}
+
+
+
+
+
+
+
+	
+
+rectangle "==ptf\n\n ptf" <<platformTeam>><< >><<system>> as ptf 
+rectangle "==complicatedSubSystem\n\n complicatedSubSystem" <<complicatedSubsystemTeam>><< >><<system>> as complicatedSubSystem 
+rectangle "==streamAligned\n\n streamAligned" <<streamAlignedTeam>><< >><<system>> as streamAligned 
+rectangle "==enabling\n\n enabling" <<enablingTeam>><< >><<system>> as enabling 
+
+
+
+
+
+
+
+
+
+
+hide stereotype
+legend right
+<#00000000,#00000000>|<color:#000000>**Legend**</color> |
+|<#1168BD><color:#3C7FC0> <U+25AF></color> <color:#FFFFFF> system </color> |
+|<#f4c399><color:#d39450> <U+25AF></color> <color:#66622E> Complicated-subsystem team </color> |
+|<#ad98c2><color:#6b5294> <U+25AF></color> <color:#66622E> Enabling team </color> |
+|<#9bcbe5><color:#6b9bc1> <U+25AF></color> <color:#66622E> Platform team </color> |
+|<#fae1a4><color:#f2c24f> <U+25AF></color> <color:#66622E> Stream-aligned team </color> |
+endlegend
+@enduml
+
+PlantUML version 1.2022.0(Tue Jan 11 17:16:42 CET 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: GB
+--></g></svg>

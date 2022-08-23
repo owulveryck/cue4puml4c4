@@ -1,5 +1,7 @@
 package tt
 
+// usage: import "github.com/owulveryck/cue4puml4c4/tags/teamtopologies:tt"
+
 import (
 	"github.com/owulveryck/cue4puml4c4:c4"
 )
