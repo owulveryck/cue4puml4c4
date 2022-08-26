@@ -1,0 +1,20 @@
+# This is a sample makefile to generate the puml and image file from a directory
+# adapt it to your own need
+CUE=cue
+CUECMD=genpuml
+PLANTUML_SERVER=http://localhost:8080
+current_dir = $(notdir $(shell pwd))
+
+all: $(current_dir).puml $(current_dir).svg $(current_dir).png
+
+$(current_dir).puml: *.cue
+        $(CUE) $(CUECMD) > $(current_dir).puml
+
+$(current_dir).svg: $(current_dir).puml
+        curl --silent --show-error --fail   -H "Content-Type: text/plain; charset=UTF-8" --data-binary @$(current_dir).puml $(PLANTUML_SERVER)/plantuml/svg > $(current_dir).svg
+
+$(current_dir).png: $(current_dir).puml
+        curl --silent --show-error --fail   -H "Content-Type: text/plain; charset=UTF-8" --data-binary @$(current_dir).puml $(PLANTUML_SERVER)/plantuml/png > $(current_dir).png
+
+clean:
+	rm *.puml *.svg *.png
