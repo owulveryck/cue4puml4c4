@@ -1,6 +1,6 @@
 baseURL = 'http://example.org/'
 languageCode = 'en-us'
-title = 'CUE4Puml4C4: from diagramming to modeling'
+title = 'CUE4Puml4C4: Diagramming as data, not as code'
 
 # Language settings
 contentDir = "content/en"
@@ -24,6 +24,7 @@ section = ["HTML", "print", "RSS"]
 [params]
 copyright = "Olivier Wulveryck"
 # privacy_policy = "https://policies.google.com/privacy"
+description = "Use CUE to describe C4 models, render them as diagrams through plantuml"
 
 # First one is picked as the Twitter card image if not set on page.
 # images = ["images/project-illustration.png"]
