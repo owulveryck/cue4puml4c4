@@ -100,6 +100,8 @@ SHOW_LEGEND()
 @enduml
 ```
 
+You can copy/paste the content in [plantuml server online](https://www.plantuml.com/plantuml/uml/bSt1Qy8m5CVnU_-Ap4iLrkQoqqwEDkYWiyLMn5E9QTImvAKaBvF-zuiKOTVT7Xzul-_Q8tSOZ4vU50WT1abkYAD_fzJnUtvLU0lduAKJ5b02vi8QEceEZv_Cuw3LcHPlMVEWmrT53VSeNQI-i81SWNJv-CzzUm_wHxf9VDFdRgQ41PzjYkPPi9UB4efh6gsmnbYOEzN7gJvqVLStVLaVTyjLilqiMTzsRC_gxjImA3JTIyrHMI0Tl_gKaaXCIoC1_mXffvWodgGqcS-bvsRKydLX9ZAVYrNIRkjZNx4DsvLnUorX24R_0W00) to see how it renders
+
 ## Cleaning
 
 ```shell
