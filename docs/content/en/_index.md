@@ -4,7 +4,7 @@ linkTitle = "CUE4Puml4C4"
 
 +++
 
-{{< blocks/cover title="Welcome to CUE4Puml4C4" image_anchor="top" height="full" color="300" >}}
+{{< blocks/cover title="Welcome to CUE4Puml4C4" image_anchor="top" height="full" color="primary" >}}
 <div class="mx-auto">
 	<a class="btn btn-lg btn-primary mr-3 mb-4" href="{{< relref "/about" >}}">
 		About this website and the library <i class="fas fa-arrow-alt-circle-right ml-2"></i>

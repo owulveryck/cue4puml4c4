@@ -1,6 +1,6 @@
 ---
 title: Team Topologies tags
-linkTitle: team-topologies
+linkTitle: Team Topologies
 type: docs
 menu:
   main:
@@ -11,7 +11,7 @@ menu:
 Here is an example with team topologies
 
 {{< tabpane >}}
-{{< tab header="Diagram data (CUE)" lang="cue" >}}
+{{< tab header="Diagram data (CUE)" lang="go" >}}
 package main
 
 import (
@@ -62,7 +62,7 @@ C1: c4.#C1 & {
  Systems: [ptf, complicatedSubSystem, streamAligned, enabling]
 }
 {{< /tab >}}
-{{< tab header="CUE command" lang="cue" >}}
+{{< tab header="CUE command" lang="go" >}}
 package main
 
 import (
