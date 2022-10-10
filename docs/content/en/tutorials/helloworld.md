@@ -100,6 +100,21 @@ SHOW_LEGEND()
 @enduml
 ```
 
+Which renders as:
+```plantuml
+@startuml MyDiagram
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/GCPCommon.puml
+LAYOUT_TOP_DOWN()
+HIDE_STEREOTYPE()
+/'Relation Tags'/ 
+/'Element Tags'/ 
+/' Systems '/
+System(sample,"my sample")
+SHOW_LEGEND()
+@enduml
+```
+
 You can copy/paste the content in [plantuml server online](https://www.plantuml.com/plantuml/uml/bSt1Qy8m5CVnU_-Ap4iLrkQoqqwEDkYWiyLMn5E9QTImvAKaBvF-zuiKOTVT7Xzul-_Q8tSOZ4vU50WT1abkYAD_fzJnUtvLU0lduAKJ5b02vi8QEceEZv_Cuw3LcHPlMVEWmrT53VSeNQI-i81SWNJv-CzzUm_wHxf9VDFdRgQ41PzjYkPPi9UB4efh6gsmnbYOEzN7gJvqVLStVLaVTyjLilqiMTzsRC_gxjImA3JTIyrHMI0Tl_gKaaXCIoC1_mXffvWodgGqcS-bvsRKydLX9ZAVYrNIRkjZNx4DsvLnUorX24R_0W00) to see how it renders
 
 ## Cleaning

@@ -141,6 +141,8 @@ blog = "/:section/:year/:month/:day/:slug/"
 # Image processing configuration.
 [imaging]
 resampleFilter = "CatmullRom"
-quality = 75
 anchor = "smart"
+quality = 75
 
+[params.plantuml]
+enable = true
