@@ -1,19 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="545px" preserveAspectRatio="none" style="width:1141px;height:545px;background:#00000000;" version="1.1" viewBox="0 0 1141 545" width="1141px" zoomAndPan="magnify"><defs/><g><!--MD5=[d40f00f2144537bf04a8f78870def089]
-cluster cue4puml4c4--><rect height="292" style="stroke:#444444;stroke-width:1.0;fill:none;stroke-dasharray:7.0,7.0;" width="657" x="7" y="110.5"/><text fill="#444444" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="114" x="278.5" y="127.9688">cue4puml4c4</text><text fill="#444444" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="48" x="311.5" y="142.9453">[System]</text><!--MD5=[59b9fcab7688afb9e03ce302bdf03589]
-cluster plantuml--><rect fill="#1168BD" height="142" style="stroke:#3C7FC0;stroke-width:1.5;" width="196" x="730" y="278.5"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="73" x="791.5" y="295.9688">Plantuml</text><!--MD5=[45d7a8503c060b2b3cdbe0720acc37ef]
-cluster result--><rect height="295" style="stroke:#444444;stroke-width:1.0;fill:none;stroke-dasharray:7.0,7.0;" width="135" x="1000" y="125.5"/><text fill="#444444" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="47" x="1044" y="142.9688">result</text><text fill="#444444" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="48" x="1043.5" y="157.9453">[System]</text><!--MD5=[703ea5a149c5871c74522bf38bdfe548]
-entity data--><rect fill="#438DD5" height="116.9766" style="stroke:#3C7FC0;stroke-width:1.5;" width="209" x="435" y="162"/><image height="64" width="64" x="507.5" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAEKklEQVR4Xt2aQY7TQBBFfbc+gC/gA3CBHMAHICtWETuWLNmx5A4ICQkJCSFxDCr+k8pPVbXdbmfsBukvMna7Xa/qV7fjSZfefn2W+nffhvffTx9/jp9+ic6ff6twRE7JABnmr61W5w+tkgYtUV6+/CmUDAaMn3Ct6gEq4vYCyZaa1ABI6OIHHw0CYsOo2FT+KpGcrSvIOgBJVRi6CbdEuXnWVmMFgNzV3A8GUL358AM9GgaBbpExhsTXRMb4y3MqAvCJ59DlfmHE8zIwBqO8FMsAcieenUOvc60RY5gclcy/ACCzm8Ro1v3gLVIMU+pFhjkAE73mqbC4ayXThqWYT1YWIIx+fq6nSEtRWIcYQC7Qi2H66nW6QtgiCxkCACkldy1S8kq2yckzSEhhDAEAt9Grmn5e2O+ZQf70wywAWx/R52q3g3wdfBM+AEimGXefrp0XDKym8EZ6AOBxQPcz7i9TBBPVHYBXngOt76X7g4bHgd0BTPoPNw8LRtK1kYvwAuDT72c5VrkivADoOaT/wJUnp1wRXgD4RIPpT7dOYJ/j+BXA+Kcp97OMi2CTK4AexdrfyOLjhX3NuOgK0L5/VOwiPFl0vPtW+GfncrGLsCt32gBr1x9BHaeXJZBeiG7z49WcyKJRYeKwFmnG5aYdA5U3gOmWYfreDAY8RYaXYADC7aeXFyx/iZdpA5mnY0sVAiCFfmosbSUA5XU2MoupfLYA/hov/0gIwQZ7AsiHbu0SlItvcQADFDo+VBMA59v7U1V5TZoAOLIC/fSVP+yBcXof2E/vIcOz23sgeQD+owQgZVI43FahkJAPbgEImtgAhKn1s+iqr0eYyheTj4T8hQqW0VPVRoaIwYwZTUw4qGeZZ4ya2ADnNPiNbKh9lEgThowfMv+3mznbu23YjwkVPEr02x7mdhZKqgFL8P/e47QCjHicxlE9dCpug/1lGgC5vgJoGzTuIt8ACQA9vY5u2UXsH+w56f95rWJc1GAROP0X/2IrTfsLzqGVmyqCST/WH+gO0GwRevdyl5N7B0hUBHRCI8sRog/TnwwAF6ERI8E8mtnL47v1ZAASLUdqpAP3NexcHJI3hQVI9GSBC45i6KcHXo7emAcKAPjxTmAOYfCNe3ZfkqAAID3+rxINPRb/fGS74ByJgb2Q68YYIGUYcrM8Uep742Q/EsoCpMeGvtx6emaujVLbmPvO33EOILmffKCrTq+wvGriecVcjD4tAiTHADs9EUNDN7a55H3PWgZIt1cmYSlgqor+lkuwvoWJz605XkUA6WZQvofBAMkQfYXnSQb3uz+Tmgs9KpeoFAAaol+Mnqd3JBxTicbp5YrPSIltWOsAILNCe5iQB8dzF1aEDtUAQGE1KlQdOlQPAKEXZ1IbCoWq636jrQAqblDwKBI+w1eLjb5WfwE0yE+Pp28ykAAAAABJRU5ErkJggg==" y="172"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="189" x="445" y="251.4688">C4 Described with CUE</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="31" x="524" y="266.4453">[CUE]</text><!--MD5=[2fe15fc69bf1f604b3b0525a91a7f8d3]
-entity genpuml--><rect fill="#438DD5" height="116.9766" style="stroke:#3C7FC0;stroke-width:1.5;" width="217" x="23" y="216"/><image height="64" width="64" x="99.5" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAEKklEQVR4Xt2aQY7TQBBFfbc+gC/gA3CBHMAHICtWETuWLNmx5A4ICQkJCSFxDCr+k8pPVbXdbmfsBukvMna7Xa/qV7fjSZfefn2W+nffhvffTx9/jp9+ic6ff6twRE7JABnmr61W5w+tkgYtUV6+/CmUDAaMn3Ct6gEq4vYCyZaa1ABI6OIHHw0CYsOo2FT+KpGcrSvIOgBJVRi6CbdEuXnWVmMFgNzV3A8GUL358AM9GgaBbpExhsTXRMb4y3MqAvCJ59DlfmHE8zIwBqO8FMsAcieenUOvc60RY5gclcy/ACCzm8Ro1v3gLVIMU+pFhjkAE73mqbC4ayXThqWYT1YWIIx+fq6nSEtRWIcYQC7Qi2H66nW6QtgiCxkCACkldy1S8kq2yckzSEhhDAEAt9Grmn5e2O+ZQf70wywAWx/R52q3g3wdfBM+AEimGXefrp0XDKym8EZ6AOBxQPcz7i9TBBPVHYBXngOt76X7g4bHgd0BTPoPNw8LRtK1kYvwAuDT72c5VrkivADoOaT/wJUnp1wRXgD4RIPpT7dOYJ/j+BXA+Kcp97OMi2CTK4AexdrfyOLjhX3NuOgK0L5/VOwiPFl0vPtW+GfncrGLsCt32gBr1x9BHaeXJZBeiG7z49WcyKJRYeKwFmnG5aYdA5U3gOmWYfreDAY8RYaXYADC7aeXFyx/iZdpA5mnY0sVAiCFfmosbSUA5XU2MoupfLYA/hov/0gIwQZ7AsiHbu0SlItvcQADFDo+VBMA59v7U1V5TZoAOLIC/fSVP+yBcXof2E/vIcOz23sgeQD+owQgZVI43FahkJAPbgEImtgAhKn1s+iqr0eYyheTj4T8hQqW0VPVRoaIwYwZTUw4qGeZZ4ya2ADnNPiNbKh9lEgThowfMv+3mznbu23YjwkVPEr02x7mdhZKqgFL8P/e47QCjHicxlE9dCpug/1lGgC5vgJoGzTuIt8ACQA9vY5u2UXsH+w56f95rWJc1GAROP0X/2IrTfsLzqGVmyqCST/WH+gO0GwRevdyl5N7B0hUBHRCI8sRog/TnwwAF6ERI8E8mtnL47v1ZAASLUdqpAP3NexcHJI3hQVI9GSBC45i6KcHXo7emAcKAPjxTmAOYfCNe3ZfkqAAID3+rxINPRb/fGS74ByJgb2Q68YYIGUYcrM8Uep742Q/EsoCpMeGvtx6emaujVLbmPvO33EOILmffKCrTq+wvGriecVcjD4tAiTHADs9EUNDN7a55H3PWgZIt1cmYSlgqor+lkuwvoWJz605XkUA6WZQvofBAMkQfYXnSQb3uz+Tmgs9KpeoFAAaol+Mnqd3JBxTicbp5YrPSIltWOsAILNCe5iQB8dzF1aEDtUAQGE1KlQdOlQPAKEXZ1IbCoWq636jrQAqblDwKBI+w1eLjb5WfwE0yE+Pp28ykAAAAABJRU5ErkJggg==" y="226"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="197" x="33" y="305.4688">Cue command genpuml</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="31" x="116" y="320.4453">[CUE]</text><!--MD5=[4391fb40d59d25432ef1b401b9fce406]
-entity yourPuml--><rect fill="#438DD5" height="71.8203" style="stroke:#3C7FC0;stroke-width:1.5;" width="217" x="431" y="314.5"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="192" x="441" y="339.9688">PUML representation of</text><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="53" x="513" y="358.8125">the C4</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="67" x="506" y="373.7891">[Undefined]</text><!--MD5=[1c787825ffbe1217702881407012b235]
-entity plantumlServer--><rect fill="#438DD5" height="52.9766" style="stroke:#3C7FC0;stroke-width:1.5;" width="148" x="754" y="324"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="128" x="764" y="349.4688">Plantuml Server</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="67" x="794.5" y="364.4453">[Undefined]</text><!--MD5=[55405ef675d3720feed355db47a4677d]
-entity pictureSvg--><rect fill="#438DD5" height="103.9766" style="stroke:#3C7FC0;stroke-width:1.5;" width="71" x="1032" y="184.5"/><image height="51" width="51" x="1042" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAIAAAC1w6d9AAADcElEQVR4Xu2YP4oVQRDG393mAF7AA3iBOYAHcCOjxczAwHAzIzETTAxEVhAWZGFBUFxBEYT2w5J636uvq6dm3rIaWHzBez3VVb/p/9O76cGb49UOTR02aKdFqxSY2NR5lY4iiyxiWqWu7WTX3386AX7PTy9MBNaen3/RikVtJ/P0py+uHMt09vqTP9WKRS2T3T/7cH71DelDoecOWKHl7j1+zxWfvPyIaHDQREEp2Z2Hbz06G8on6kpkUiwI/WgO1qF3H73bhyDTvK4+GVooxiDjzjp5dqlYM3UoWujVxVf3V8var0MWWgvNg/fm8Q67/PzDfljXqNzfPc260ZShT8Z1Qj5+5KZYRU9+pBgjMs3XTanNFprETENxNMWIZD5y0QsaCNJBUyHLJop7zjLaIpnHyoY2yt3HrEKGVUZDzTSF8cILZD5g4aqBTDw3W4FMl2L1RKMukPHE1EAuhhuTDbDmVeNsog7l3VDFK1Z45GRFrFYk452nDaMbXEaWVUR89B2nwA6hGB2yiUabWzaEAdcly7B0d9Gx3yebf68LStaGs3WxxKRYSAQhY9j4D8i6NMGylBUplhq33x+y6JLbNrgKltueLDzA6ofRo6ul21q4ARayIJevt26RTPcQ1OwqmxAqvIZWNwXPcBLe+R91vX05DGxPpn5/Rf/J1qtDlh3IblPXtCAczE1dDrDzdLVqbmp1U/DkxSWuGmbwQLjBlpDtiZnCeY4NfMgVNvjmZAo3sLVYpgGc2sHuVITbhmWqwGGcOU88awx2kgxLx5yWmBTOxwz6NJBEMpN+IGVYKNexjFfXyWRSOJQoQJ8MRyWuie02S2MN3CVrvZluQnl4c7srWSbjOhrX5f2ekbUczrRPU/kOKH478XAckLUy3DIZ0pir5nOFWaKeTNbybwj2PD28n+uQebjsXU82faNrHJOfGRFkgWzxXkPPnxWybGq7J9p1gWz6Z++CmKxJOH7kpvm6nnpm5qeK0SELd6roVjsvcKG3Stbp7hDaDyuZHheq69nU2wPY+Gk2UfjWY3Bsab1ZOSKbpOXc7GOaZ7tizXIxFu5K3LqtZUrJXJYDr85ReO1QrJnG0EyXiYhg7ZftlaxlskyeWzuUT4JasagbIGuH84CHvK6fdW0nmwqHTa1S11Fk0xBOnVfpWDLTzTKZfgHTF1y33qiJPQAAAABJRU5ErkJggg==" y="194.5"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="32" x="1051.5" y="260.9688">SVG</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="27" x="1054" y="275.9453">[Svg]</text><!--MD5=[25fa7e2689bf026fa7ae096c8bd990c8]
-entity picturePng--><rect fill="#438DD5" height="52.9766" style="stroke:#3C7FC0;stroke-width:1.5;" width="87" x="1024" y="324"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="33" x="1051" y="349.4688">png</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="67" x="1034" y="364.4453">[Undefined]</text><!--MD5=[fee662a292a0353a69bd162820bae93b]
-entity User--><rect fill="#08427B" height="86.8438" style="stroke:#073B6F;stroke-width:1.5;" width="68" x="97.5" y="7"/><image height="48" width="48" x="107.5" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAACD0lEQVR4Xu2YoU4EMRCGT+4j8Ai8AhaH4QHgAUjQuFMECUgMIUgwJAgMhgQsAYUiJCiQIBBY+EITsjfTdme6V24v4c8vyGbb+ZjOtN0bNcvjQXmkH83WvYBWto6PLm6v7p7uH1/w2fXD+PBycX1Pv2l3IdDm/vn7x+dXQiAubRzoURa7gRZWd0iGRIiJbOnhnfYBQZNJjNbuyY2eJG8fkDE3bbG4ep6MHUAsgYxmE3nVs6VsBWJSGccsOlFPmLIViMzLOB7pCVO2AtHJMohH7Fh6zqitQK7m0rJvAVYgGcEpe//PLdDz65sM4pF9N7ICcXDKIB5Nv6j7tD0NoSdM2QrU9Gg0ewE1LqBhHR3BBdvj2vapnidjHxD/q6vd7Pvhr31AwcY8eXMTXAKECZZJFXuEq27aLgQK5uLMohCenGGuGewOxSjBvYBqeG6B+Nqiblggdjnc+ZXDy+FNFpFzw76O3UBAROuXh6FoiAcf5g9eTvUgzy0nWg6I8cXHRUpg5bOVBCo+KDpFajOf23GgPme7RSQ+lacIENUgJ6gg1k6HjgOlqnLqip4tEuhv0hNEMXUD0clyXE3p6pZA0S2nnvTlXwLJEZWlb7cTQH1+USgTN4VhAenm/wea1OCAOmqo6fE1WCb9WSKBah+rbUWPWAmE2Rvk0ApiB45eOyNAzU8xcTvj8KvkKEoOaIYeHNA3ZuygAvFMUO0AAAAASUVORK5CYII=" y="17"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="32" x="115.5" y="80.4688">You</text><!--MD5=[c20b4d9a1a15c80c944c865744e5dbe9]
-link genpuml to data--><path d="M240.23,260.17 C297.78,252.52 368.55,243.1 426.7,235.37 " fill="none" id="genpuml-to-data" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="434.82,234.29,426.4937,232.3736,427.2867,238.321,434.82,234.29" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="122" x="272.5" y="223.1016">Read your code and</text><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="129" x="271" y="237.2344">apply puml template</text><!--MD5=[5f69317217baabcdc0e664ead32aeaf2]
-link genpuml to yourPuml--><path d="M240.23,294.67 C296.55,305.21 365.52,318.12 422.94,328.87 " fill="none" id="genpuml-to-yourPuml" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="430.97,330.37,423.6589,325.9487,422.5545,331.8462,430.97,330.37" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="115" x="278" y="298.1016">Generate puml file</text><!--MD5=[19c87a52daa5d5ef6a0f74c9a86e8512]
-link User to data--><path d="M165.72,64.41 C222.13,88.03 339.04,136.98 426.99,173.81 " fill="none" id="User-to-data" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="434.6,177,428.3749,171.1479,426.0618,176.6841,434.6,177" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="24" x="323.5" y="107.1016">****</text><!--MD5=[0725da39fde1832abdb85d8b6f0ba71f]
-link yourPuml to plantumlServer--><path d="M648.41,350.5 C680.73,350.5 715.62,350.5 745.9,350.5 " fill="none" id="yourPuml-to-plantumlServer" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="753.91,350.5,745.91,347.5,745.91,353.5,753.91,350.5" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="24" x="681" y="347.1016">****</text><!--MD5=[8720b5941ef2c7f0863186ffb1381e28]
-link plantuml to result--><path d="M927.303,412.5 C927.7536,412.5 928.2046,412.5 928.6559,412.5 C929.5586,412.5 930.4629,412.5 931.3684,412.5 C933.1795,412.5 934.9957,412.5 936.8154,412.5 C940.4548,412.5 944.108,412.5 947.7612,412.5 C962.3741,412.5 976.9866,412.5 990.7139,412.5 C992.4298,412.5 994.1319,412.5 995.8184,412.5 C996.6617,412.5 997.5011,412.5 998.3363,412.5 C998.7539,412.5 999.1706,412.5 999.5861,412.5 " fill="none" id="plantuml-to-result" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="999.5861,412.5,991.5861,409.5,991.5861,415.5,999.5861,412.5" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="24" x="951" y="409.1016">****</text><rect height="96.4414" rx="5" ry="5" style="stroke:#00000000;stroke-width:1.0;fill:none;" width="309" x="810" y="433.5"/><rect height="16.4883" style="stroke:none;stroke-width:1.0;fill:none;" width="297" x="816" y="440.5"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="51" x="816" y="454.0352">Legend</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="871" y="454.0352"/><rect fill="#08427B" height="16.4883" style="stroke:none;stroke-width:1.0;" width="297" x="816" y="456.9883"/><text fill="#073B6F" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="820" y="470.5234">▯</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="832" y="470.5234"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="836" y="470.5234">person</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="892" y="470.5234"/><rect fill="#1168BD" height="16.4883" style="stroke:none;stroke-width:1.0;" width="297" x="816" y="473.4766"/><text fill="#3C7FC0" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="820" y="487.0117">▯</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="832" y="487.0117"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47" x="836" y="487.0117">system</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="891" y="487.0117"/><rect fill="#438DD5" height="16.4883" style="stroke:none;stroke-width:1.0;" width="297" x="816" y="489.9648"/><text fill="#3C7FC0" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="820" y="503.5">▯</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="832" y="503.5"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="65" x="836" y="503.5">container</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="909" y="503.5"/><rect height="16.4883" style="stroke:none;stroke-width:1.0;fill:none;" width="297" x="816" y="506.4531"/><text fill="#444444" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="820" y="519.9883">▯</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="832" y="519.9883"/><text fill="#444444" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="269" x="836" y="519.9883">system boundary (dashed, transparent)</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="1113" y="519.9883"/><line style="stroke:#00000000;stroke-width:1.0;" x1="816" x2="1113" y1="440.5" y2="440.5"/><line style="stroke:#00000000;stroke-width:1.0;" x1="816" x2="1113" y1="456.9883" y2="456.9883"/><line style="stroke:#00000000;stroke-width:1.0;" x1="816" x2="1113" y1="473.4766" y2="473.4766"/><line style="stroke:#00000000;stroke-width:1.0;" x1="816" x2="1113" y1="489.9648" y2="489.9648"/><line style="stroke:#00000000;stroke-width:1.0;" x1="816" x2="1113" y1="506.4531" y2="506.4531"/><line style="stroke:#00000000;stroke-width:1.0;" x1="816" x2="1113" y1="522.9414" y2="522.9414"/><line style="stroke:#00000000;stroke-width:1.0;" x1="816" x2="816" y1="440.5" y2="522.9414"/><line style="stroke:#00000000;stroke-width:1.0;" x1="1113" x2="1113" y1="440.5" y2="522.9414"/><!--MD5=[dee97f9db92d5c00614f10cdaa667144]
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="1512px" preserveAspectRatio="none" style="width:427px;height:1512px;background:#00000000;" version="1.1" viewBox="0 0 427 1512" width="427px" zoomAndPan="magnify"><defs/><g><!--MD5=[d40f00f2144537bf04a8f78870def089]
+cluster cue4puml4c4--><rect height="703" style="stroke:#444444;stroke-width:1.0;fill:none;stroke-dasharray:7.0,7.0;" width="250" x="7" y="156"/><text fill="#444444" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="114" x="75" y="173.4688">cue4puml4c4</text><text fill="#444444" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="48" x="108" y="188.4453">[System]</text><!--MD5=[59b9fcab7688afb9e03ce302bdf03589]
+cluster plantuml--><rect fill="#004455" height="122" rx="12.5" ry="12.5" style="stroke:#AABBCC;stroke-width:1.5;" width="215" x="15" y="915"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="73" x="86" y="932.4688">Plantuml</text><!--MD5=[45d7a8503c060b2b3cdbe0720acc37ef]
+cluster result--><rect height="187" style="stroke:#444444;stroke-width:1.0;fill:none;stroke-dasharray:7.0,7.0;" width="261" x="15" y="1101"/><text fill="#444444" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="47" x="122" y="1118.4688">result</text><text fill="#444444" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="48" x="121.5" y="1133.4453">[System]</text><!--MD5=[703ea5a149c5871c74522bf38bdfe548]
+entity data--><rect fill="#008800" height="166.4414" rx="12.5" ry="12.5" style="stroke:#00BB00;stroke-width:1.5;" width="209" x="23.5" y="207"/><image height="64" width="64" x="96" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAEHklEQVR4Xt1azbGjTAycFEiBFF4KToEUnAIpcNvjHve4x+/4HTe1ladBJVoaGMAG3lZ11bOYH9RSS4N5TmlI70Lzo2l/to/fj+6/TvD8/6nAFRmSCTLNr90PtjdCnRYv+z99JWQyyPgNN4Ptauzw2wNMDuWE7QqI66IH7w0csoJRWFH5VQIZ3ZkQthchoQpdJ3drUNpnczbYLkPuSveDABRfv75Qo6ETqBaZQ0x8TmSOX14E2xF84K3rcr/Q42UQGaKxIRVsO8id7O7W9Z2qncPSoBhV7c/2HLI7BUaj7icfgdKgVK9zYNuAvNc41SZ3I2TbMBUrwWJ7Quj9yl7vgKaiNg9sZ8gCXQzR7+/T24EjspYD2zmVtmoRkg/JpgTPQVyKfWB7SLaMPir6ZeC8txzE9NPYttKH98XcfR4+D0ERWkMibemeU7XLgIBVFIGQrGHngbrf8XxQEtgr/WQ7z4XS99DzQd2bOaafKPyXi8cCQtLeOEsC/vjw+12uRTEJOmzDf2HnKaGYBPyxAzcMf5oqwep8HEpOP7dSvwWpaJQJBnAJvf8mzccD5xqrKH0H/SisisYnC3v67tDPyemyKhpPZS2Arf1HqHb5ZQmgC1Ftfr6KE1EkVAYOvUgj/rqpJVRfAFQtbf7eDA54igyXYALcbfLLCwu/xIPK4EXbSqqSAELot0ZrqyFQn2cCNdNXqomAX+MRPBJmQAZnEnjdaGsLKvm3OsESqFR8iFsQeE7vTxX1ObkFgSsz0OSv/GENdPl9YJPfQ4ajx2sgeQLWqCGQCiFspy4UMrQXjxAIipgIhKH1u2jX1yuWlU+mvRLyr0TQRh+7DjJ4DM7YkXzCRR21fLqoiIlwCa0/yNq9jxIp05D5beH/dgujjTuG/ZwQwaNEc+xh7mQgperwi3b6bo/TSqBDr8NVvfSoLoPzQQUwxhoD30JFQQEMmUBjXkffWUVWPzhzXtAxHXhs7EXnAOFn/Qz/zIutlM8XjKGUb5UECv/YfwD9dNskNO7l7iy4dqomAZVwk3YE7+PwD3MCNgk3ERLEo5Ht6d36MCeQTDtSIfGCE4GTy7oUiIJt82SBBVdxaPIDr/WexQOwnVfqGiFzCQdfuE/3JWkE2xlf5n+VKOiu/ucjhwHliA9WC8VqZHtCyKG4y/uguicl+5kj2DawGeynml7a6xhUNnTflTuyPYfNQz/11scH2qsG3nbMde+HNQLJcYCc3khDXSfZ9Au6t2A7Qjv/0ZZNBUS1o75lCfpbGPhiz/FguwAI1N6DaIBJG32Ft5u07nd/FJrePirXgO1FtNEvRp/5HYn1qQZdfrniI1IlGwu2K0Ad2pMJ+eB6aeEe1wG2qxFmYwf2uw6wvRGoxYXQhkCi9lU/g+29sAUKPkoJn6Gr1ULfir9d/ixy5dFiAAAAAABJRU5ErkJggg==" y="217"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="189" x="33.5" y="296.4688">C4 Described with CUE</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="31" x="112.5" y="311.4453">[CUE]</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="130" y="327.5117"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="174" x="39" y="344">Describe your diagram as</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="137" x="59.5" y="360.4883">data with the library</text><!--MD5=[2fe15fc69bf1f604b3b0525a91a7f8d3]
+entity genpuml--><rect fill="#004400" height="182.9297" rx="12.5" ry="12.5" style="stroke:#00BB00;stroke-width:1.5;" width="201" x="27.5" y="463"/><image height="64" width="64" x="96" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAEGUlEQVR4Xt1aza2kTAzsFEiBFF4KBLAXbnseaQNYzX0D+BL4kl1PF1im7IammQHeSiW9Mf2Dyy67Gd6kNKR3ofvR9T/74fcw/hkFj/8eClyRIZkg0/zadrC9E+q0ePn8/1kJmQwyfsPdYLsaDX57gMmhnLBdAXFd9OC9gUNWMAorKr9KIKONCWF7FRKq0HVytwalfXZng+0y5K50PwhA8fXrCzUaOoFqkTnExOdE5vjlRbAdwQfeui73Cz1eB5EhGjtSwbaD3Mnubl1vVO0SlgbFqGp/tpeQ3SkwGnU/+QiUBqV6mwPbBuS9xqk2uTsh24ap2AgW2zNC7zf2egc0FbV5YDtDFuhiiL69T+8HjshaDmznVNqqRUg+JJsSPAdxKfaB7SHZMvqo6NeB895yENNPY9tKH94Xc/d5+DwERWgNibSle07VrgMCVlEEQrKGnQfqfsfzQUlgr/ST7TwXSt9Dzwd1b+GYfqLwXy4eCwhJe+MiCfjjw+93uRbFJOiwDf+FnaeEYhLwxw7cMPxprgSr82koOf3cSv0WpKJJJhjAJfT+mzQfD5xrrKL0HfSjsCqanizs6dugn5PTZVU0ncpaAHv7j1Ad88sSQBei2vx8FSeiSKgMHHqRRjzfdNlAKyNK1dLn783ggKfIcAkmwN0uv7yw8Es8qAxetK2kKgkghH5rtLYaAvV5JlAzfaWaCPg1HsEjYQZkcCaB1432tqCSf5sTLIFKxYe4BYHH/P5UUZ+TWxC4MgNd/sof1sCY3wd2+T1kOHq8BpInYI0aAqkQwn7uQiFDe/EIgaCIiUAYWr+Ldn29Yln5ZNorIf9KBG10aDrI4DE4Y0fyCRd11PIZoyImwiX0/iDrWx8lUqYh8/vC/+1WRjt3DPs5IYJHie7Yw9zJQErV4Rft9N0ep5XAiF6Hq3ppqC6D80EFMMUaA99CRUEBDJlAZ15H31lFVj84c17QMR0Ydvaic4Dws36Gf+bFVnJfDG6VBAr/1H8A/XTbJHTu5e4iuHaqJgGVcJN2BO/j8A9LAjYJNxESxKORfdK79WFJIJl2pELiBScCJ5d1KRAF2+bJAguu4tDlB17rPYsHYDuv1DVC5hIOvnAf7kvSBLYzvsz/KlHQY/3PRw4DyhEfrBaK1cj2jJBDcZf3QXVPSvYzJ7BtYDP4nGt6ba9jUNnQfTfuyPYSNg/PubcOH2ivGnjbMbe9H7YIJMcBcnojDXWdZPNc0b0F2xH65Y+2bCogqob6liXob2Hgiz3Hg+0CIFB7D6IBJn30Fd5u0rvf/VFonvZRuQZsr6KPfjH6yO9IrE81GPPLFR+RKtlYsF0B6tCeTMgH10sLW1wH2K5GmI0GtLsOsL0TqMWV0IZAotqqn8F2K2yBgo9SwmfoarPQ9+IvMW5S0BCJoGgAAAAASUVORK5CYII=" y="473"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="108" x="74" y="552.4688">cue genpuml</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="31" x="112.5" y="567.4453">[CUE]</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="130" y="583.5117"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="143" x="54.5" y="600">run the cue genpuml</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="177" x="37.5" y="616.4883">command to generate the</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="101" x="77.5" y="632.9766">representation</text><!--MD5=[4391fb40d59d25432ef1b401b9fce406]
+entity yourPuml--><rect fill="#004455" height="121.2852" rx="12.5" ry="12.5" style="stroke:#AABBCC;stroke-width:1.5;" width="217" x="23.5" y="722"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="192" x="33.5" y="747.4688">PUML representation of</text><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="53" x="105.5" y="766.3125">the C4</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="58" x="103" y="781.2891">[plantuml]</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="134" y="797.3555"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="174" x="43" y="813.8438">Your c4 is represented as</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="83" y="830.332">plantuml code</text><!--MD5=[1c787825ffbe1217702881407012b235]
+entity plantumlServer--><rect fill="#438DD5" height="52.9766" style="stroke:#3C7FC0;stroke-width:1.5;" width="148" x="58" y="960"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="128" x="68" y="985.4688">Plantuml Server</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="58" x="103" y="1000.4453">[plantuml]</text><!--MD5=[55405ef675d3720feed355db47a4677d]
+entity pictureSvg--><rect fill="#438DD5" height="103.9766" style="stroke:#3C7FC0;stroke-width:1.5;" width="71" x="180.5" y="1160"/><image height="51" width="51" x="190.5" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAIAAAC1w6d9AAADcElEQVR4Xu2YP4oVQRDG393mAF7AA3iBOYAHcCOjxczAwHAzIzETTAxEVhAWZGFBUFxBEYT2w5J636uvq6dm3rIaWHzBez3VVb/p/9O76cGb49UOTR02aKdFqxSY2NR5lY4iiyxiWqWu7WTX3386AX7PTy9MBNaen3/RikVtJ/P0py+uHMt09vqTP9WKRS2T3T/7cH71DelDoecOWKHl7j1+zxWfvPyIaHDQREEp2Z2Hbz06G8on6kpkUiwI/WgO1qF3H73bhyDTvK4+GVooxiDjzjp5dqlYM3UoWujVxVf3V8var0MWWgvNg/fm8Q67/PzDfljXqNzfPc260ZShT8Z1Qj5+5KZYRU9+pBgjMs3XTanNFprETENxNMWIZD5y0QsaCNJBUyHLJop7zjLaIpnHyoY2yt3HrEKGVUZDzTSF8cILZD5g4aqBTDw3W4FMl2L1RKMukPHE1EAuhhuTDbDmVeNsog7l3VDFK1Z45GRFrFYk452nDaMbXEaWVUR89B2nwA6hGB2yiUabWzaEAdcly7B0d9Gx3yebf68LStaGs3WxxKRYSAQhY9j4D8i6NMGylBUplhq33x+y6JLbNrgKltueLDzA6ofRo6ul21q4ARayIJevt26RTPcQ1OwqmxAqvIZWNwXPcBLe+R91vX05DGxPpn5/Rf/J1qtDlh3IblPXtCAczE1dDrDzdLVqbmp1U/DkxSWuGmbwQLjBlpDtiZnCeY4NfMgVNvjmZAo3sLVYpgGc2sHuVITbhmWqwGGcOU88awx2kgxLx5yWmBTOxwz6NJBEMpN+IGVYKNexjFfXyWRSOJQoQJ8MRyWuie02S2MN3CVrvZluQnl4c7srWSbjOhrX5f2ekbUczrRPU/kOKH478XAckLUy3DIZ0pir5nOFWaKeTNbybwj2PD28n+uQebjsXU82faNrHJOfGRFkgWzxXkPPnxWybGq7J9p1gWz6Z++CmKxJOH7kpvm6nnpm5qeK0SELd6roVjsvcKG3Stbp7hDaDyuZHheq69nU2wPY+Gk2UfjWY3Bsab1ZOSKbpOXc7GOaZ7tizXIxFu5K3LqtZUrJXJYDr85ReO1QrJnG0EyXiYhg7ZftlaxlskyeWzuUT4JasagbIGuH84CHvK6fdW0nmwqHTa1S11Fk0xBOnVfpWDLTzTKZfgHTF1y33qiJPQAAAABJRU5ErkJggg==" y="1170"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="32" x="200" y="1236.4688">SVG</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="27" x="202.5" y="1251.4453">[Svg]</text><!--MD5=[25fa7e2689bf026fa7ae096c8bd990c8]
+entity picturePng--><rect fill="#438DD5" height="52.9766" style="stroke:#3C7FC0;stroke-width:1.5;" width="87" x="58.5" y="1185.5"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="33" x="85.5" y="1210.9688">png</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="67" x="68.5" y="1225.9453">[Undefined]</text><!--MD5=[fee662a292a0353a69bd162820bae93b]
+entity User--><rect fill="#08427B" height="86.8438" style="stroke:#073B6F;stroke-width:1.5;" width="68" x="182" y="7"/><image height="48" width="48" x="192" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAACD0lEQVR4Xu2YoU4EMRCGT+4j8Ai8AhaH4QHgAUjQuFMECUgMIUgwJAgMhgQsAYUiJCiQIBBY+EITsjfTdme6V24v4c8vyGbb+ZjOtN0bNcvjQXmkH83WvYBWto6PLm6v7p7uH1/w2fXD+PBycX1Pv2l3IdDm/vn7x+dXQiAubRzoURa7gRZWd0iGRIiJbOnhnfYBQZNJjNbuyY2eJG8fkDE3bbG4ep6MHUAsgYxmE3nVs6VsBWJSGccsOlFPmLIViMzLOB7pCVO2AtHJMohH7Fh6zqitQK7m0rJvAVYgGcEpe//PLdDz65sM4pF9N7ICcXDKIB5Nv6j7tD0NoSdM2QrU9Gg0ewE1LqBhHR3BBdvj2vapnidjHxD/q6vd7Pvhr31AwcY8eXMTXAKECZZJFXuEq27aLgQK5uLMohCenGGuGewOxSjBvYBqeG6B+Nqiblggdjnc+ZXDy+FNFpFzw76O3UBAROuXh6FoiAcf5g9eTvUgzy0nWg6I8cXHRUpg5bOVBCo+KDpFajOf23GgPme7RSQ+lacIENUgJ6gg1k6HjgOlqnLqip4tEuhv0hNEMXUD0clyXE3p6pZA0S2nnvTlXwLJEZWlb7cTQH1+USgTN4VhAenm/wea1OCAOmqo6fE1WCb9WSKBah+rbUWPWAmE2Rvk0ApiB45eOyNAzU8xcTvj8KvkKEoOaIYeHNA3ZuygAvFMUO0AAAAASUVORK5CYII=" y="17"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="32" x="200" y="80.4688">You</text><!--MD5=[32da8a16bfd6303f92565ee3a55f8341]
+link data to genpuml--><path d="M128,373.34 C128,399.09 128,427.77 128,454.55 " fill="none" id="data-to-genpuml" style="stroke:#FFFFFF;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#FFFFFF" points="128,462.79,131,454.79,125,454.79,128,462.79" style="stroke:#FFFFFF;stroke-width:1.0;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="96" x="129" y="415.6016">Apply plantuml</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="55" x="151.5" y="429.7344">template</text><!--MD5=[5f69317217baabcdc0e664ead32aeaf2]
+link genpuml to yourPuml--><path d="M129.6,646.12 C130,668.66 130.42,692.44 130.8,713.67 " fill="none" id="genpuml-to-yourPuml" style="stroke:#FFFFFF;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#FFFFFF" points="130.94,721.68,133.7967,713.6277,127.7976,713.7348,130.94,721.68" style="stroke:#FFFFFF;stroke-width:1.0;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="146" x="132" y="688.6016">Dump the plantuml file</text><!--MD5=[19c87a52daa5d5ef6a0f74c9a86e8512]
+link User to data--><path d="M181.85,93.06 C175.14,102.77 168.72,113.39 164,124 C153.62,147.33 146.14,173.88 140.79,198.75 " fill="none" id="User-to-data" style="stroke:#00BB00;stroke-width:2.0;"/><polygon fill="#00BB00" points="139.12,206.77,143.6865,199.5487,137.8122,198.3267,139.12,206.77" style="stroke:#00BB00;stroke-width:2.0;"/><text fill="#008800" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="111" x="165" y="136.6016">Write the diagram</text><!--MD5=[2eecbc3006cf4e68129197b39d927499]
+link User to genpuml--><path d="M250.2,79.77 C262.35,91.96 274.6,107.26 281,124 C330.55,253.5 300.63,309.29 238,433 C234.03,440.84 229.41,448.54 224.36,456.03 " fill="none" id="User-to-genpuml" style="stroke:#00BB00;stroke-width:2.0;"/><polygon fill="#00BB00" points="219.6,462.85,226.6433,458.0134,221.7264,454.5748,219.6,462.85" style="stroke:#00BB00;stroke-width:2.0;"/><text fill="#008800" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="113" x="306" y="294.6016">Run the command</text><!--MD5=[0725da39fde1832abdb85d8b6f0ba71f]
+link yourPuml to plantumlServer--><path d="M132,843.01 C132,878.39 132,921.99 132,951.57 " fill="none" id="yourPuml-to-plantumlServer" style="stroke:#FFFFFF;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#FFFFFF" points="132,959.9,135,951.9,129,951.9,132,959.9" style="stroke:#FFFFFF;stroke-width:1.0;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="24" x="133" y="887.6016">****</text><!--MD5=[8720b5941ef2c7f0863186ffb1381e28]
+link plantuml to result--><path d="M23,1037.78 C23,1038.14 23,1038.5012 23,1038.8637 C23,1039.5886 23,1040.3184 23,1041.0528 C23,1046.9282 23,1053.1012 23,1059.4726 C23,1072.2155 23,1085.7519 23,1099.2875 C23,1099.7105 23,1100.1335 23,1100.5564 " fill="none" id="plantuml-to-result" style="stroke:#FFFFFF;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#FFFFFF" points="23,1100.5564,26,1092.5564,20,1092.5564,23,1100.5564" style="stroke:#FFFFFF;stroke-width:1.0;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="24" x="24" y="1073.6016">****</text><rect height="195.3711" rx="5" ry="5" style="stroke:#00000000;stroke-width:1.0;fill:none;" width="387" x="18" y="1301"/><rect height="16.4883" style="stroke:none;stroke-width:1.0;fill:none;" width="375" x="24" y="1308"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="51" x="24" y="1321.5352">Legend</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="79" y="1321.5352"/><rect fill="#08427B" height="16.4883" style="stroke:none;stroke-width:1.0;" width="375" x="24" y="1324.4883"/><text fill="#073B6F" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="28" y="1338.0234">▯</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="40" y="1338.0234"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="44" y="1338.0234">person</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="100" y="1338.0234"/><rect fill="#1168BD" height="16.4883" style="stroke:none;stroke-width:1.0;" width="375" x="24" y="1340.9766"/><text fill="#3C7FC0" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="28" y="1354.5117">▯</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="40" y="1354.5117"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47" x="44" y="1354.5117">system</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="99" y="1354.5117"/><rect fill="#438DD5" height="16.4883" style="stroke:none;stroke-width:1.0;" width="375" x="24" y="1357.4648"/><text fill="#3C7FC0" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="28" y="1371">▯</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="40" y="1371"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="65" x="44" y="1371">container</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="117" y="1371"/><rect height="16.4883" style="stroke:none;stroke-width:1.0;fill:none;" width="375" x="24" y="1373.9531"/><text fill="#444444" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="28" y="1387.4883">▯</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="40" y="1387.4883"/><text fill="#444444" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="269" x="44" y="1387.4883">system boundary (dashed, transparent)</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="321" y="1387.4883"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="14" x="28" y="1403.9766">─</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="46" y="1403.9766"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="139" x="50" y="1403.9766">external component</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="197" y="1403.9766"/><text fill="#00BB00" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="14" x="28" y="1420.4648">─</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="46" y="1420.4648"/><text fill="#008800" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="71" x="50" y="1420.4648">User Input</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="129" y="1420.4648"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="14" x="28" y="1436.9531">─</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="46" y="1436.9531"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="128" x="50" y="1436.9531">internal machinery</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="186" y="1436.9531"/><rect fill="#008800" height="16.4883" style="stroke:none;stroke-width:1.0;" width="375" x="24" y="1439.9063"/><text fill="#00BB00" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="28" y="1453.4414">▯</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="40" y="1453.4414"/><text fill="#F0E68C" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="347" x="44" y="1453.4414">User Generated Data (rounded box) (no text color)</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="399" y="1453.4414"/><rect fill="#004400" height="16.4883" style="stroke:none;stroke-width:1.0;" width="375" x="24" y="1456.3945"/><text fill="#00BB00" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="28" y="1469.9297">▯</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="40" y="1469.9297"/><text fill="#F0E68C" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="71" x="44" y="1469.9297">Command</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="123" y="1469.9297"/><rect fill="#004455" height="16.4883" style="stroke:none;stroke-width:1.0;" width="375" x="24" y="1472.8828"/><text fill="#AABBCC" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="8" x="28" y="1486.418">▯</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="40" y="1486.418"/><text fill="#F0E68C" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="63" x="44" y="1486.418">PlantUML</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="0" x="115" y="1486.418"/><line style="stroke:#00000000;stroke-width:1.0;" x1="24" x2="399" y1="1308" y2="1308"/><line style="stroke:#00000000;stroke-width:1.0;" x1="24" x2="399" y1="1324.4883" y2="1324.4883"/><line style="stroke:#00000000;stroke-width:1.0;" x1="24" x2="399" y1="1340.9766" y2="1340.9766"/><line style="stroke:#00000000;stroke-width:1.0;" x1="24" x2="399" y1="1357.4648" y2="1357.4648"/><line style="stroke:#00000000;stroke-width:1.0;" x1="24" x2="399" y1="1373.9531" y2="1373.9531"/><line style="stroke:#00000000;stroke-width:1.0;" x1="24" x2="399" y1="1390.4414" y2="1390.4414"/><line style="stroke:#00000000;stroke-width:1.0;" x1="24" x2="399" y1="1406.9297" y2="1406.9297"/><line style="stroke:#00000000;stroke-width:1.0;" x1="24" x2="399" y1="1423.418" y2="1423.418"/><line style="stroke:#00000000;stroke-width:1.0;" x1="24" x2="399" y1="1439.9063" y2="1439.9063"/><line style="stroke:#00000000;stroke-width:1.0;" x1="24" x2="399" y1="1456.3945" y2="1456.3945"/><line style="stroke:#00000000;stroke-width:1.0;" x1="24" x2="399" y1="1472.8828" y2="1472.8828"/><line style="stroke:#00000000;stroke-width:1.0;" x1="24" x2="399" y1="1489.3711" y2="1489.3711"/><line style="stroke:#00000000;stroke-width:1.0;" x1="24" x2="24" y1="1308" y2="1489.3711"/><line style="stroke:#00000000;stroke-width:1.0;" x1="399" x2="399" y1="1308" y2="1489.3711"/><!--MD5=[993dfba13219a75852d030edd205634f]
 @startuml MyDiagram
 skinparam backgroundcolor transparent
 
@@ -25,7 +26,7 @@ skinparam backgroundcolor transparent
 
 !include https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/master/sprites/./svg.puml 
 
-LAYOUT_LANDSCAPE()
+LAYOUT_TOP_DOWN()
 
 
 HIDE_STEREOTYPE()
@@ -34,11 +35,23 @@ HIDE_STEREOTYPE()
 /'Relation Tags'/ 
 
 
+AddRelTag("externalSystem",$textColor="#ffffff",$lineColor="#ffffff",$lineStyle=DashedLine(),$legendText="external component")
+
+AddRelTag("userInput",$textColor="#008800",$lineColor="#00bb00",$lineStyle=BoldLine(),$legendText="User Input")
+
+
+AddRelTag("internalWiring",$textColor="#ffffff",$lineColor="#ffffff",$lineStyle=DashedLine(),$legendText="internal machinery")
 
 
 
 /'Element Tags'/ 
 
+
+AddElementTag("User Generated Data",$bgColor="#008800",$borderColor="#00bb00",$shape="RoundedBoxShape()")
+
+AddElementTag("commandT",$bgColor="#004400",$borderColor="#00bb00",$shape="RoundedBoxShape()",$legendText="Command")
+
+AddElementTag("plantumlT",$bgColor="#004455",$borderColor="#aabbcc",$shape="RoundedBoxShape()",$legendText="PlantUML")
 
 
 
@@ -52,19 +65,19 @@ Person(User,"You")
 /' Systems '/
 
 System_Boundary(cue4puml4c4,"cue4puml4c4"){
-	Container(data,"C4 Described with CUE","CUE","","cue_logo")
-	Container(genpuml,"Cue command genpuml","CUE","","cue_logo")
-	Container(yourPuml,"PUML representation of the C4","Undefined","")
+	Container(data,"C4 Described with CUE","CUE","Describe your diagram as data with the library","cue_logo",$tags="User Generated Data+ ")
+	Container(genpuml,"cue genpuml","CUE","run the cue genpuml command to generate the representation","cue_logo",$tags="commandT+ ")
+	Container(yourPuml,"PUML representation of the C4","plantuml","Your c4 is represented as plantuml code",$tags="plantumlT+ ")
 
-	Rel("genpuml","data","Read your code and apply puml template")
+	Rel("data","genpuml","Apply plantuml template",$tags="internalWiring+ ")
 
 
-	Rel("genpuml","yourPuml","Generate puml file")
+	Rel("genpuml","yourPuml","Dump the plantuml file",$tags="internalWiring+ ")
 
 }
 
-System(plantuml,"Plantuml"){
-	Container(plantumlServer,"Plantuml Server","Undefined","")
+System(plantuml,"Plantuml",$tags="plantumlT+ "){
+	Container(plantumlServer,"Plantuml Server","plantuml","")
 }
 
 System_Boundary(result,"result"){
@@ -82,13 +95,16 @@ System_Boundary(result,"result"){
 /' Relations '/
 
 
-	Rel("User","data","")
+	Rel("User","data","Write the diagram",$tags="userInput+ ")
 
 
-	Rel("yourPuml","plantumlServer","")
+	Rel("User","genpuml","Run the command",$tags="userInput+ ")
 
 
-	Rel("plantuml","result","")
+	Rel("yourPuml","plantumlServer","",$tags="externalSystem+ ")
+
+
+	Rel("plantuml","result","",$tags="externalSystem+ ")
 
 
 
@@ -926,7 +942,7 @@ FFFD4444444444444444444444444444444444444444444EFFF
 00000000000000000000000FFFFF00000000000000000000000
 }
 
-left to right direction
+top to bottom direction
 
 
 hide stereotype
@@ -934,8 +950,104 @@ hide stereotype
 
 
 
+skinparam arrow<<externalSystem>> {
+    Color ffffff;text:ffffff;line.dashed
+}
 
 
+skinparam arrow<<userInput>> {
+    Color 00bb00;text:008800;line.bold
+}
+
+
+
+skinparam arrow<<internalWiring>> {
+    Color ffffff;text:ffffff;line.dashed
+}
+
+
+
+
+
+
+skinparam rectangle<<User Generated Data>> {
+    BackgroundColor #008800
+    BorderColor #00bb00
+    RoundCorner 25
+    DiagonalCorner 0
+}
+skinparam database<<User Generated Data>> {
+    BackgroundColor #008800
+    BorderColor #00bb00
+}
+skinparam queue<<User Generated Data>> {
+    BackgroundColor #008800
+    BorderColor #00bb00
+}
+skinparam actor<<User Generated Data>> {
+    StereotypeFontColor #008800
+    FontColor #008800
+    BackgroundColor #008800
+    BorderColor #00bb00
+}
+skinparam person<<User Generated Data>> {
+    BackgroundColor #008800
+    BorderColor #00bb00
+}
+
+
+
+skinparam rectangle<<commandT>> {
+    BackgroundColor #004400
+    BorderColor #00bb00
+    RoundCorner 25
+    DiagonalCorner 0
+}
+skinparam database<<commandT>> {
+    BackgroundColor #004400
+    BorderColor #00bb00
+}
+skinparam queue<<commandT>> {
+    BackgroundColor #004400
+    BorderColor #00bb00
+}
+skinparam actor<<commandT>> {
+    StereotypeFontColor #004400
+    FontColor #004400
+    BackgroundColor #004400
+    BorderColor #00bb00
+}
+skinparam person<<commandT>> {
+    BackgroundColor #004400
+    BorderColor #00bb00
+}
+
+
+
+skinparam rectangle<<plantumlT>> {
+    BackgroundColor #004455
+    BorderColor #aabbcc
+    RoundCorner 25
+    DiagonalCorner 0
+}
+skinparam database<<plantumlT>> {
+    BackgroundColor #004455
+    BorderColor #aabbcc
+}
+skinparam queue<<plantumlT>> {
+    BackgroundColor #004455
+    BorderColor #aabbcc
+}
+skinparam actor<<plantumlT>> {
+    StereotypeFontColor #004455
+    FontColor #004455
+    BackgroundColor #004455
+    BorderColor #aabbcc
+}
+skinparam person<<plantumlT>> {
+    BackgroundColor #004455
+    BorderColor #aabbcc
+}
 
 
 
@@ -949,19 +1061,19 @@ rectangle "<$person>\n==You" <<person>> as User
 	
 
   rectangle "==cue4puml4c4\n<size:12>[System]</size>" <<system_boundary>><<boundary>> as cue4puml4c4 {
-	rectangle "<$cue_logo>\n==C4 Described with CUE\n//<size:12>[CUE]</size>//" <<container>> as data 
-	rectangle "<$cue_logo>\n==Cue command genpuml\n//<size:12>[CUE]</size>//" <<container>> as genpuml 
-	rectangle "==PUML representation of the C4\n//<size:12>[Undefined]</size>//" <<container>> as yourPuml 
+	rectangle "<$cue_logo>\n==C4 Described with CUE\n//<size:12>[CUE]</size>//\n\nDescribe your diagram as data with the library" <<User Generated Data>><< >><<container>> as data 
+	rectangle "<$cue_logo>\n==cue genpuml\n//<size:12>[CUE]</size>//\n\nrun the cue genpuml command to generate the representation" <<commandT>><< >><<container>> as genpuml 
+	rectangle "==PUML representation of the C4\n//<size:12>[plantuml]</size>//\n\nYour c4 is represented as plantuml code" <<plantumlT>><< >><<container>> as yourPuml 
 
-	genpuml - ->> data : **Read your code and apply puml template**
+	data - ->> genpuml <<internalWiring>><< >> : **Apply plantuml template**
 
 
-	genpuml - ->> yourPuml : **Generate puml file**
+	genpuml - ->> yourPuml <<internalWiring>><< >> : **Dump the plantuml file**
 
 }
 
-rectangle "==Plantuml" <<system>> as plantuml {
-	rectangle "==Plantuml Server\n//<size:12>[Undefined]</size>//" <<container>> as plantumlServer 
+rectangle "==Plantuml" <<plantumlT>><< >><<system>> as plantuml {
+	rectangle "==Plantuml Server\n//<size:12>[plantuml]</size>//" <<container>> as plantumlServer 
 }
 
   rectangle "==result\n<size:12>[System]</size>" <<system_boundary>><<boundary>> as result {
@@ -978,13 +1090,16 @@ rectangle "==Plantuml" <<system>> as plantuml {
 
 
 
-	User - ->> data : ****
+	User - ->> data <<userInput>><< >> : **Write the diagram**
 
 
-	yourPuml - ->> plantumlServer : ****
+	User - ->> genpuml <<userInput>><< >> : **Run the command**
 
 
-	plantuml - ->> result : ****
+	yourPuml - ->> plantumlServer <<externalSystem>><< >> : ****
+
+
+	plantuml - ->> result <<externalSystem>><< >> : ****
 
 
 
@@ -997,6 +1112,12 @@ legend right
 |<#1168BD><color:#3C7FC0> <U+25AF></color> <color:#FFFFFF> system </color> |
 |<#438DD5><color:#3C7FC0> <U+25AF></color> <color:#FFFFFF> container </color> |
 |<#transparent><color:#444444> <U+25AF></color> <color:#444444> system boundary (dashed, transparent) </color> |
+|<color:#ffffff> <U+2500></color> <color:#ffffff> external component </color> |
+|<color:#00bb00> <U+2500></color> <color:#008800> User Input </color> |
+|<color:#ffffff> <U+2500></color> <color:#ffffff> internal machinery </color> |
+|<#008800><color:#00bb00> <U+25AF></color> <color:#khaki> User Generated Data (rounded box) (no text color) </color> |
+|<#004400><color:#00bb00> <U+25AF></color> <color:#khaki> Command </color> |
+|<#004455><color:#aabbcc> <U+25AF></color> <color:#khaki> PlantUML </color> |
 endlegend
 @enduml
 

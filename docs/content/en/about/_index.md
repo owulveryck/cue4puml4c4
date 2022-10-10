@@ -13,7 +13,7 @@ menu:
 Here is an example of the potential of this library
 
 {{< tabpane >}}
-{{< tab header="Diagram data (CUE)" lang="cue" >}}
+{{< tab header="Diagram data (CUE)" lang="go" >}}
 package main
 
 import (
@@ -91,7 +91,7 @@ C1: c4.#C1 & {// the name C1 should be coherent with the name you declare in the
 	]
 }
 {{< /tab >}}
-{{< tab header="CUE command" lang="cue" >}}
+{{< tab header="CUE command" lang="go" >}}
 package main
 
 import (
