@@ -6,6 +6,7 @@ plantumlTemplate: """
 	!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
 	
 	!include https://raw.githubusercontent.com/owulveryck/PlantUML-icons-GCP/master/official/GCPCommon.puml
+	!include https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/v14.0/dist/AWSCommon.puml
 	{{- range .Technologies.tech}}
 	{{- if .sprite }}
 	!include {{ .sprite.url }} 

@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/owulveryck/cue4puml4c4/technology/gcp"
+	"github.com/owulveryck/cue4puml4c4/technology/aws"
 	"github.com/owulveryck/cue4puml4c4/technology/dev"
 	"github.com/owulveryck/cue4puml4c4/technology/stdlib"
 	"github.com/owulveryck/cue4puml4c4:c4"
@@ -39,6 +40,12 @@ myWebApp: c4.#Container & {
 	tags: [aSupprimer]
 }
 
+mysample2: c4.#Container & {
+	id:          "mysample2"
+	label:       "mysample2"
+	description: "mysample2"
+	technology:  aws.EC2
+}
 myothercontainer: c4.#Container & {
 	id:         "othercontainer"
 	label:      "Cool2"
@@ -68,7 +75,7 @@ sampleSystem: c4.#System & {
 	id:         "c1"
 	label:      "Sample System"
 	isBoundary: true
-	containers: [othersample, myothercontainer]
+	containers: [othersample, myothercontainer, mysample2]
 	systems: [appEngine, twitter]
 	technology: dev.CUE
 	relations: [
