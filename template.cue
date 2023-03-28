@@ -25,39 +25,11 @@ plantumlTemplate: """
 	{{- end}}
 	
 	/'Relation Tags'/ 
-	{{- if .relationTags}}
-	{{- range .relationTags.a.tags}}
-	AddRelTag("{{.id}}"
-	{{- if .textColor}},$textColor="{{.textColor}}"{{end -}}
-	{{- if .lineColor}},$lineColor="{{.lineColor}}"{{ end -}}
-	{{- if .lineStyle}},$lineStyle={{if eq .lineStyle  "dot"}}DottedLine(){{end}}{{if eq .lineStyle  "dash"}}DashedLine(){{end}}{{if eq .lineStyle  "bold"}}BoldLine(){{end}}{{ end -}}
-	{{- if .legendText}},$legendText="{{.legendText}}"{{ end -}}
-	{{- if .technology}},$techn="{{.technology.name}}",$sprite="{{.technology.sprite.id}}"{{ end -}})
-	{{- end}}
-	{{- range .relationTags.b.tags}}
-	AddRelTag("{{.id}}"
-	{{- if .textColor}},$textColor="{{.textColor}}"{{end -}}
-	{{- if .lineColor}},$lineColor="{{.lineColor}}"{{ end -}}
-	{{- if .lineStyle}},$lineStyle={{if eq .lineStyle  "dot"}}DottedLine(){{end}}{{if eq .lineStyle  "dash"}}DashedLine(){{end}}{{if eq .lineStyle  "bold"}}BoldLine(){{end}}{{ end -}}
-	{{- if .legendText}},$legendText="{{.legendText}}"{{ end -}}
-	{{- if .technology}},$techn="{{.technology.name}}",$sprite="{{.technology.sprite.id}}"{{ end -}})
-	{{- end}}
-	{{- end}}
+	{{- if .relationTags}}{{template "RelationTags" .relationTags}}{{- end}}
 	
 	/'Element Tags'/ 
-	{{- if .elementTags}}
-	{{- range .elementTags.tags}}
-	AddElementTag("{{.id}}"
-	{{- if .bgColor}},$bgColor="{{.bgColor}}"{{end -}}
-	{{- if .borderColor}},$borderColor="{{.borderColor}}"{{ end -}}
-	{{- if .shadowing}},$shadowing="{{.shadowing}}"{{ end -}}
-	{{- if .shape}},$shape="{{if eq .shape  "rounded"}}RoundedBoxShape(){{end}}{{if eq .shape  "eightsided"}}EightSidedShape(){{end}}"{{ end -}}
-	{{- if .fontColor}},$fontColor="{{.fontColor}}"{{ end -}}
-	{{- if .legendText}},$legendText="{{.legendText}}"{{ end -}}
-	{{- if .technology}},$techn="{{.technology.name}}",$sprite="{{.technology.sprite.id}}"{{ end -}})
-	{{- end}}
-	{{- end}}
-	
+	{{- if .elementTags}}{{template "ElementTags" .elementTags}}{{- end}}
+
 	/'People'/ 
 	{{- if .Persons}}{{- template "Persons" .Persons -}} {{- end}}
 
@@ -76,7 +48,7 @@ plantumlTemplate: """
 
 	SHOW_LEGEND()
 	@enduml
-	""" + containerTemplateDef + relTemplateDef + personsTemplateDef + systemsTemplateDef + tagsTemplateDef + systemsExtTemplateDef
+	""" + containerTemplatePuml + relTemplatePuml + personsTemplatePuml + systemsTemplatePuml + tagsTemplatePuml + systemsExtTemplatePuml + relationTagsTemplatePuml + elementTagsTemplatePuml
 
 mermaidTemplate: """
 	C4Container
@@ -90,9 +62,9 @@ mermaidTemplate: """
 	{{template "Rel" . -}}
 	{{- end}}
 	{{- end}}
-	""" + containerTemplateDef + relTemplateDef + personsTemplateDef + systemsTemplateDef + tagsTemplateDef + systemsExtTemplateDef
+	""" + containerTemplatePuml + relTemplatePuml + personsTemplatePuml + systemsTemplatePuml + tagsTemplatePuml + systemsExtTemplatePuml
 
-systemsExtTemplateDef: """
+systemsExtTemplatePuml: """
 	{{- define "SystemsExt"}}
 	{{- range .}}
 	System_Ext({{.id}},"{{.label}}"{{if .technology}},"{{.technology.name}}","{{.technology.sprite.id}}"{{end}}{{if .link}},$link="{{.link}}"{{end}}{{if .tags}},$tags="{{template "tags".tags}}"{{end}}){{if or .containers .systems}}{
@@ -114,11 +86,11 @@ systemsExtTemplateDef: """
 	{{end -}}	
 	"""
 
-tagsTemplateDef: """
+tagsTemplatePuml: """
 	{{define "tags"}}{{range .}}{{.id}}+{{end}} {{end}}
 	"""
 
-systemsTemplateDef: """
+systemsTemplatePuml: """
 	{{- define "Systems" }}
 	{{- range . }}
 	System{{if .isBoundary}}_Boundary{{end}}({{.id}},"{{.label}}"{{if .description}},"{{.desc}}"{{end}}{{if .technology}},{{if not .description}}"{{.technology.name}}",{{end}}"{{.technology.sprite.id}}"{{end}}{{if .link}},$link="{{.link}}"{{end}}{{if .tags}},$tags="{{template "tags".tags}}"{{end}}){{    if or .containers .systems}} {
@@ -137,16 +109,52 @@ systemsTemplateDef: """
 	{{- end}}
 	"""
 
-personsTemplateDef: """
+personsTemplatePuml: """
 	{{ define "Persons"}}{{- range .}}
 	Person({{.id}},"{{.label}}")
 	{{- end }}{{ end }}
 	"""
 
-relTemplateDef: """
+relTemplatePuml: """
 	{{ define "Rel"}}Rel("{{.source.id}}","{{.dest.id}}","{{.desc}}"{{if .protocol}},"{{.protocol}}"{{end}}{{if .link}},$link="{{.link}}"{{end}}{{if .tags}},$tags="{{template "tags".tags}}"{{end}}){{ end}}
 	"""
 
-containerTemplateDef: """
+containerTemplatePuml: """
 	{{ define "Container" }}Container{{.technology.type}}({{.id}},"{{.label}}","{{.technology.name}}","{{if .description}}{{.desc}}{{end}}"{{if .technology.sprite}},"{{.technology.sprite.id}}"{{end}}{{if .link}},$link="{{.link}}"{{end}}{{if .tags}},$tags="{{template "tags".tags}}"{{end}}) {{ end }}
+	"""
+
+relationTagsTemplatePuml: """
+	{{- define "RelationTags"}}
+	{{- range .a.tags}}
+	AddRelTag("{{.id}}"
+	{{- if .textColor}},$textColor="{{.textColor}}"{{end -}}
+	{{- if .lineColor}},$lineColor="{{.lineColor}}"{{ end -}}
+	{{- if .lineStyle}},$lineStyle={{if eq .lineStyle  "dot"}}DottedLine(){{end}}{{if eq .lineStyle  "dash"}}DashedLine(){{end}}{{if eq .lineStyle  "bold"}}BoldLine(){{end}}{{ end -}}
+	{{- if .legendText}},$legendText="{{.legendText}}"{{ end -}}
+	{{- if .technology}},$techn="{{.technology.name}}",$sprite="{{.technology.sprite.id}}"{{ end -}})
+	{{- end}}
+	{{- range .b.tags}}
+	AddRelTag("{{.id}}"
+	{{- if .textColor}},$textColor="{{.textColor}}"{{end -}}
+	{{- if .lineColor}},$lineColor="{{.lineColor}}"{{ end -}}
+	{{- if .lineStyle}},$lineStyle={{if eq .lineStyle  "dot"}}DottedLine(){{end}}{{if eq .lineStyle  "dash"}}DashedLine(){{end}}{{if eq .lineStyle  "bold"}}BoldLine(){{end}}{{ end -}}
+	{{- if .legendText}},$legendText="{{.legendText}}"{{ end -}}
+	{{- if .technology}},$techn="{{.technology.name}}",$sprite="{{.technology.sprite.id}}"{{ end -}})
+	{{- end}}
+	{{- end}}
+	"""
+
+elementTagsTemplatePuml: """
+	{{- define "ElementTags"}}
+	{{- range .tags}}
+	AddElementTag("{{.id}}"
+	{{- if .bgColor}},$bgColor="{{.bgColor}}"{{end -}}
+	{{- if .borderColor}},$borderColor="{{.borderColor}}"{{ end -}}
+	{{- if .shadowing}},$shadowing="{{.shadowing}}"{{ end -}}
+	{{- if .shape}},$shape="{{if eq .shape  "rounded"}}RoundedBoxShape(){{end}}{{if eq .shape  "eightsided"}}EightSidedShape(){{end}}"{{ end -}}
+	{{- if .fontColor}},$fontColor="{{.fontColor}}"{{ end -}}
+	{{- if .legendText}},$legendText="{{.legendText}}"{{ end -}}
+	{{- if .technology}},$techn="{{.technology.name}}",$sprite="{{.technology.sprite.id}}"{{ end -}})
+	{{- end}}
+	{{- end}}
 	"""
