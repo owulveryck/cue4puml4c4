@@ -10,43 +10,157 @@ plantumlTemplate: """
 	{{- range .Technologies.tech}}
 	{{- if .sprite }}
 	!include {{ .sprite.url }} 
-	{{end -}}
-	{{end -}}
+	{{- end }}
+	{{- end }}
 	
-	{{ if eq .layout "top-down"}}
+	{{- if eq .layout "top-down"}}
 	LAYOUT_TOP_DOWN()
 	{{ else if eq .layout "left-right"}}
 	LAYOUT_LEFT_RIGHT()
 	{{ else if eq .layout "landscape"}}
 	LAYOUT_LANDSCAPE()
-	{{end}}
-	{{ if .hideStereotype }}
+	{{- end}}
+	{{- if .hideStereotype }}
 	HIDE_STEREOTYPE()
-	{{end}}
+	{{- end}}
 	
 	/'Relation Tags'/ 
-	{{if .relationTags}}
-	{{range .relationTags.a.tags}}
-	AddRelTag("{{.id}}"
-	{{- if .textColor}},$textColor="{{.textColor}}"{{end -}}
-	{{- if .lineColor}},$lineColor="{{.lineColor}}"{{ end -}}
-	{{- if .lineStyle}},$lineStyle={{if eq .lineStyle  "dot"}}DottedLine(){{end}}{{if eq .lineStyle  "dash"}}DashedLine(){{end}}{{if eq .lineStyle  "bold"}}BoldLine(){{end}}{{ end -}}
-	{{- if .legendText}},$legendText="{{.legendText}}"{{ end -}}
-	{{- if .technology}},$techn="{{.technology.name}}",$sprite="{{.technology.sprite.id}}"{{ end -}})
-	{{end}}
-	{{range .relationTags.b.tags}}
-	AddRelTag("{{.id}}"
-	{{- if .textColor}},$textColor="{{.textColor}}"{{end -}}
-	{{- if .lineColor}},$lineColor="{{.lineColor}}"{{ end -}}
-	{{- if .lineStyle}},$lineStyle={{if eq .lineStyle  "dot"}}DottedLine(){{end}}{{if eq .lineStyle  "dash"}}DashedLine(){{end}}{{if eq .lineStyle  "bold"}}BoldLine(){{end}}{{ end -}}
-	{{- if .legendText}},$legendText="{{.legendText}}"{{ end -}}
-	{{- if .technology}},$techn="{{.technology.name}}",$sprite="{{.technology.sprite.id}}"{{ end -}})
-	{{end}}
-	{{end}}
+	{{- if .relationTags}}{{template "RelationTags" .relationTags}}{{- end}}
 	
 	/'Element Tags'/ 
-	{{if .elementTags}}
-	{{range .elementTags.tags}}
+	{{- if .elementTags}}{{template "ElementTags" .elementTags}}{{- end}}
+
+	/'People'/ 
+	{{- if .Persons}}{{- template "Persons" .Persons -}} {{- end}}
+
+	/'Systems'/ 
+	{{- if .Systems}} {{template "Systems" .Systems}} {{end}}
+
+	/'SystemsExt'/ 
+	{{- if .SystemsExt}}{{template "SystemsExt" .SystemsExt}} {{end}}
+
+	/'Relations'/ 
+	{{- if .relations}}
+	{{- range .relations}}
+	{{template "Rel" . -}}
+	{{- end}}
+	{{- end}}
+
+	SHOW_LEGEND()
+	@enduml
+	""" + containerTemplatePuml + relTemplatePuml + personsTemplatePuml + systemsTemplatePuml + tagsTemplatePuml + systemsExtTemplatePuml + relationTagsTemplatePuml + elementTagsTemplatePuml
+
+mermaidTemplate: """
+	C4Container
+	   title {{if .title}}{{.title}}{{else}}MyDiagram{{end}}
+	
+	{{- if .Persons}}{{- template "Persons" .Persons -}} {{- end}}
+	{{- if .Systems}} {{template "Systems" .Systems}} {{end}}
+	{{- if .SystemsExt}}{{template "SystemsExt" .SystemsExt}} {{end}}
+	""" + containerTemplatePuml + relTemplatePuml + personsTemplatePuml + systemsTemplateMermaid + tagsTemplatePuml + systemsExtTemplatePuml
+
+systemsExtTemplatePuml: """
+	{{- define "SystemsExt"}}
+	{{- range .}}
+	System_Ext({{.id}},"{{.label}}"{{if .technology}},"{{.technology.name}}","{{.technology.sprite.id}}"{{end}}{{if .link}},$link="{{.link}}"{{end}}{{if .tags}},$tags="{{template "tags".tags}}"{{end}}){{if or .containers .systems}}{
+	{{- range .containers }}	
+	{{template "Container" . -}}
+	{{- end }}
+	{{- if .systems}}
+	{{template "Systems" .systems -}}
+	{{- end }}
+	{{if .SystemsExt}}
+	{{template "SystemsExt" .SystemsExt}}
+	{{end}}
+	{{- range .relations}}
+	{{template "Rel" . -}}
+	{{- end}}
+	}
+	{{end -}}
+	{{end -}}
+	{{end -}}	
+	"""
+
+tagsTemplatePuml: """
+	{{define "tags"}}{{range .}}{{.id}}+{{end}} {{end}}
+	"""
+
+systemsTemplatePuml: """
+	{{- define "Systems" }}
+	{{- range . }}
+	System{{if .isBoundary}}_Boundary{{end}}({{.id}},"{{.label}}"{{if .description}},"{{.desc}}"{{end}}{{if .technology}},{{if not .description}}"{{.technology.name}}",{{end}}"{{.technology.sprite.id}}"{{end}}{{if .link}},$link="{{.link}}"{{end}}{{if .tags}},$tags="{{template "tags".tags}}"{{end}}){{    if or .containers .systems}} {
+	{{- range .containers }}	
+	{{ template "Container" . -}}
+	{{- end }}
+	{{- if .systems }}
+	{{- template "Systems" .systems -}}
+	{{- end }}
+	{{- range .relations }}
+	{{template "Rel" . -}}
+	{{- end }}
+	}
+	{{- end}}
+	{{- end}}
+	{{- end}}
+	"""
+
+systemsTemplateMermaid: """
+	{{- define "Systems" }}
+	{{- range . }}
+	System{{if or .containers .systems }}_Boundary{{end}}({{.id}},"{{.label}}"{{if .description}},"{{.desc}}"{{end}}{{if .technology}},{{if not .description}}"{{.technology.name}}",{{end}}"{{.technology.sprite.id}}"{{end}}{{if .link}},$link="{{.link}}"{{end}}{{if .tags}},$tags="{{template "tags".tags}}"{{end}}){{    if or .containers .systems}} {
+	{{- range .containers }}	
+	{{ template "Container" . -}}
+	{{- end }}
+	{{- if .systems }}
+	{{- template "Systems" .systems -}}
+	{{- end }}
+	{{- range .relations }}
+	{{template "Rel" . -}}
+	{{- end }}
+	}
+	{{- end}}
+	{{- end}}
+	{{- end}}
+	"""
+
+personsTemplatePuml: """
+	{{ define "Persons"}}{{- range .}}
+	Person({{.id}},"{{.label}}")
+	{{- end }}{{ end }}
+	"""
+
+relTemplatePuml: """
+	{{ define "Rel"}}Rel("{{.source.id}}","{{.dest.id}}","{{.desc}}"{{if .protocol}},"{{.protocol}}"{{end}}{{if .link}},$link="{{.link}}"{{end}}{{if .tags}},$tags="{{template "tags".tags}}"{{end}}){{ end}}
+	"""
+
+containerTemplatePuml: """
+	{{ define "Container" }}Container{{.technology.type}}({{.id}},"{{.label}}","{{.technology.name}}","{{if .description}}{{.desc}}{{end}}"{{if .technology.sprite}},"{{.technology.sprite.id}}"{{end}}{{if .link}},$link="{{.link}}"{{end}}{{if .tags}},$tags="{{template "tags".tags}}"{{end}}) {{ end }}
+	"""
+
+relationTagsTemplatePuml: """
+	{{- define "RelationTags"}}
+	{{- range .a.tags}}
+	AddRelTag("{{.id}}"
+	{{- if .textColor}},$textColor="{{.textColor}}"{{end -}}
+	{{- if .lineColor}},$lineColor="{{.lineColor}}"{{ end -}}
+	{{- if .lineStyle}},$lineStyle={{if eq .lineStyle  "dot"}}DottedLine(){{end}}{{if eq .lineStyle  "dash"}}DashedLine(){{end}}{{if eq .lineStyle  "bold"}}BoldLine(){{end}}{{ end -}}
+	{{- if .legendText}},$legendText="{{.legendText}}"{{ end -}}
+	{{- if .technology}},$techn="{{.technology.name}}",$sprite="{{.technology.sprite.id}}"{{ end -}})
+	{{- end}}
+	{{- range .b.tags}}
+	AddRelTag("{{.id}}"
+	{{- if .textColor}},$textColor="{{.textColor}}"{{end -}}
+	{{- if .lineColor}},$lineColor="{{.lineColor}}"{{ end -}}
+	{{- if .lineStyle}},$lineStyle={{if eq .lineStyle  "dot"}}DottedLine(){{end}}{{if eq .lineStyle  "dash"}}DashedLine(){{end}}{{if eq .lineStyle  "bold"}}BoldLine(){{end}}{{ end -}}
+	{{- if .legendText}},$legendText="{{.legendText}}"{{ end -}}
+	{{- if .technology}},$techn="{{.technology.name}}",$sprite="{{.technology.sprite.id}}"{{ end -}})
+	{{- end}}
+	{{- end}}
+	"""
+
+elementTagsTemplatePuml: """
+	{{- define "ElementTags"}}
+	{{- range .tags}}
 	AddElementTag("{{.id}}"
 	{{- if .bgColor}},$bgColor="{{.bgColor}}"{{end -}}
 	{{- if .borderColor}},$borderColor="{{.borderColor}}"{{ end -}}
@@ -55,83 +169,6 @@ plantumlTemplate: """
 	{{- if .fontColor}},$fontColor="{{.fontColor}}"{{ end -}}
 	{{- if .legendText}},$legendText="{{.legendText}}"{{ end -}}
 	{{- if .technology}},$techn="{{.technology.name}}",$sprite="{{.technology.sprite.id}}"{{ end -}})
-	{{end}}
-	{{end}}
-	
-	{{if .Persons}}
-	/' Persons '/
-	{{template "Persons" .Persons}}
-	{{end}}
-	{{if .SystemsExt}}
-	/' Systems Ext '/
-	{{template "SystemsExt" .SystemsExt}}
-	{{end}}
-		{{if .Systems}}
-	/' Systems '/
-	{{template "Systems" .Systems}}
-	{{end}}
-
-	{{- define "SystemsExt"}}
-	{{- range .}}
-	System_Ext({{.id}},"{{.label}}"{{if .technology}},"{{.technology.name}}","{{.technology.sprite.id}}"{{end}}{{if .link}},$link="{{.link}}"{{end}}{{if .tags}},$tags="{{template "tags".tags}}"{{end}}){{if or .containers .systems}}{
-	{{- range .containers -}}	
-	{{- template "Container" . -}}
-	{{- end -}}
-	{{- if .systems}}
-	{{template "Systems" .systems}}
-	{{end -}}
-	{{if .SystemsExt}}
-	/' Systems Ext '/
-	{{template "SystemsExt" .SystemsExt}}
-	{{end}}
-	{{- range .relations}}
-	{{template "Rel" .}}
-	{{end}}
-	}
-	{{end -}}
-	{{end -}}
-	{{end -}}	
-	
-	{{- define "Systems"}}
-	{{- range .}}
-	System{{if .isBoundary}}_Boundary{{end}}({{.id}},"{{.label}}"{{if .description}},"{{.desc}}"{{end}}{{if .technology}},{{if not .description}}"{{.technology.name}}",{{end}}"{{.technology.sprite.id}}"{{end}}{{if .link}},$link="{{.link}}"{{end}}{{if .tags}},$tags="{{template "tags".tags}}"{{end}}){{    if or .containers .systems}}{
-	{{- range .containers -}}	
-	{{- template "Container" . -}}
-	{{- end -}}
-	{{- if .systems}}
-	{{template "Systems" .systems}}
-	{{end -}}
-	{{- range .relations}}
-	{{template "Rel" .}}
-	{{end}}
-	}
-	{{end -}}
-	{{end -}}
-	{{end -}}
-	
-	{{define "Persons"}}
-	{{- range .}}
-	Person({{.id}},"{{.label}}")
-	{{- end }}
-	{{- end }}
-	
-	{{define "Container" }}
-		Container{{.technology.type}}({{.id}},"{{.label}}","{{.technology.name}}","{{if .description}}{{.desc}}{{end}}"{{if .technology.sprite}},"{{.technology.sprite.id}}"{{end}}{{if .link}},$link="{{.link}}"{{end}}{{if .tags}},$tags="{{template "tags".tags}}"{{end}})
-	{{- end }}
-	
-	{{define "Rel"}}
-		Rel("{{.source.id}}","{{.dest.id}}","{{.desc}}"{{if .protocol}},"{{.protocol}}"{{end}}{{if .link}},$link="{{.link}}"{{end}}{{if .tags}},$tags="{{template "tags".tags}}"{{end}})
 	{{- end}}
-	
-	{{if .relations}}
-	/' Relations '/
-	{{ range .relations}}
-	{{template "Rel" .}}
-	{{end}}
-	{{end}}
-	
-	{{define "tags"}}{{range .}}{{.id}}+{{end}} {{end}}
-	
-	SHOW_LEGEND()
-	@enduml
+	{{- end}}
 	"""
