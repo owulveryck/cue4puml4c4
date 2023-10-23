@@ -10,7 +10,7 @@ import (
 
 aSupprimer: c4.#ElementTag & {
 	id:          "aSupprimer"
-	legendText:  "A Migrer en Rust"
+	legendText:  "Rebuild in Rust"
 	bgColor:     "#f0235c"
 	borderColor: "#ff0239c"
 	technology:  dev.Rust
@@ -75,12 +75,7 @@ sampleSystem: c4.#System & {
 	id:         "c1"
 	label:      "Sample System"
 	isBoundary: true
-	containers: [othersample, myothercontainer, mysample2]
-	systems: [appEngine, twitter]
-	technology: dev.CUE
-	relations: [
-		{source: othersample, dest: myothercontainer, tags: [autreFleche]},
-	]
+	containers: [myWebApp]
 }
 
 admin2: c4.#Person & {
@@ -94,11 +89,6 @@ admin: c4.#Person & {
 }
 
 C1: c4.#C1 & {
-	Persons: [admin2, admin]
+	Persons: [admin]
 	Systems: [sampleSystem]
-	layout: "landscape"
-	relations: [
-		{source: admin, dest:    myWebApp, description: "Uses", protocol:            "HTTPS ", tags: [myTest]},
-		{source: myWebApp, dest: twitter, description:  "Get tweets from", protocol: "HTTPS ", link: "https://plantuml.com/link"},
-	]
 }

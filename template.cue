@@ -57,12 +57,7 @@ mermaidTemplate: """
 	{{- if .Persons}}{{- template "Persons" .Persons -}} {{- end}}
 	{{- if .Systems}} {{template "Systems" .Systems}} {{end}}
 	{{- if .SystemsExt}}{{template "SystemsExt" .SystemsExt}} {{end}}
-	{{- if .relations}}
-	{{- range .relations}}
-	{{template "Rel" . -}}
-	{{- end}}
-	{{- end}}
-	""" + containerTemplatePuml + relTemplatePuml + personsTemplatePuml + systemsTemplatePuml + tagsTemplatePuml + systemsExtTemplatePuml
+	""" + containerTemplatePuml + relTemplatePuml + personsTemplatePuml + systemsTemplateMermaid + tagsTemplatePuml + systemsExtTemplatePuml
 
 systemsExtTemplatePuml: """
 	{{- define "SystemsExt"}}
@@ -94,6 +89,25 @@ systemsTemplatePuml: """
 	{{- define "Systems" }}
 	{{- range . }}
 	System{{if .isBoundary}}_Boundary{{end}}({{.id}},"{{.label}}"{{if .description}},"{{.desc}}"{{end}}{{if .technology}},{{if not .description}}"{{.technology.name}}",{{end}}"{{.technology.sprite.id}}"{{end}}{{if .link}},$link="{{.link}}"{{end}}{{if .tags}},$tags="{{template "tags".tags}}"{{end}}){{    if or .containers .systems}} {
+	{{- range .containers }}	
+	{{ template "Container" . -}}
+	{{- end }}
+	{{- if .systems }}
+	{{- template "Systems" .systems -}}
+	{{- end }}
+	{{- range .relations }}
+	{{template "Rel" . -}}
+	{{- end }}
+	}
+	{{- end}}
+	{{- end}}
+	{{- end}}
+	"""
+
+systemsTemplateMermaid: """
+	{{- define "Systems" }}
+	{{- range . }}
+	System{{if or .containers .systems }}_Boundary{{end}}({{.id}},"{{.label}}"{{if .description}},"{{.desc}}"{{end}}{{if .technology}},{{if not .description}}"{{.technology.name}}",{{end}}"{{.technology.sprite.id}}"{{end}}{{if .link}},$link="{{.link}}"{{end}}{{if .tags}},$tags="{{template "tags".tags}}"{{end}}){{    if or .containers .systems}} {
 	{{- range .containers }}	
 	{{ template "Container" . -}}
 	{{- end }}
