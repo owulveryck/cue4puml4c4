@@ -3195,6 +3195,7 @@ AwsGlacier: c4.#Technology & {
 
 Elasticsearch: c4.#Technology & {
 	name: "Elasticsearch"
+	type: "Db"
 	sprite: {
 		url: "https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/master/sprites/./elasticsearch.puml"
 		id:  "elasticsearch"
