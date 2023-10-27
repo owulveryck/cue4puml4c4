@@ -1598,6 +1598,7 @@ GetSatisfaction: c4.#Technology & {
 
 Mongodb: c4.#Technology & {
 	name: "Mongodb"
+	type: "Db"
 	sprite: {
 		url: "https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/master/sprites/./mongodb.puml"
 		id:  "mongodb"
@@ -2158,6 +2159,7 @@ Jetbrains: c4.#Technology & {
 
 Arangodb: c4.#Technology & {
 	name: "Arangodb"
+	type: "Db"
 	sprite: {
 		url: "https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/master/sprites/./arangodb.puml"
 		id:  "arangodb"
@@ -3353,6 +3355,7 @@ Bitbucket: c4.#Technology & {
 
 Rabbitmq: c4.#Technology & {
 	name: "Rabbitmq"
+	type: "Queue"
 	sprite: {
 		url: "https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/master/sprites/./rabbitmq.puml"
 		id:  "rabbitmq"
